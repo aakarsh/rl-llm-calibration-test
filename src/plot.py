@@ -4,10 +4,13 @@
 import seaborn as sns
 import json
 from functools import partial
-
+import os
 # Load the test data
-with open('../test/data/test_data.json') as f:
-  test_data = json.load(f)
+spyder_mode='IPYKERNEL_CELL_NAME' in os.environ
+ 
+if spyder_mode:
+  with open('../test/data/test_data.json') as f:
+    test_data = json.load(f)
 
 #%% 
 def get_normalized_probabilities(model_results):
@@ -20,9 +23,10 @@ def get_normalized_probabilities(model_results):
     truth_value+= [(completion == model_result['answer']) and (model_result['answer'] == model_result['chosen']) for completion in completions]
   return completion_probabilities, truth_value
 
-model_results = test_data[0]['results']
-completion_probabilities, truth_values = get_normalized_probabilities(model_results)
-assert len(completion_probabilities) == len(truth_values)
+if spyder_mode:
+  model_results = test_data[0]['results']
+  completion_probabilities, truth_values = get_normalized_probabilities(model_results)
+  assert len(completion_probabilities) == len(truth_values)
 #%%
 # Apply the default theme
 sns.set_theme()
@@ -71,7 +75,8 @@ def plot_calibration(prediction_probabilities, actual_labels,num_bins=50, range_
 
 # Plot the calibration effect of the following
 # convert boolean array to np.int32
-plot_calibration(np.array(completion_probabilities), 
-                 np.array(truth_values, dtype=np.int32), 
-                 num_bins=20, range_start=0, range_end=1)
+if spyder_mode:
+  plot_calibration(np.array(completion_probabilities), 
+                  np.array(truth_values, dtype=np.int32), 
+                  num_bins=20, range_start=0, range_end=1)
 #%%
