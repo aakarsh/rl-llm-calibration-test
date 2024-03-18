@@ -94,8 +94,6 @@ ipykernel==6.9.1
 ipython==8.4.0
 ipython-genutils==0.2.0
 isort==5.9.3
-jax==0.3.25
-jaxlib==0.3.25
 jedi==0.18.1
 Jinja2==3.0.3
 jinja2-time==0.2.0
