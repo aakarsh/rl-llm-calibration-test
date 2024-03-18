@@ -17,7 +17,7 @@ def get_normalized_probabilities(model_results):
   for model_result in model_results:
     total = sum ([model_result['context_results'][completion] for completion in completions])
     completion_probabilities +=[model_result['context_results'][completion] / total for completion in completions]
-    truth_value+= [(model_result['context_results'][completion] == model_result['answer']) and model_result['answer'] == model_result['chosen'] for completion in completions]
+    truth_value+= [(completion == model_result['answer']) and (model_result['answer'] == model_result['chosen']) for completion in completions]
   return completion_probabilities, truth_value
 
 model_results = test_data[0]['results']
@@ -37,9 +37,7 @@ def plot_calibration(prediction_probabilities, actual_labels,num_bins=50, range_
   sorted_labels = actual_labels[sorted_indices]
 
   # Create equal-sized bins
-  bin_edges = np.linspace(range_start, range_end, num_bins)# + 1)
-  print("bin_edges", bin_edges)
-  print("len:bin_edges", len(bin_edges))
+  bin_edges = np.linspace(range_start, range_end, num_bins)
   # Calculate frequency of correct predictions in each bin
   bin_counts = np.zeros(num_bins)
   bin_correct = np.zeros(num_bins)
@@ -50,9 +48,16 @@ def plot_calibration(prediction_probabilities, actual_labels,num_bins=50, range_
           print("bin_index", bin_index)
       bin_counts[bin_index] += 1
       bin_correct[bin_index] += sorted_labels[i]
+      
+  # Find indices of zero counts
+  bin_accuracy = np.zeros(num_bins)
+  zero_counts_idx = np.where(bin_counts == 0)[0]
 
-  bin_accuracy = bin_correct / bin_counts # TODO Fix runtime issue.
+  # Set accuracy to 0 for bins with zero counts
+  bin_accuracy[zero_counts_idx] = 0
 
+  # Calculate accuracy for bins with non-zero counts
+  bin_accuracy[bin_counts != 0] = bin_correct[bin_counts != 0] / bin_counts[bin_counts != 0]
   bin_means = (bin_edges[:-1] + bin_edges[1:]) / 2  # For plotting midpoints
 
   # Create the calibration chart
@@ -65,8 +70,8 @@ def plot_calibration(prediction_probabilities, actual_labels,num_bins=50, range_
   plt.show()
 
 # Plot the calibration effect of the following
-
+# convert boolean array to np.int32
 plot_calibration(np.array(completion_probabilities), 
-                 np.array(truth_values), 
-                 num_bins=10, range_start=0, range_end=1)
-# %%
+                 np.array(truth_values, dtype=np.int32), 
+                 num_bins=20, range_start=0, range_end=1)
+#%%
