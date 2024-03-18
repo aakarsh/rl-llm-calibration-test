@@ -1,6 +1,9 @@
-# ugly
+#%%
 import numpy as np
 
+
+#%%
+# ugly
 model_results = []
 results = []
 mmlu_prediction_probabilities = []
