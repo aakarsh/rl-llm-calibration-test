@@ -7,6 +7,8 @@ WORKDIR /app
 # Copy the notebook directory and requirements.txt (if applicable)
 COPY . ./
 COPY requirements.txt ./  
+
+# RUN pip install --upgrade pip
 # Optional: If you have specific Python dependencies
 # Install required Python packages (if using requirements.txt)
 RUN pip install -r requirements.txt  # Optional
@@ -14,8 +16,8 @@ RUN pip install -r requirements.txt  # Optional
 # Install Jupyter Notebook and dependencies
 RUN apt-get update && apt-get install -y \
     jupyter \
-    python3-notebook \
-    ipywidgets  # Optional: Additional Jupyter libraries you might need
+    python3-notebook 
+#ipywidgets  # Optional: Additional Jupyter libraries you might need
 
 # Expose Jupyter Notebook port (default: 8888)
 EXPOSE 8888
