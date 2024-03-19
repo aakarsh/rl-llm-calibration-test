@@ -1,6 +1,9 @@
 #%%
+from datasets import load_dataset
 import numpy as np
 
+
+mmlu_dataset = load_dataset("cais/mmlu","high_school_world_history")
 
 #%%
 # ugly
@@ -13,7 +16,6 @@ verbose = False
 for idx, mmlu_item  in enumerate(mmlu_dataset['test']):
   #if idx> 10000: break;
   question_template = "Select one (A, B, C, D). Question: {question}".format(**mmlu_item)
-
   choices_template = "\n"+"\n".join(["%s. %s" % (alpha, choice) for alpha, choice in zip(['A', 'B', 'C', 'D'], mmlu_item['choices'])])
   prompt = "%s\n%s" %(question_template, choices_template)
   selections = ["A", "B", "C","D"]
