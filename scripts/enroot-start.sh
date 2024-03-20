@@ -1,3 +1,3 @@
 #!/bin/bash
 
-enroot start  -w aakarsh+llm_calibration+latest.sqsh
+enroot start  --root --rw  aakarsh+llm_calibration+latest.sqsh bash
