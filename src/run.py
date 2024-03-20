@@ -33,6 +33,9 @@ def main():
     parser.add_argument("--output-dir", type=str, default="output",
                         help="Path to save the predictions JSON file (default: result.json)")
 
+    parser.add_argument("--output-tag", type=str, default="llama",
+                        help="Path to save the predictions JSON file (default: result.json)")
+
     args = parser.parse_args()
     
     # Load your model
@@ -48,12 +51,13 @@ def main():
     plot_calibration(np.array(completion_probabilities), 
                   np.array(truth_values, dtype=np.int32), 
                   num_bins=20, range_start=0, range_end=1,
-                  out_file=args.output_dir+"/calibration_"+args.model_name+".png")
+                  out_file=args.output_dir+"/calibration_"+args.output_tag+".png")
     # Create a dictionary to store results (modify as needed)
 
     # Save the results to a JSON file
+    output_file = args.output_dir+"model_results_"+args.output_tag+"-result.json"
     with open(args.output_file, "w") as f:
-        json.dump("../output/model_results_"+args.model_name+".json", f, indent=4)
+        json.dump(model_results, f, indent=4)
 
     print(f"Predictions saved to {args.output_file}")
 
