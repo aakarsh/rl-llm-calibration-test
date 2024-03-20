@@ -50,16 +50,15 @@ def main():
   
     plot_calibration(np.array(completion_probabilities), 
                   np.array(truth_values, dtype=np.int32), 
-                  num_bins=20, range_start=0, range_end=1,
+                  num_bins=25, range_start=0, range_end=1,
                   out_file=args.output_dir+"/calibration_"+args.output_tag+".png")
     # Create a dictionary to store results (modify as needed)
 
     # Save the results to a JSON file
     output_file = args.output_dir+"model_results_"+args.output_tag+"-result.json"
-    with open(args.output_file, "w") as f:
+    with open(output_file, "w") as f:
         json.dump(model_results, f, indent=4)
 
-    print(f"Predictions saved to {args.output_file}")
 
 
 if __name__ == "__main__":

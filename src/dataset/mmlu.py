@@ -17,10 +17,10 @@ def run_inference(model,tokenizer, dataset):
   verbose = False
 
   for idx, mmlu_item  in enumerate(dataset['test']):
-    question_template = "Select one (A, B, C, D). Question: {question}".format(**mmlu_item)
-    choices_template = "\n"+"\n".join(["%s. %s" % (alpha, choice) for alpha, choice in zip(['A', 'B', 'C', 'D'], mmlu_item['choices'])])
+    question_template = "{question}".format(**mmlu_item)
+    choices_template = "\n"+"\n".join(["(%s) %s" % (alpha, choice) for alpha, choice in zip(['A', 'B', 'C', 'D'], mmlu_item['choices'])])
     prompt = "%s\n%s" %(question_template, choices_template)
-    selections = ["A", "B", "C","D"]
+    selections = ["(A)", "(B)", "(C)","(D)"]
     if verbose:
       print(prompt)
     selection_log_prob_opt_option = []
