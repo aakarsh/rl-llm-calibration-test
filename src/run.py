@@ -1,6 +1,6 @@
 import torch
 import json
-import np
+import numpy as np
 from torch.utils.data import DataLoader
 
 import argparse
@@ -22,21 +22,21 @@ def main():
     parser = argparse.ArgumentParser(description="Run PyTorch model on a dataset")
 
     # Model arguments
-    parser.add_argument("--model_name", type=str, required=True, default="meta-llama/Llama-2-7b-chat-hf",
+    parser.add_argument("--model_name", type=str,  default="meta-llama/Llama-2-7b-chat-hf",
                         help="Path to the saved PyTorch model file")
 
     # Dataset arguments
-    parser.add_argument("--dataset", type=str, required=True, default="high_school_world_history",
+    parser.add_argument("--dataset", type=str, default="high_school_world_history",
                         help="Dataset name")
     
     # Output arguments
-    parser.add_argument("--output", type=str, default="result.json",
+    parser.add_argument("--output-dir", type=str, default="output",
                         help="Path to save the predictions JSON file (default: result.json)")
 
     args = parser.parse_args()
     
     # Load your model
-    model, tokenizer = load_model(name=args.model_name)
+    tokenizer, model = load_model(name=args.model_name)
     dataset = mmlu.load_dataset(name=args.dataset)
     model_results, mmlu_prediction_probabilities, mmlu_target_labels = \
         mmlu.run_inference(model, tokenizer, dataset)
@@ -48,7 +48,7 @@ def main():
     plot_calibration(np.array(completion_probabilities), 
                   np.array(truth_values, dtype=np.int32), 
                   num_bins=20, range_start=0, range_end=1,
-                  out_file="../output/calibration_"+args.model_name".png")
+                  out_file=args.output_dir+"/calibration_"+args.model_name+".png")
     # Create a dictionary to store results (modify as needed)
 
     # Save the results to a JSON file
