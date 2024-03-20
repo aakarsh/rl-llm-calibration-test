@@ -1,17 +1,16 @@
 import torch
 
-from transformers.utils import is_accelerate_available, is_bitsandbytes_available
-from transformers import LlamaForCausalLM, LlamaTokenizer, AutoTokenizer
-from transformers import (
-    AutoTokenizer,
-    AutoModelForCausalLM
-)
 
-from datasets import (
-    load_dataset,
-    Dataset
-)
-
+def get_normalized_probabilities(model_results):
+  completions = list(sorted(model_results[0]['context_results'].keys()))
+  completion_probabilities = []
+  truth_value = []
+  for model_result in model_results:
+    total = sum ([model_result['context_results'][completion] for completion in completions])
+    completion_probabilities +=[model_result['context_results'][completion] / total for completion in completions]
+    truth_value+= [(completion == model_result['answer']) and (model_result['answer'] == model_result['chosen']) for completion in completions]
+  return completion_probabilities, truth_value  
+  
 def get_log_prob_of_completion(
         model,
         tokenizer,
