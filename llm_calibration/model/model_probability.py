@@ -14,11 +14,11 @@ def get_normalized_probabilities(model_results):
   truth_value = []
   for model_result in model_results:
     model_log_prob_of_completion = torch.tensor([model_result['selection_results'][completion] for completion in completions])
-    model_completion_probability = torch.nn.functional.softmax(model_log_prob_of_completion)
+    model_completion_probability = torch.nn.functional.softmax(model_log_prob_of_completion, dim=0)
     completion_probabilities += model_completion_probability.tolist()
     truth_value += [ (completion == model_result['answer']) 
                         and (model_result['answer'] == model_result['chosen']) for completion in completions ]
-  return model_completion_probability, truth_value  
+  return completion_probabilities, truth_value  
   
 def get_log_prob_of_completion(
         model,
