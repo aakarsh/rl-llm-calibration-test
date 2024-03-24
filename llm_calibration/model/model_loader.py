@@ -1,5 +1,4 @@
 from transformers.utils import is_accelerate_available, is_bitsandbytes_available
-# import libraries
 from transformers import LlamaForCausalLM, LlamaTokenizer, AutoTokenizer
 import torch
 from trl import AutoModelForCausalLMWithValueHead, PPOConfig, PPOTrainer

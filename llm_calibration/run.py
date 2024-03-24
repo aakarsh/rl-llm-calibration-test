@@ -45,6 +45,8 @@ def main():
         mmlu.run_inference(model, tokenizer, dataset)
 
     model_results = model_results[0]['results']
+    # 5-shot prompting.  
+    # What the format for it ?  
     completion_probabilities, truth_values = get_normalized_probabilities(model_results)
 
   

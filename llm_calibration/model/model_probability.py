@@ -1,14 +1,23 @@
 import torch
 
-
+# What we want to do is apply the soft-max function, exponentiate the numbers, 
+# and take the exponentiate number and divide by the sum of the 
+# exponentiate numbers. This is the softmax function, and it is used to 
+# normalize the numbers. np.exp(1e-4) np.(2e-5).
 def get_normalized_probabilities(model_results):
+  """
+  Get the probability of selected actions from the model results.
+  """
   completions = list(sorted(model_results[0]['context_results'].keys()))
   completion_probabilities = []
   truth_value = []
   for model_result in model_results:
-    total = sum ([model_result['context_results'][completion] for completion in completions])
-    completion_probabilities +=[model_result['context_results'][completion] / total for completion in completions]
-    truth_value+= [(completion == model_result['answer']) and (model_result['answer'] == model_result['chosen']) for completion in completions]
+    total = sum([model_result['context_results'][completion] for completion in completions])
+    completion_probabilities += [model_result['context_results'][completion] / total for completion in completions]
+   
+    truth_value += [ (completion == model_result['answer']) 
+                        and (model_result['answer'] == model_result['chosen']) for completion in completions ]
+    
   return completion_probabilities, truth_value  
   
 def get_log_prob_of_completion(
@@ -82,6 +91,16 @@ def get_log_prob_of_completion(
         continuationConditionalLogProbs = log_completion_tokens[
             prompt_end_index:
         ]
+        # Why are we doing a mean here ? 
+        # Normalizing over number of token, because when we have log probablity 
+        # of different completions, because under some tokenizations we might have different number 
+        # tokens, when we have sum of probablity of two tokens, you might get a smaller number than 
+        # so to avoid the issue of effect of number tokens, to take the average over the number ot tokens, 
+        # so we compute the average token probability, if they consist only of one token or two tokens, you
+        # can compute the number
+        # We can do that when we have variation in token number, 
+        # sum is totally fine. 
+        
         # Maybe normalize tokent length.
         completion_log_prob = torch.mean(
                 continuationConditionalLogProbs
