@@ -42,13 +42,13 @@ def main():
     tokenizer, model = load_model(name=args.model_name)
     dataset = mmlu.load_dataset(name=args.dataset)
     model_results, mmlu_prediction_probabilities, mmlu_target_labels = \
-        mmlu.run_inference(model, tokenizer, dataset)
+        mmlu.run_inference(model, tokenizer, dataset, 
+                           tag="model_"+args.model_name+"_ds_"+args.dataset+"_tag", 
+                           include_prompt=False)
 
-    model_results = model_results[0]['results']
     # 5-shot prompting.  
     # What the format for it ?  
     completion_probabilities, truth_values = get_normalized_probabilities(model_results)
-
   
     plot_calibration(np.array(completion_probabilities), 
                   np.array(truth_values, dtype=np.int32), 

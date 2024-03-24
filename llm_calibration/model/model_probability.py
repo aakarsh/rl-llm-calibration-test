@@ -8,12 +8,12 @@ def get_normalized_probabilities(model_results):
   """
   Get the probability of selected actions from the model results.
   """
-  completions = list(sorted(model_results[0]['context_results'].keys()))
+  completions = list(sorted(model_results[0]['selection_results'].keys()))
   completion_probabilities = []
   truth_value = []
   for model_result in model_results:
-    total = sum([model_result['context_results'][completion] for completion in completions])
-    completion_probabilities += [model_result['context_results'][completion] / total for completion in completions]
+    total = sum([model_result['selection_results'][completion] for completion in completions])
+    completion_probabilities += [model_result['selection_results'][completion] / total for completion in completions]
    
     truth_value += [ (completion == model_result['answer']) 
                         and (model_result['answer'] == model_result['chosen']) for completion in completions ]
