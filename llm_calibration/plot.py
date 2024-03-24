@@ -5,6 +5,7 @@ import os
 from model.model_probability import get_normalized_probabilities
 import numpy as np
 import matplotlib.pyplot as plt
+
 #%%
 # Get probability for each to option. 
 # 0-1  - 10  
@@ -12,7 +13,7 @@ import matplotlib.pyplot as plt
 # and the labels, , then you normalized frequency of the labels 1 for the y coordinate. 
 #   
 # A -(.9,0), B - 1 , C - 0  D 0 
- def plot_calibration(prediction_probabilities, actual_labels,num_bins=50, range_start = 0 , range_end=.00001, out_file=None):
+def plot_calibration(prediction_probabilities, actual_labels,num_bins=50, range_start = 0 , range_end=.00001, out_file=None):
   """
   Plot the calibration curves for the predicted probabilities of a model.
   """
