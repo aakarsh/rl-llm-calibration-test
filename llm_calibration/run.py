@@ -10,7 +10,7 @@ import torch
 from huggingface_hub import login
 from model.model_loader import load_model
 from model.model_probability import (get_normalized_probabilities)
-import dataset.mmlu as mmlu
+import runner.mmlu as mmlu
 from plot import plot_calibration
 
 print("accelerate", is_accelerate_available())

@@ -1,3 +1,4 @@
+import numpy as np
 import torch
 
 # What we want to do is apply the soft-max function, exponentiate the numbers, 
@@ -12,13 +13,12 @@ def get_normalized_probabilities(model_results):
   completion_probabilities = []
   truth_value = []
   for model_result in model_results:
-    total = sum([model_result['selection_results'][completion] for completion in completions])
-    completion_probabilities += [model_result['selection_results'][completion] / total for completion in completions]
-   
+    model_log_prob_of_completion = torch.tensor([model_result['selection_results'][completion] for completion in completions])
+    model_completion_probability = torch.nn.functional.softmax(model_log_prob_of_completion)
+    completion_probabilities += model_completion_probability.tolist()
     truth_value += [ (completion == model_result['answer']) 
                         and (model_result['answer'] == model_result['chosen']) for completion in completions ]
-    
-  return completion_probabilities, truth_value  
+  return model_completion_probability, truth_value  
   
 def get_log_prob_of_completion(
         model,
