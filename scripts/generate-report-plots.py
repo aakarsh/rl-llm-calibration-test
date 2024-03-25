@@ -31,7 +31,21 @@ def generate_calibration_plot(file_path, output_dir=None, output_tag=None):
                   np.array(truth_values, dtype=np.int32), 
                   num_bins=10, range_start=0, range_end=1, out_file=output_dir+"/"+output_tag+".png")
  
-
+def generate_comparison_plot(file_paths,  model_tags, output_dir, output_tag=None):
+    comparison_files = []
+    with open(file_path) as f:
+        comparison_files.append(json.load(f))
+        
+    model_results = [] 
+    model_completion_probabilities={}
+    model_truth_values = {}
+    for idx, comparison_file in enumerate(comparison_files):
+        model_results = comparison_file[0]['results']
+    completion_probabilities, truth_values = get_normalized_probabilities(model_results)
+    assert len(completion_probabilities) == len(truth_values)
+ 
+    pass
+    
 # Generate the 0-shot calibration plot between 7-b, 14-b and 70-b models
 generate_calibration_plot(os.path.abspath(file_path+'/../test/data/test_data.json'), output_dir=report_path, output_tag="0-shot")
 
