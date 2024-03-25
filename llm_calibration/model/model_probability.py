@@ -88,10 +88,12 @@ def get_log_prob_of_completion(
             prompt_end_index:
         ]
         # Why are we doing a mean here ? 
-        # Normalizing over number of token, because when we have log probablity 
-        # of different completions, because under some tokenizations we might have different number 
-        # tokens, when we have sum of probablity of two tokens, you might get a smaller number than 
-        # so to avoid the issue of effect of number tokens, to take the average over the number ot tokens, 
+        # Normalizing over number of token, because when we have 
+        # log probablity of different completions, 
+        # because under some tokenizations we might have 
+        # different number tokens, when we have sum of probablity of two tokens, 
+        # you might get a smaller number than so to avoid the issue of 
+        # effect of number tokens, to take the average over the number ot tokens, 
         # so we compute the average token probability, if they consist only of one token or two tokens, you
         # can compute the number
         # We can do that when we have variation in token number, 

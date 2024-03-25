@@ -29,7 +29,7 @@ def generate_calibration_plot(file_path, output_dir=None, output_tag=None):
   
   plot_calibration(np.array(completion_probabilities), 
                   np.array(truth_values, dtype=np.int32), 
-                  num_bins=20, range_start=0, range_end=1, out_file=output_dir+"/"+output_tag+".png")
+                  num_bins=10, range_start=0, range_end=1, out_file=output_dir+"/"+output_tag+".png")
  
 
 # Generate the 0-shot calibration plot between 7-b, 14-b and 70-b models
@@ -40,3 +40,4 @@ generate_calibration_plot(os.path.abspath(file_path+'/../test/data/test_data.jso
 
 # Generate Subject-wise calibration plots between 7-b, 14-b models.
 generate_calibration_plot(os.path.abspath(file_path+'/../test/data/test_data.json'), output_dir=report_path, output_tag="by_subject")
+# %%
