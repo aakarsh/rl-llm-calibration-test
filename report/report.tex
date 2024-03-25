@@ -66,15 +66,17 @@
 
 \begin{document}
 \maketitle
+
 \begin{abstract}
 The popularity of large language models has lead to a growing 
-need to need to characterize their behavior and understanding 
-beyond the generation grammatical sentences In this study we 
+need to characterize their behavior and understanding 
+beyond the generation grammatical sentences. In this study we 
 attempt to replicate and extend the calibration study of 
 \cite{kadavath2022language} on open models and datasets, 
-attempting compare model response to their calibration, that is the certainty 
-with which a model answers a question with a given completion and 
-the probability that the model is answering the question correctly. 
+attempting compare model reported response probabilities to 
+their actual calibration, that is the certainty with which a model answers 
+a question with a given completion and the probability that the 
+model is answering the question correctly. 
 \end{abstract}
 
 \section{Introduction}
@@ -85,21 +87,21 @@ the probability that the model is answering the question correctly.
 %% exhaustive literature review; it is sufficient to mention relevant work 
 %% from the project proposals and the class materials
 
-
-
 \section{Method}
 
 \subsection{Dataset}
+
 The Measuring Massive Multitask Language Understanding (MMLU) \cite{hendrycks2021measuring}
 is a massive dataset of multiple choice questions which covers 57 
-tasks in various subjects including elementary mathematics, 
-US history, computer science, law, and more.
+tasks in various subjects including elementary mathematics, US history, 
+computer science, law, and more. It serves as a challenging dataset for most 
+modern large language models and can be used to evaluate their calibration.
 
 \subsection{Model Calibration}
 
 We compare the calibration of the Llama \cite{touvron2023llama} model 
-7b-chat and 13b chat models for answering multiple choice questions in figure 
-... 
+7b-chat and 13b chat models for answering multiple choice questions in 
+figure ... 
 
 We note that that the calibration of the model while not perfect improves 
 with the size of the model with the 13b-chat model being better calibrated 
