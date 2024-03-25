@@ -30,6 +30,10 @@
 % the typewriter font.
 \usepackage{inconsolata}
 
+%% Use the graphicx package to include figures.
+
+\usepackage{graphicx}
+
 
 % If the title and author information does not fit in the area allocated, uncomment the following
 %
@@ -89,13 +93,30 @@ model is answering the question correctly.
 
 \section{Method}
 
+\subsection{Introduction}
+
+We measure the calibration in keeping with the methodology presented 
+in  \cite{kadavath2022language}. The model is queried in either a
+0-shot or 5-shot manner. The transformer model is given a question 
+prompt  with the each of the multiple choice options.  In the 5-shot 
+methodology, in addition to the question under test we proceed the 
+question with 4 additional questions with in the same multiple 
+choice format in order to provide the model with enough context to 
+understand the expected format for answering the question.
+
+For each prompt completion pair we compute the log probability of 
+the completion normalized by its completion length. 
+
+
+
+
 \subsection{Dataset}
 
-The Measuring Massive Multitask Language Understanding (MMLU) \cite{hendrycks2021measuring}
-is a massive dataset of multiple choice questions which covers 57 
-tasks in various subjects including elementary mathematics, US history, 
-computer science, law, and more. It serves as a challenging dataset for most 
-modern large language models and can be used to evaluate their calibration.
+The Measuring Massive Multitask Language Understanding (MMLU) 
+\cite{hendrycks2021measuring} is a massive dataset of multiple choice 
+questions which covers 57 tasks in various subjects including 
+elementary mathematics, US history, computer science, law, and more. It 
+serves as a challenging dataset for most modern large language models and can be used to evaluate their calibration.
 
 \subsection{Model Calibration}
 
@@ -109,6 +130,13 @@ and closer to the ideal calibration line than the 7b-chat model. Thus we
 note that models sizes improves not only the performance of the model but
 the calibration of the model as well.
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/mmlu-13b-chat.png}
+  \caption{Calibration of the 13b-chat model on the MMLU dataset, we 
+  note that it is closer, in calibration than the 7b-chat model. }
+\end{figure}
+  
 \section{Results}
 \begin{table*}
 \centering
