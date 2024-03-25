@@ -2,7 +2,7 @@
 import seaborn as sns
 import json
 import os
-from model.model_probability import get_normalized_probabilities
+from .model.model_probability import get_normalized_probabilities
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -54,25 +54,8 @@ def plot_calibration(prediction_probabilities, actual_labels,num_bins=50, range_
   plt.ylabel('Frequency of Correct Predictions')
   plt.title('Calibration Chart')
   plt.legend()
+  if out_file: plt.savefig(out_file)
   plt.show()
-  if out_file:
-    plt.savefig(out_file)
     
 # Plot the calibration effect of the following
 # convert boolean array to np.int32
-#%% 
-spyder_mode='IPYKERNEL_CELL_NAME' in os.environ
-
-# Load the test data 
-if spyder_mode:
-  with open('../test/data/test_data.json') as f:
-    test_data = json.load(f)
-  model_results = test_data[0]['results']
-  completion_probabilities, truth_values = get_normalized_probabilities(model_results)
-  assert len(completion_probabilities) == len(truth_values)
-
-  
-  plot_calibration(np.array(completion_probabilities), 
-                  np.array(truth_values, dtype=np.int32), 
-                  num_bins=20, range_start=0, range_end=1)
-#%%
