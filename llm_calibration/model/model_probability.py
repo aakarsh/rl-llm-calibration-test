@@ -1,13 +1,9 @@
 import numpy as np
 import torch
 
-# What we want to do is apply the soft-max function, exponentiate the numbers, 
-# and take the exponentiate number and divide by the sum of the 
-# exponentiate numbers. This is the softmax function, and it is used to 
-# normalize the numbers. np.exp(1e-4) np.(2e-5).
 def get_normalized_probabilities(model_results):
   """
-  Get the probability of selected actions from the model results.
+  Takes model results and returns normalized probabilities and truth values.
   """
   completions = list(sorted(model_results[0]['selection_results'].keys()))
   completion_probabilities = []

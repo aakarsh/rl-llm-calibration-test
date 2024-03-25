@@ -51,9 +51,9 @@ def main():
     completion_probabilities, truth_values = get_normalized_probabilities(model_results)
   
     plot_calibration(np.array(completion_probabilities), 
-                  np.array(truth_values, dtype=np.int32), 
-                  num_bins=25, range_start=0, range_end=1,
-                  out_file=args.output_dir+"/calibration_"+args.output_tag+".png")
+                    np.array(truth_values, dtype=np.int32), 
+                    num_bins=25, range_start=0, range_end=1,
+                    out_file=args.output_dir+"/calibration_"+args.output_tag+".png")
     # Create a dictionary to store results (modify as needed)
 
     # Save the results to a JSON file

@@ -8,7 +8,8 @@ def load_dataset(name):
   return hugging_face_datasets.load_dataset("cais/mmlu",name)
 
 def run_inference(model, tokenizer, dataset, 
-                  tag="default_tag", include_prompt=False, verbose = False):
+                  tag="default_tag", include_prompt=False, 
+                  verbose = False):
   results = []
   prediction_probabilities = []
   target_labels = []
