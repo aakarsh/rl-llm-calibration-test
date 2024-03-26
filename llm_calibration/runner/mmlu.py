@@ -4,8 +4,98 @@ import numpy as np
 
 from model.model_probability import  get_log_prob_of_completion
 
+STEM_DATASETS = [
+      'abstract_algebra',
+      'anatomy',
+      'astronomy',
+      'college_biology',
+      'college_chemistry',
+      'college_computer_science',
+      'college_mathematics',
+      'college_physics',
+      'computer_security',
+      'conceptual_physics',
+      'electrical_engineering',
+      'elementary_mathematics',
+      'high_school_biology',
+      'high_school_chemistry',
+      'high_school_computer_science',
+      'high_school_mathematics',
+      'high_school_physics',
+      'high_school_statistics',
+      'machine_learning',
+]
+ 
+HUMANITIES_DATASET = [
+   'formal_logic',
+   'high_school_european_history',
+   'high_school_us_history',
+   'high_school_world_history',
+   'human_sexuality',
+   'international_law',
+   'jurisprudence',
+   'logical_fallacies',
+   'moral_disputes',
+   'moral_scenarios',
+   'philosophy',
+   'prehistory',
+   'professional_law',
+   'world_religions'
+]
+
+SOCIAL_SCIENCE_DATASET = [
+  'econometrics',
+  'geography',
+  'high_school_government_and_politics',
+  'high_school_macroeconomics',
+  'high_school_microeconomics',
+  'high_school_psychology',
+  'human_sexuality',
+  'professional_psychology',
+  'public_relations',
+  'security_studies',
+  'sociology',
+  'us_foreign_policy'
+]
+
+OTHER_DATASET = [
+  'business_ethics',
+  'clinical_knowledge',
+  'college_medicine',
+  'global_facts',
+  'human_aging',
+  'human_sexuality',
+  'management',
+  'marketing',
+  'medical_genetics',
+  'miscellaneous',
+  'nutrition',
+  'professional_accounting',
+  'professional_medicine',
+  'virology',
+]
+
 def load_dataset(name):
-  return hugging_face_datasets.load_dataset("cais/mmlu",name)
+  datasets = []
+  if name == "STEM":
+          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset) for dataset in STEM_DATASETS]
+  if name == "HUMANITIES":
+          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset) for dataset in HUMANITIES_DATASET]
+  if name == "SOCIAL_SCIENCE":
+          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset) for dataset in SOCIAL_SCIENCE_DATASET]
+  if name == "OTHER":
+          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset) for dataset in OTHER_DATASET]
+  else: # built in dataset
+    return hugging_face_datasets.load_dataset("cais/mmlu", name)
+  return hugging_face_datasets.concatenate_datasets(datasets)
+
+def generate_prompt(question, options, options_template):
+   question_template = "{question}".format(**item)
+   alphanumeric_options = ['A', 'B', 'C', 'D'] 
+   choices_template = "\n"+"\n".join(["(%s) %s" % (alpha, choice) for alpha, choice in zip(alphanumeric_options, item['choices'])])
+   question_prompt = "%s\n%s" % (question_template, choices_template)
+   formatted_options = ["(%s)" % choice for choice in alphanumeric_options ]
+   return question_prompt, formatted_options
 
 def run_inference(model, tokenizer, dataset, 
                   tag="default_tag", include_prompt=False, 

@@ -22,7 +22,9 @@ login(token="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")
 def run_experiment(model_name, dataset_name, runner, output_dir, output_tag):
     """
     TODO:
-    - 5-shot prompting 
+        - 5-shot prompting 
+        - Subject-wise calibration plots
+        - Thinking-Step-By-Step.
     """
     sanitized_model_name = model_name.replace("/", "_") 
     sanitized_dataset_name = dataset_name.replace("/", "_")
