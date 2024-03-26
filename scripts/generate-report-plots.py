@@ -53,4 +53,3 @@ generate_comparison_plot(model_result_files,
 
 # Generate Subject-wise calibration plots between 7-b, 14-b models.
 # generate_calibration_plot(os.path.abspath(file_path+'/../test/data/test_data.json'), output_dir=report_path, output_tag="by_subject")
-#%%
