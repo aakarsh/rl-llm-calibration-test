@@ -77,16 +77,16 @@ OTHER_DATASET = [
 def load_dataset(name, split="test"):
   datasets = []
   if name == "STEM":
-          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset, split=split) for dataset in STEM_DATASETS]
-  if name == "HUMANITIES":
-          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset, split=split) for dataset in HUMANITIES_DATASET]
-  if name == "SOCIAL_SCIENCE":
-          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset, split=split) for dataset in SOCIAL_SCIENCE_DATASET]
-  if name == "OTHER":
-          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset, split=split) for dataset in OTHER_DATASET]
+          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset )[split] for dataset in STEM_DATASETS]
+  elif name == "HUMANITIES":
+          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset)[split] for dataset in HUMANITIES_DATASET]
+  elif name == "SOCIAL_SCIENCE":
+          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset)[split] for dataset in SOCIAL_SCIENCE_DATASET]
+  elif name == "OTHER":
+          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset)[split] for dataset in OTHER_DATASET]
   else: # built in dataset
-    return hugging_face_datasets.load_dataset("cais/mmlu", name)
-  return hugging_face_datasets.concatenate_datasets(datasets)
+    return hugging_face_datasets.load_dataset("cais/mmlu", name)[split]
+  return hugging_face_datasets.concatenate_datasets(datasets, split=split)
 
 def generate_prompt(question, options, options_template):
    question_template = "{question}".format(**item)
@@ -103,7 +103,7 @@ def run_inference(model, tokenizer, dataset,
   prediction_probabilities = []
   target_labels = []
 
-  for _, item  in enumerate(dataset['test']):
+  for _, item  in enumerate(dataset):
     question_template = "{question}".format(**item)
     alphanumeric_options = ['A', 'B', 'C', 'D'] 
     choices_template = "\n"+"\n".join(["(%s) %s" % (alpha, choice) for alpha, choice in zip(alphanumeric_options, item['choices'])])
