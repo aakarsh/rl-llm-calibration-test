@@ -74,16 +74,16 @@ OTHER_DATASET = [
   'virology',
 ]
 
-def load_dataset(name):
+def load_dataset(name, split="test"):
   datasets = []
   if name == "STEM":
-          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset) for dataset in STEM_DATASETS]
+          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset, split=split) for dataset in STEM_DATASETS]
   if name == "HUMANITIES":
-          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset) for dataset in HUMANITIES_DATASET]
+          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset, split=split) for dataset in HUMANITIES_DATASET]
   if name == "SOCIAL_SCIENCE":
-          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset) for dataset in SOCIAL_SCIENCE_DATASET]
+          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset, split=split) for dataset in SOCIAL_SCIENCE_DATASET]
   if name == "OTHER":
-          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset) for dataset in OTHER_DATASET]
+          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset, split=split) for dataset in OTHER_DATASET]
   else: # built in dataset
     return hugging_face_datasets.load_dataset("cais/mmlu", name)
   return hugging_face_datasets.concatenate_datasets(datasets)
