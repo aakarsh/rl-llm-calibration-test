@@ -44,7 +44,7 @@ HUMANITIES_DATASET = [
 
 SOCIAL_SCIENCE_DATASET = [
   'econometrics',
-  'geography',
+  'high_school_geography',
   'high_school_government_and_politics',
   'high_school_macroeconomics',
   'high_school_microeconomics',
@@ -63,7 +63,6 @@ OTHER_DATASET = [
   'college_medicine',
   'global_facts',
   'human_aging',
-  'human_sexuality',
   'management',
   'marketing',
   'medical_genetics',
@@ -95,6 +94,18 @@ def generate_prompt(question, options, options_template):
    question_prompt = "%s\n%s" % (question_template, choices_template)
    formatted_options = ["(%s)" % choice for choice in alphanumeric_options ]
    return question_prompt, formatted_options
+
+ def generate_n_shot_prompt(question, options, options_template, n_shots):
+   """
+    Generate a prompt for n-shot learning
+   """
+    for _, item  in enumerate(dataset):
+      question_template = "{question}".format(**item)
+      alphanumeric_options = ['A', 'B', 'C', 'D']
+      choices_template = "\n"+"\n".join(["(%s) %s" % (alpha, choice) for alpha, choice in zip(alphanumeric_options, item['choices'])])
+      question_prompt = "%s\n%s" % (question_template, choices_template)
+      formatted_options = ["(%s)" % choice for choice in alphanumeric_options ]
+      return question_prompt, formatted_options
 
 def run_inference(model, tokenizer, dataset, 
                   tag="default_tag", include_prompt=False, 
