@@ -1,7 +1,7 @@
 import datasets as hugging_face_datasets
 import numpy as np
 
-from model.model_probability import  get_log_prob_of_completion
+from llm_calibration.model.model_probability import  get_log_prob_of_completion
 
 STEM_DATASETS = [
       'abstract_algebra',
