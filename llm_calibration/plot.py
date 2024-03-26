@@ -1,7 +1,7 @@
 #%%
 import seaborn as sns
 import json
-from .model.model_probability import get_normalized_probabilities
+from llm_calibration.model.model_probability import get_normalized_probabilities
 import numpy as np
 import matplotlib.pyplot as plt
 

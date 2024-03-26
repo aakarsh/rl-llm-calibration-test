@@ -58,4 +58,3 @@ def run_inference(model, tokenizer, dataset,
   return results, prediction_probabilities, target_labels
 
 
-
