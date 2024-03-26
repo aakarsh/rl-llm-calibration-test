@@ -8,10 +8,11 @@ from transformers.utils import is_accelerate_available, is_bitsandbytes_availabl
 import torch
 
 from huggingface_hub import login
-from model.model_loader import load_model
-from model.model_probability import (get_normalized_probabilities)
-import runner.mmlu as mmlu_runner
-from plot import plot_calibration
+
+from llm_calibration.model.model_loader import load_model
+from llm_calibration.model.model_probability import (get_normalized_probabilities)
+import llm_calibration.runner.mmlu as mmlu_runner
+from llm_calibration.plot import plot_calibration
 
 print("accelerate", is_accelerate_available())
 print("is_bitsandbytes_available", is_bitsandbytes_available())
