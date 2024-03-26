@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 #%%
 # Get probability for each to option. 
 # 0-1  - 10  
-# for each bin you will have the probability of the points which land in the bin. 
+# For each bin you will have the probability of the points which land in the bin. 
 # and the labels, , then you normalized frequency of the labels 1 for the y coordinate. 
 #   
 # A -(.9,0), B - 1 , C - 0  D 0 

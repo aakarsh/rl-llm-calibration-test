@@ -83,27 +83,25 @@ model_result_files = [
    os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_all_tag-result.json') 
 ]
 generate_comparison_plot(model_result_files, 
-                         ["Llama 13-b Base Model", 
-                          "Llama 13-b Chat Model"
+                         ["Llama 13-b Base Model (0-shot)", 
+                          "Llama 13-b Chat Model (0-shot)"
                           ], 
                          output_dir=report_path, 
                          output_tag="0-shot-13-b-chat-vs-13-b-hf")
 
-#%%
 #%%   
 # Generate the 0-shot calibration plot between 7-b, 14-b and 70-b models
-# model_results_model_meta-llama_Llama-2-13b-hf_ds_all_tag-result.json
 model_result_files = [
    os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_all_tag-result.json'), 
    os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_all_tag-result.json') 
 ]
+
 generate_comparison_plot(model_result_files, 
-                         ["Llama 13b Chat Model", 
-                          "Llama 7b Chat Model"
+                         ["Llama 13b Chat Model (0-shot)", 
+                          "Llama 7b Chat Model (0-shot)"
                           ], 
                          output_dir=report_path, 
                          output_tag="0-shot-7b-vs-13b-chat")
-
 
 # Generate the 5-shot calibration plot between 7-b, 14-b and 70-b models 
 # generate_calibration_plot(os.path.abspath(file_path+'/../test/data/test_data.json'), output_dir=report_path, output_tag="5-shot")
