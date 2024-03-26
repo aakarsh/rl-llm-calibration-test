@@ -1,24 +1,21 @@
 #%%
 import seaborn as sns
 import json
-import os
 from .model.model_probability import get_normalized_probabilities
 import numpy as np
 import matplotlib.pyplot as plt
 
 #%%
-# Get probability for each to option. 
-# 0-1  - 10  
-# For each bin you will have the probability of the points which land in the bin. 
-# and the labels, , then you normalized frequency of the labels 1 for the y coordinate. 
-#   
-# A -(.9,0), B - 1 , C - 0  D 0 
 def plot_calibration(prediction_probabilities, actual_labels,
                      num_bins=10, range_start = 0, range_end=1, 
                      model_label="Model Calibration",
                      out_file=None, figure=None, show_figure=False):
   """
-    Plot the calibration curves for the predicted probabilities of a model.
+    Takes the probability for each completion along with its actual label(True/False), 
+    and bins the probabilities into num_bins, and calculates the frequency of the
+    correct predictions in each bin. 
+    
+    Plots the prediction probability against the frequency of correct predictions.  
   """
   sns.set_theme()
 
@@ -124,14 +121,6 @@ def generate_comparison_plot(file_paths,  model_labels=[],
       
   assert len(completion_probabilities) == len(truth_values)
   
-  # model_tags, 
-  # model_labels, 
-  # prediction_probabilities, 
-  # actual_labels, num_bins=10, 
-  # range_start = 0 , 
-  # range_end=1, 
-  # out_file=None, 
-  # show_figure=False
   plot_calibration_comparison(model_labels, model_labels, 
                               model_completion_probabilities,
                               model_truth_values,
