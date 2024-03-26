@@ -1,5 +1,4 @@
-#%%
-import datasets as hugging_face_datasets 
+import datasets as hugging_face_datasets
 import numpy as np
 
 from model.model_probability import  get_log_prob_of_completion
