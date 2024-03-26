@@ -53,3 +53,15 @@ generate_comparison_plot(model_result_files,
 
 # Generate Subject-wise calibration plots between 7-b, 14-b models.
 # generate_calibration_plot(os.path.abspath(file_path+'/../test/data/test_data.json'), output_dir=report_path, output_tag="by_subject")
+#%%
+subjects = ["STEM", "OTHER", "SOCIAL_SCIENCE", "HUMANITIES"]
+model_result_files = [os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_%s_tag-result.json'% subject)) for subject in subjects]
+
+generate_comparison_plot(model_result_files, 
+                          ["Llama 13-b Chat Model %s (0-shot)" % subject.capitalize() for subject in subjects], 
+                         output_dir=report_path, 
+                         output_tag="0-shot-13-b-chat-vs-subjects")
+
+
+
+# %%
