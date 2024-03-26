@@ -97,7 +97,54 @@ def plot_calibration_comparison(model_tags, model_labels,
   if show_figure: 
     save_fig.show()
   return save_fig
-# Plot the calibration effect of the following
-# convert boolean array to np.int32
 
-# %%
+def generate_comparison_plot(file_paths,  model_labels=[], 
+                            output_dir=None, output_tag=None):
+  """
+  Generate a comparison on multiple runs of a model, 
+  by parsing model result files.
+  """
+  comparison_files = []
+  
+  for file_path in file_paths: 
+      with open(file_path) as f:
+          comparison_files.append(json.load(f))
+      
+  model_completion_probabilities={}
+  model_truth_values = {}
+  
+  for idx, comparison_file in enumerate(comparison_files):
+      model_results = comparison_file 
+      completion_probabilities, truth_values = \
+          get_normalized_probabilities(model_results)
+      current_label: str  = model_labels[idx]
+      model_completion_probabilities[current_label] = \
+          completion_probabilities
+      model_truth_values[current_label] = truth_values
+      
+  assert len(completion_probabilities) == len(truth_values)
+  
+  # model_tags, 
+  # model_labels, 
+  # prediction_probabilities, 
+  # actual_labels, num_bins=10, 
+  # range_start = 0 , 
+  # range_end=1, 
+  # out_file=None, 
+  # show_figure=False
+  plot_calibration_comparison(model_labels, model_labels, 
+                              model_completion_probabilities,
+                              model_truth_values,
+                              range_start=0, range_end=1, 
+                              out_file=output_dir+"/"+output_tag+".png")
+
+def generate_calibration_plot(file_path, output_dir=None, output_tag=None):
+  with open(file_path) as f:
+    test_data = json.load(f)
+  model_results = test_data[0]['results']
+  completion_probabilities, truth_values = get_normalized_probabilities(model_results)
+  assert len(completion_probabilities) == len(truth_values)
+  
+  plot_calibration(np.array(completion_probabilities), 
+                  np.array(truth_values, dtype=np.int32), 
+                  num_bins=10, range_start=0, range_end=1, out_file=output_dir+"/"+output_tag+".png")
