@@ -20,7 +20,7 @@ print("is_bitsandbytes_available", is_bitsandbytes_available())
 login(token="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")
 
 
-def run_experiment(model_name, dataset_name, runner, output_dir, output_tag):
+def run_experiment(model_name, dataset_name, runner, output_dir, output_tag, n_shots=1):
     """
     TODO:
         - 5-shot prompting 
@@ -35,8 +35,8 @@ def run_experiment(model_name, dataset_name, runner, output_dir, output_tag):
     
     model_results, _, _ = \
         runner.run_inference(model, tokenizer, dataset, 
-                           tag="model_"+sanitized_model_name+"_ds_"+sanitized_dataset_name+"_tag", 
-                           include_prompt=False)
+                           tag="model_"+sanitized_model_name+"_ds_"+sanitized_dataset_name+"_n_shots_"+(str(n_shots))+"_tag", 
+                           include_prompt=False, n_shots=n_shots)
         
     # Save the results to a JSON file
     output_file = output_dir+"model_results_"+output_tag+"-result.json"
