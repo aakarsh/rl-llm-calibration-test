@@ -95,17 +95,41 @@ def generate_prompt(question, options, options_template):
    formatted_options = ["(%s)" % choice for choice in alphanumeric_options ]
    return question_prompt, formatted_options
 
-# def generate_n_shot_prompt(question, options, options_template, n_shots):
-#   """
-#    Generate a prompt for n-shot learning
-#   """
-#    for _, item  in enumerate(dataset):
-#      question_template = "{question}".format(**item)
-#      alphanumeric_options = ['A', 'B', 'C', 'D']
-#      choices_template = "\n"+"\n".join(["(%s) %s" % (alpha, choice) for alpha, choice in zip(alphanumeric_options, item['choices'])])
-#      question_prompt = "%s\n%s" % (question_template, choices_template)
-#      formatted_options = ["(%s)" % choice for choice in alphanumeric_options ]
-#      return question_prompt, formatted_options
+
+def generate_n_shot_prompt(dataset,
+                           question_idx,
+                           prompt_template="{question}",
+                           options_template="({choice})",
+                           answer_template="Answer:{answer}",
+                           n_shots=5):
+  """
+  Generate a n-shot prompt.
+  """
+  def format_question(current_idx, with_answer=True):
+    item = dataset[current_idx]
+    question_template = prompt_template.format(question=item["question"])
+    choices_template = "\n"+"\n".join(["%s. %s" % (options_template.format(choice=alpha), choice) for alpha, choice in zip(alphanumeric_options, item['choices'])])
+    question_prompt = "%s\n%s\n" % (question_template, choices_template)
+    if with_answer:
+      question_prompt += "\n"+ answer_template.format(answer=options_template.format(choice=alphanumeric_options[item['answer']]))+"\n"
+    else:
+      question_prompt += "\n"+ answer_template.format(answer="")
+    return question_prompt
+ 
+  alphanumeric_options = ['A', 'B', 'C', 'D']
+  formatted_options = ["(%s)" % choice for choice in alphanumeric_options ]
+  current_idx = 0 
+  question_buffer = ""
+  while n_shots > 0:
+    if current_idx >= len(dataset): 
+      break
+    if not current_idx == question_idx:
+      question_buffer += format_question(current_idx) +"\n"
+      
+    current_idx += 1
+    n_shots -= 1
+  question_buffer += format_question(question_idx, with_answer=False)
+  return question_buffer, formatted_options
 
 def run_inference(model, tokenizer, dataset,
                   tag="default_tag", include_prompt=False, 
