@@ -133,17 +133,15 @@ def generate_n_shot_prompt(dataset,
 
 def run_inference(model, tokenizer, dataset,
                   tag="default_tag", include_prompt=False, 
-                  verbose = False):
+                  verbose = False, 
+                  n_shots=1):
   results = []
   prediction_probabilities = []
   target_labels = []
 
-  for _, item  in enumerate(dataset):
-    question_template = "{question}".format(**item)
+  for question_idx, item  in enumerate(dataset):
     alphanumeric_options = ['A', 'B', 'C', 'D'] 
-    choices_template = "\n"+"\n".join(["(%s) %s" % (alpha, choice) for alpha, choice in zip(alphanumeric_options, item['choices'])])
-    prompt = "%s\n%s" % (question_template, choices_template)
-    selections = ["(%s)" % choice for choice in alphanumeric_options]
+    prompt, selections = generate_n_shot_prompt(dataset, question_idx, n_shots=n_shots)
     if verbose: 
       print(prompt)
     selection_log_prob_opt_option = []
@@ -180,5 +178,3 @@ def run_inference(model, tokenizer, dataset,
     results.append(result)
 
   return results, prediction_probabilities, target_labels
-
-
