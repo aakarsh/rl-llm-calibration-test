@@ -14,18 +14,21 @@ model_results =  [{
             "answer": "A"
         }]
 
-def test_get_normalized_probabilities():
-    completion_probabilities, _ = mp.get_normalized_probabilities(model_results)
-    assert np.isclose(np.sum(completion_probabilities), 1)
-    
-def test_n_shot_prompt():
+def create_dummy_dataset():
     dummy_dataset=[]
     for i in range(10):
         ds = {"question":"What is question %d?" % i, 
               "answer": i % 4,
               "choices":["ans-1", "ans-2", "ans-3", "ans-4"]}
         dummy_dataset.append(ds)
-       
+    return dummy_dataset
+ 
+def test_get_normalized_probabilities():
+    completion_probabilities, _ = mp.get_normalized_probabilities(model_results)
+    assert np.isclose(np.sum(completion_probabilities), 1)
+    
+def test_n_shot_prompt():
+    dummy_dataset = create_dummy_dataset() 
     question_idx=1 
     generated_prompt, _ = mmlu_runner.generate_n_shot_prompt(
             dummy_dataset, 
@@ -36,3 +39,14 @@ def test_n_shot_prompt():
     with open("test/data/expected_answer.txt") as f:
         expected_prompt = f.read().strip()
     assert generated_prompt == expected_prompt
+    
+def test_zero_shot():
+   dummy_dataset = create_dummy_dataset() 
+   question_idx=1
+   generated_prompt, _ = mmlu_runner.generate_n_shot_prompt(dummy_dataset, 
+            question_idx, 
+            n_shots=1)
+   print(generated_prompt)
+   with open("test/data/zero_shot.txt") as f:
+        expected_prompt = f.read().strip()
+   assert generated_prompt == expected_prompt

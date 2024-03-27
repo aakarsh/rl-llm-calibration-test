@@ -120,12 +120,12 @@ def generate_n_shot_prompt(dataset,
   formatted_options = ["(%s)" % choice for choice in alphanumeric_options ]
   current_idx = 0 
   question_buffer = ""
-  while n_shots > 0:
+
+  while n_shots > 1:
     if current_idx >= len(dataset): 
       break
     if not current_idx == question_idx:
       question_buffer += format_question(current_idx) +"\n"
-      
     current_idx += 1
     n_shots -= 1
   question_buffer += format_question(question_idx, with_answer=False)

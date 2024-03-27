@@ -1,0 +1,8 @@
+What is question 1?
+
+(A). ans-1
+(B). ans-2
+(C). ans-3
+(D). ans-4
+
+Answer:
