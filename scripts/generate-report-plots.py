@@ -38,15 +38,38 @@ generate_comparison_plot(model_result_files,
 # Generate the 0-shot calibration plot between 7-b, 14-b and 70-b models
 model_result_files = [
    os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_all_tag-result.json'), 
-   os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_all_tag-result.json') 
+   os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_all_n_shots_5_tag-result.json'), 
+   os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_all_tag-result.json'), 
+   os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_all_n_shots_5_tag-result.json') 
 ]
 
 generate_comparison_plot(model_result_files, 
-                         ["Llama 13b Chat Model (0-shot)", 
-                          "Llama 7b Chat Model (0-shot)"
+                         [
+                            "Llama 13b Chat Model (0-shot)", 
+                            "Llama 13b Chat Model (5-shot)", 
+                            "Llama 7b Chat Model (0-shot)",
+                            "Llama 7b Chat Model (5-shot)"
                           ], 
                          output_dir=report_path, 
                          output_tag="0-shot-7b-vs-13b-chat")
+
+#%% 0-shot vs 5-shot 
+# 7-b can be better calibrated with smart prompting to bring calibration closer to 13b model.
+model_result_files = [
+   os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_all_tag-result.json'), 
+   os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_all_n_shots_5_tag-result.json'), 
+   os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_all_n_shots_5_tag-result.json') 
+]
+
+generate_comparison_plot(model_result_files, 
+                         [
+                            "Llama 13b Chat Model (0-shot)", 
+                            "Llama 13b Chat Model (5-shot)",
+                            "Llama 7b Chat Model (5-shot)" 
+                          ], 
+                         output_dir=report_path, 
+                         output_tag="0-shot-vs-5-shot-7b-vs-13b-chat")
+
 
 # Generate the 5-shot calibration plot between 7-b, 14-b and 70-b models 
 # generate_calibration_plot(os.path.abspath(file_path+'/../test/data/test_data.json'), output_dir=report_path, output_tag="5-shot")
@@ -54,14 +77,18 @@ generate_comparison_plot(model_result_files,
 # Generate Subject-wise calibration plots between 7-b, 14-b models.
 # generate_calibration_plot(os.path.abspath(file_path+'/../test/data/test_data.json'), output_dir=report_path, output_tag="by_subject")
 #%%
-subjects = ["STEM", "OTHER", "SOCIAL_SCIENCE", "HUMANITIES"]
-model_result_files = [os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_%s_tag-result.json'% subject)) for subject in subjects]
+subjects = ["STEM", "SOCIAL_SCIENCE", "HUMANITIES", "OTHER"]
+model_result_files = [ os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_%s_tag-result.json'% subject)) for subject in subjects]
 
 generate_comparison_plot(model_result_files, 
-                          ["Llama 13-b Chat Model %s (0-shot)" % subject.capitalize() for subject in subjects], 
+                          ["Llama 13-b Chat Model %s (0-shot)" % subject.upper() for subject in subjects], 
                          output_dir=report_path, 
                          output_tag="0-shot-13-b-chat-vs-subjects")
-
-
-
-# %%
+#%% 5-shot subject specific.
+subjects = ["STEM", "SOCIAL_SCIENCE", "HUMANITIES", "OTHER"]
+model_result_files = [os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_%s_n_shots_5_tag-result.json'% subject)) 
+                           for subject in subjects]
+generate_comparison_plot(model_result_files, 
+                          ["Llama 13-b Chat Model %s (5-shot)" % subject.upper() for subject in subjects], 
+                         output_dir=report_path, 
+                         output_tag="5-shot-13-b-chat-vs-subjects")
