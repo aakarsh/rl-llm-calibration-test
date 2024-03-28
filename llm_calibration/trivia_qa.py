@@ -201,9 +201,9 @@ def run(dump_start=0, dump_step=250, model_name="meta-llama/Llama-2-7b-chat-hf")
     questions = trivia_qa_questions(trivia_qa)
     print("=== running inference")
     i_prev = dump_start
-    for i in range(i_prev, len(questions), dump_step):
+    for i in range(i_prev+dump_step, len(questions), dump_step):
         results = run_on_questions(model, questions[i_prev:i])
-        fname = "trivia_qa_{}_{}-{}.json".format(model["model_name"], i_prev, i)
+        fname = "trivia_qa_{}-{}.json".format(i_prev, i)
         with open(fname, 'w', encoding="utf-8") as fout:
             json.dump(results, fout, indent="\t")
         print("   --- wrote predictions {}-{}".format(i_prev, i))
