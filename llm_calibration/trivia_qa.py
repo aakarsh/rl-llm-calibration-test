@@ -1,12 +1,14 @@
 """
-!pip install transformers==4.31.0
-!pip install torch
-!pip install datasets
+!pip install transformers torch datasets accelerate
+
+#!pip install transformers==4.31.0
+#!pip install torch
+#!pip install datasets
 
 #!pip install trl datasets evaluate nltk
-!pip install bitsandbytes-cuda110
-!pip install bitsandbytes
-!pip install accelerate
+#!pip install bitsandbytes-cuda110
+#!pip install bitsandbytes
+#!pip install accelerate
 #"""
 
 # import libraries
@@ -37,7 +39,8 @@ def load_model(model_name="meta-llama/Llama-2-7b-chat-hf"):
     tokenizer = transformers.AutoTokenizer.from_pretrained(active_model)
     model = transformers.AutoModelForCausalLM.from_pretrained(active_model,
                                                  #load_in_4bit=True,
-                                                 #device_map="auto",
+                                                 # This requires accelerate to be installed
+                                                 device_map="auto",
                                                  #bnb_4bit_use_double_quant=True,
                                                  #bnb_4bit_quant_type="nf4",
                                                  #bnb_4bit_compute_dtype=torch.float16
