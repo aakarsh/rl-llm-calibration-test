@@ -43,10 +43,11 @@ def test_n_shot_prompt():
 def test_zero_shot():
    dummy_dataset = create_dummy_dataset() 
    question_idx=1
-   generated_prompt, _ = mmlu_runner.generate_n_shot_prompt(dummy_dataset, 
+   generated_prompt, formatted_options = mmlu_runner.generate_n_shot_prompt(dummy_dataset, 
             question_idx, 
             n_shots=1)
    print(generated_prompt)
    with open("test/data/zero_shot.txt") as f:
         expected_prompt = f.read().strip()
    assert generated_prompt == expected_prompt
+   assert formatted_options[0]  == "(A)"
