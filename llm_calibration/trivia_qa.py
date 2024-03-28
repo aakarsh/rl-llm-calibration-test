@@ -13,6 +13,8 @@
 import sys
 import numpy as np
 import pandas as pd
+import json
+
 from transformers import LlamaForCausalLM, LlamaTokenizer, AutoTokenizer
 import torch
 
@@ -161,10 +163,13 @@ def question_probs(model, question):
                     "choice": choice,
                     "raw_prob": raw_prob,
                     "correct": correct})
-        # Normalize
-    total = sum([choice["raw_prob"] for choice in res])
-    for choice in res:
+    # Normalize
+    raw_probs = [choice["raw_prob"] for choice in res]
+    total = sum(raw_probs)
+    correct = numpy.argmax(raw_probs)
+    for i, choice in enumerate(res):
         choice["norm_prob"] = choice["raw_prob"] / total
+        choice["correct"] = 1 if i == correct else 0
     return res
 
 def run_on_questions(model, questions):
@@ -187,7 +192,7 @@ def get_prob_of_completion(model, tokenizer, prompt, completion):
         tokenizer=tokenizer,
         prompt=prompt, completion=completion))
 
-def run():
+def run(dump_start=0, dump_step=250):
     print("=== Loading Model")
     model = load_model()
     print("=== Loading data")
@@ -195,7 +200,15 @@ def run():
     print("=== transforming data")
     questions = trivia_qa_questions(trivia_qa)
     print("=== running inference")
-    results = run_on_questions(model, questions[:500])
+    i_prev = dump_start
+    for i in range(i_prev, len(questions), dump_step):
+        results = run_on_questions(model, questions[i_prev:i])
+        fname = "trivia_qa_{}_{}-{}.json".format(model.model_name, i_prev, i)
+        with open(fname, 'w', encoding="utf-8") as fout:
+            json.dump(results, fout, indent="\t")
+        print("   --- wrote predictions {}-{}".format(i_prev, i))
+        i_prev = i
+    #results = run_on_questions(model, questions[:500])
     print("=== extracting probs and labels")
     probs = np.array([choice["norm_prob"] for choice in results])
     labels = np.array([1 if choice["correct"] else 0 for choice in results])
