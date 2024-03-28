@@ -37,7 +37,7 @@ def load_model(model_name="meta-llama/Llama-2-7b-chat-hf"):
     tokenizer = transformers.AutoTokenizer.from_pretrained(active_model)
     model = transformers.AutoModelForCausalLM.from_pretrained(active_model,
                                                  #load_in_4bit=True,
-                                                 device_map="auto",
+                                                 #device_map="auto",
                                                  #bnb_4bit_use_double_quant=True,
                                                  #bnb_4bit_quant_type="nf4",
                                                  #bnb_4bit_compute_dtype=torch.float16
@@ -162,14 +162,14 @@ def question_probs(model, question):
         res.append({"prompt": prompt,
                     "choice": choice,
                     "raw_prob": raw_prob,
-                    "correct": correct})
+                    "label": 1 if correct else 0})
     # Normalize
     raw_probs = [choice["raw_prob"] for choice in res]
     total = sum(raw_probs)
     correct = np.argmax(raw_probs)
     for i, choice in enumerate(res):
         choice["norm_prob"] = choice["raw_prob"] / total
-        choice["correct"] = 1 if i == correct else 0
+        choice["prediction"] = 1 if i == correct else 0
     return res
 
 def run_on_questions(model, questions):
@@ -192,6 +192,7 @@ def get_prob_of_completion(model, tokenizer, prompt, completion):
         tokenizer=tokenizer,
         prompt=prompt, completion=completion))
 
+# TODO
 def run(dump_start=0, dump_step=250, model_name="meta-llama/Llama-2-7b-chat-hf"):
     print("=== Loading Model")
     model = load_model(model_name="meta-llama/Llama-2-7b-chat-hf")
