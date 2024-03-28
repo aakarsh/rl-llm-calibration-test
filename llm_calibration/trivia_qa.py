@@ -166,7 +166,7 @@ def question_probs(model, question):
     # Normalize
     raw_probs = [choice["raw_prob"] for choice in res]
     total = sum(raw_probs)
-    correct = numpy.argmax(raw_probs)
+    correct = np.argmax(raw_probs)
     for i, choice in enumerate(res):
         choice["norm_prob"] = choice["raw_prob"] / total
         choice["correct"] = 1 if i == correct else 0
