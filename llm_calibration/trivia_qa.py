@@ -216,7 +216,7 @@ def run(dump_start=0, dump_step=250, dump_end=2000,
     print(questions[:5])
     print("=== running inference")
     i_prev = dump_start
-    for i in range(i_prev+dump_step, dumpe_end if dump_end > 0 else len(questions), dump_step):
+    for i in range(i_prev+dump_step, dump_end if dump_end > 0 else len(questions), dump_step):
         results = run_on_questions(model, questions[i_prev:i])
         output = [{"raw_prob": choice["raw_prob"],
                    "prob": choice["norm_prob"],
