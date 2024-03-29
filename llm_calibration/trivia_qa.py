@@ -199,7 +199,9 @@ def get_prob_of_completion(model, tokenizer, prompt, completion):
         prompt=prompt, completion=completion))
 
 # TODO
-def run(dump_start=0, dump_step=250, model_name="meta-llama/Llama-2-7b-chat-hf"):
+def run(dump_start=0, dump_step=250,
+        model_name="meta-llama/Llama-2-7b-chat-hf",
+        file_prefix="trivia_qa-llama-2-7b-chat"):
     print("=== Loading Model")
     model = load_model(model_name="meta-llama/Llama-2-7b-chat-hf")
     print("=== Loading data")
@@ -209,18 +211,17 @@ def run(dump_start=0, dump_step=250, model_name="meta-llama/Llama-2-7b-chat-hf")
     print("=== running inference")
     i_prev = dump_start
     for i in range(i_prev+dump_step, len(questions), dump_step):
-        results = run_on_questions(model, questions[i_prev:i])
-        fname = "trivia_qa_{}-{}.json".format(i_prev, i)
+        results = trivia_qa.run_on_questions(model, questions[i_prev:i])
+        output = [{"raw_prob": choice["raw_prob"],
+                   "prob": choice["norm_prob"],
+                   "label": choice["label"],
+                   "prediction": choice["prediction"]}
+                  for choice in results]
+        fname = "{}-{:06}-{:06}.json".format(file_prefix, i_prev, i)
         with open(fname, 'w', encoding="utf-8") as fout:
-            json.dump(results, fout, indent="\t")
+            json.dump(output, fout, indent="\t")
         print("   --- wrote predictions {}-{}".format(i_prev, i))
         i_prev = i
-    #results = run_on_questions(model, questions[:500])
-    print("=== extracting probs and labels")
-    probs = np.array([choice["norm_prob"] for choice in results])
-    labels = np.array([1 if choice["correct"] else 0 for choice in results])
-    print("probs: {}".format(probs[:20]))
-    print("labels: {}".format(labels[:20]))
 
 
 if __name__ == "__main__":
