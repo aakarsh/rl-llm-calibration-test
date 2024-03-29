@@ -1,14 +1,7 @@
 """
 !pip install transformers torch datasets accelerate
-
-#!pip install transformers==4.31.0
-#!pip install torch
-#!pip install datasets
-
-#!pip install trl datasets evaluate nltk
-#!pip install bitsandbytes-cuda110
-#!pip install bitsandbytes
-#!pip install accelerate
+# Needed for quantization
+!pip install bitsandbytes-cuda110 bitsandbytes
 #"""
 
 # import libraries
