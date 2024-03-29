@@ -173,7 +173,8 @@ def question_probs(model, question):
         )
         res.append({"prompt": prompt,
                     "choice": choice,
-                    "raw_prob": raw_prob,
+                    # Extract value from single element tensor
+                    "raw_prob": raw_prob.item(),
                     "label": 1 if correct else 0})
     # Normalize
     raw_probs = [choice["raw_prob"] for choice in res]
