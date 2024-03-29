@@ -185,16 +185,9 @@ def question_probs(model, question):
     return res
 
 def run_on_questions(model, questions):
-    sys.stderr.write("\n")
-    steps = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 5.0]
     res = []
-    ntotal = len(questions)
     for i, q in enumerate(questions):
         res += question_probs(model, q)
-        sys.stderr.write(".")
-        if (i/ntotal >= steps[0]):
-            sys.stdrr.write("\n{} done\n".format(steps[0]))
-            steps = steps[1:]
     return res
 
 
