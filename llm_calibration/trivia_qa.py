@@ -2,6 +2,8 @@
 !pip install transformers torch datasets accelerate
 # Needed for quantization
 !pip install bitsandbytes-cuda110 bitsandbytes
+# Probably not neccessary
+!pip install numpy pandas
 #"""
 
 # import libraries
@@ -29,17 +31,24 @@ def load_model(model_name="meta-llama/Llama-2-7b-chat-hf", quantized=True):
     #active_model= "meta-llama/Llama-2-7b-chat-hf"
     #active_model= "meta-llama/Llama-2-7b-hf"
     active_model = model_name
+    
+    config = transformers.AutoConfig.from_pretrained(active_model)
+    # Explicitly set the max_seq_len
+    config.max_seq_len = 512
+    config.max_answer_len= 10
     tokenizer = transformers.AutoTokenizer.from_pretrained(active_model)
     model = None
     if not quantized:
         model = transformers.AutoModelForCausalLM.from_pretrained(
             active_model,
+            config=config,
             # This requires accelerate to be installed
-            device_map="auto",
+            #device_map="auto",
         )
     else:
         model = transformers.AutoModelForCausalLM.from_pretrained(
             active_model,
+            config=config,
             # This requires accelerate to be installed
             device_map="auto",
             # This require bits and bytes
@@ -146,11 +155,11 @@ def trivia_qa_questions(dataset):
     for letter, choice in zip("ABCDEFGHIJKLMOPQRS", choice_names):
         prompt += "  ({}) {}\n".format(letter, choice)
         choices.append("("+letter+")")
-        prompt += "Answer: "
-        questions.append({"prompt":prompt,
-                          "choices": choices,
-                          "choice_names": choice_names,
-                          "correct_choice": correct_choice})
+    prompt += "Answer: "
+    questions.append({"prompt":prompt,
+                      "choices": choices,
+                      "choice_names": choice_names,
+                      "correct_choice": correct_choice})
   return questions
 
 def question_probs(model, question):
@@ -194,17 +203,21 @@ def get_prob_of_completion(model, tokenizer, prompt, completion):
 # TODO
 def run(dump_start=0, dump_step=250,
         model_name="meta-llama/Llama-2-7b-chat-hf",
-        file_prefix="trivia_qa-llama-2-7b-chat"):
+        file_prefix="trivia_qa-llama-2-7b-chat",
+        quantized=True):
     print("=== Loading Model")
-    model = load_model(model_name="meta-llama/Llama-2-7b-chat-hf")
+    model = load_model(model_name=model_name, quantized=quantized)
     print("=== Loading data")
-    trivia_qa = datasets.load_dataset("mandarjoshi/trivia_qa", name="rc.nocontext")
+    data = datasets.load_dataset("mandarjoshi/trivia_qa", name="rc.nocontext")
     print("=== transforming data")
-    questions = trivia_qa_questions(trivia_qa)
+    questions = trivia_qa_questions(data)
+    data = None
+    print("--- sanity check: ")
+    print(questions[:5])
     print("=== running inference")
     i_prev = dump_start
     for i in range(i_prev+dump_step, len(questions), dump_step):
-        results = trivia_qa.run_on_questions(model, questions[i_prev:i])
+        results = run_on_questions(model, questions[i_prev:i])
         output = [{"raw_prob": choice["raw_prob"],
                    "prob": choice["norm_prob"],
                    "label": choice["label"],
