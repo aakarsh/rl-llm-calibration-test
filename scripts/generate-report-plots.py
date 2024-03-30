@@ -47,12 +47,10 @@ model_result_files = [
 ]
 
 generate_comparison_plot(model_result_files, 
-                         [
-                            "Llama 13b Chat Model (0-shot)", 
-                            "Llama 13b Chat Model (5-shot)", 
-                            "Llama 7b Chat Model (0-shot)",
-                            "Llama 7b Chat Model (5-shot)"
-                          ], 
+                         [ "Llama 13b Chat Model (0-shot)", 
+                           "Llama 13b Chat Model (5-shot)", 
+                           "Llama 7b Chat Model (0-shot)",
+                           "Llama 7b Chat Model (5-shot)"], 
                          output_dir=report_path, 
                          output_tag="0-shot-7b-vs-13b-chat")
 
@@ -72,7 +70,6 @@ generate_comparison_plot(model_result_files,
                           ], 
                          output_dir=report_path, 
                          output_tag="0-shot-vs-5-shot-7b-vs-13b-chat")
-
 
 # Generate the 5-shot calibration plot between 7-b, 14-b and 70-b models 
 # generate_calibration_plot(os.path.abspath(file_path+'/../test/data/test_data.json'), output_dir=report_path, output_tag="5-shot")
@@ -103,4 +100,5 @@ model_result_files = [
 generate_comparison_plot(model_result_files, 
                           ['Llama 7b Chat Model (5-shot)', 'Llama 13b Chat Model (5-shot)'], 
                          output_dir=report_path, 
-                         output_tag="5-shot-7b-13-b-logic-qa")
+                         output_tag="5-shot-7b-13b-logic-qa")
+#%%

@@ -3,6 +3,7 @@ import numpy as np
 import llm_calibration.runner.mmlu as mmlu_runner
 import llm_calibration.runner.multiple_choice_questions as mcq
 import llm_calibration.runner.logic_qa as logic_qa_runner
+import llm_calibration.runner.true_false_questions as tfq
 
 model_results =  [{
             "prompt_template": "Select one (A, B, C, D). Question: This question refers to the following information.\nNo task is more urgent than that of preserving peace. Without peace our independence means little. The rehabilitation and upbuilding of our countries will have little meaning. Our revolutions will not be allowed to run their course. What can we do? We can do much! We can inject the voice of reason into world affairs. We can mobilize all the spiritual, all the moral, all the political strength of Asia and Africa on the side of peace. Yes, we! We, the peoples of Asia and Africa, 1.4 billion strong.\nIndonesian leader Sukarno, keynote address to the Bandung Conference, 1955\nThe passage above is most associated with which of the following developments?\n\nA. The formation of the non-aligned movement\nB. Global disarmanent and nuclear non-proliferation\nC. The Green Revolution in agriculture\nD. Mobilization of pan-Asian ideology",
@@ -85,3 +86,31 @@ def test_zero_shot_logciqa():
    ldd = create_logic_dummy_dataset() 
    question = mcq.generate_n_shot_prompt(ldd, 1, n_shots=1, item_parser=logic_qa_runner.parse_dataset_item)
    print(question)
+   
+  
+def create_completions_dataset():
+    completions_dataset = []
+    for i in range(10):
+        ds = {"prompt": "This is prompt %d" % i, 
+              "canonical_solution": "This is canonical solution %d" % i}
+        completions_dataset.append(ds)
+    return completions_dataset
+
+def test_random_exclude():
+    completions_dataset = create_completions_dataset()
+    for i in range(10):
+        selected_question_idx = 1
+        alternate_index = tfq.random_index_excluding(completions_dataset, selected_question_idx)
+        assert alternate_index != selected_question_idx
+        assert alternate_index >= 0
+        assert alternate_index < len(completions_dataset)
+        
+def test_make_boolean_question():
+    completions_dataset = create_completions_dataset()
+    print(completions_dataset)
+    for i in range(10):
+        selected_question_idx = 1
+        question, options, actual_answer = tfq.make_single_boolean_question(selected_question_idx, completions_dataset)
+        if actual_answer  == 0:
+           assert "This is canonical solution %d"  % selected_question_idx in question
+        print(question)

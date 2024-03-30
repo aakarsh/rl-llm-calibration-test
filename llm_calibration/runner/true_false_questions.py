@@ -11,11 +11,37 @@ def format_question(prompt):
                                                  answer   = prompt["answer"])
     return formatted
 
+
+def random_index_excluding(data_list, exclude_index):
+  """Randomly selects an index from the list excluding the given index.
+
+  Args:
+      data_list: The list from which to select an index.
+      exclude_index: The index to exclude from the selection.
+
+  Returns:
+      A randomly selected index from the list, excluding the given index.
+
+  Raises:
+      ValueError: If the exclude_index is out of range or the list is empty.
+  """
+
+  if exclude_index < 0 or exclude_index >= len(data_list):
+    raise ValueError("exclude_index is out of range")
+  if len(data_list) == 1:
+    return 0  # Handle case of single element list (can't exclude anything)
+
+  # Exclude the element at exclude_index from the list for random selection
+  filtered_list = data_list[:exclude_index] + data_list[exclude_index + 1:]
+
+  # Randomly select an index from the filtered list
+  return random.choice(range(len(filtered_list)))
+
+
 def make_single_boolean_question(idx, completions_dataset):
     use_canonical_solution = bool(random.getrandbits(1))
     # randomly-select an index that is not the current-index.
-    r = list(range(1,len(completions_dataset))) + list(range(idx+1, len(completions_dataset)))
-    alternate_index = random.choice(r) 
+    alternate_index = random_index_excluding(completions_dataset, idx)
     proposed_idx = idx if use_canonical_solution else alternate_index
     propose_solution = completions_dataset[proposed_idx]["canonical_solution"]
     prompt_dict = { "question": completions_dataset[idx]["prompt"],
