@@ -244,6 +244,7 @@ def run(dump_start=0, dump_step=250, dump_end=2000,
             json.dump(output, fout, indent="\t")
         print("   --- wrote predictions {}-{}".format(i_prev, i))
         i_prev = i
+    print("=== done.")
 
 
 if __name__ == "__main__":
