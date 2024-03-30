@@ -4,7 +4,7 @@ import numpy as np
 from llm_calibration.model.model_probability import get_log_prob_of_completion
 
 boolean_question_template =\
-    'Question : {question}.\n Proposed Answer: {answer}\n Is the following answer:  \n A) True \n B)False \n Proposed answer:'
+    'Question : {question}.\n Proposed Answer:\n{answer}\n Is the following answer:  \n A) True \n B) False \n Proposed Answer:'
 
 def format_question(prompt):
     formatted = boolean_question_template.format(question = prompt["question"],
@@ -41,7 +41,7 @@ def random_index_excluding(data_list, exclude_index):
 def make_single_boolean_question(idx, completions_dataset):
     use_canonical_solution = bool(random.getrandbits(1))
     # randomly-select an index that is not the current-index.
-    alternate_index = random_index_excluding(completions_dataset, idx)
+    alternate_index = random_index_excluding(completions_dataset['test'], idx)
     proposed_idx = idx if use_canonical_solution else alternate_index
     propose_solution = completions_dataset[proposed_idx]["canonical_solution"]
     prompt_dict = { "question": completions_dataset[idx]["prompt"],
@@ -59,13 +59,15 @@ def run_inference(model, tokenizer, dataset,
   results = []
   prediction_probabilities = []
   target_labels = []
-
+  print(dataset)
   for question_idx, item  in enumerate(dataset):
-    if question_idx % 100 == 0:
-      print("Processing question %d" % question_idx)
     item = dataset_item_parser(item)
     prompt, selections, actual_answer = make_single_boolean_question(question_idx, dataset)
-    if verbose: 
+    if question_idx % 25 == 0:
+      print("Processing question %d" % question_idx, "num lables", len(target_labels))
+      print(np.int32(target_labels))
+      print("Correct predictions so far", np.sum(np.int32(target_labels)))
+      print("Incorrect predictions so far", len(target_labels) - np.sum(np.int32(target_labels)))
       print(prompt)
     selection_log_prob_opt_option = []
     for _, selection  in enumerate(selections):
