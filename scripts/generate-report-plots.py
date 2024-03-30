@@ -96,15 +96,17 @@ generate_comparison_plot(model_result_files,
 model_result_files = [
     os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_lucasmccabe_logiqa_n_shots_5_tag-result.json'),
     os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-hf_ds_lucasmccabe_logiqa_n_shots_5_tag-result.json'),
+    os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-13b-hf_ds_lucasmccabe_logiqa_n_shots_5_tag-result.json'), 
     os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_lucasmccabe_logiqa_n_shots_5_tag-result.json') 
 ]
 generate_comparison_plot(model_result_files, 
                           ['Llama 7b Chat Model (5-shot)', 
                            'Llama 7b Base Model (5-shot)', 
-                           'Llama 13b Chat Model (5-shot)'], 
+                           'Llama 13b Base Model (5-shot)',
+                           'Llama 13b Chat Model (5-shot)'
+                           ], 
                          output_dir=report_path, 
                          output_tag="5-shot-7b-13b-logic-qa")
-
 #%% Running on human eval
 model_result_files = [
     os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_openai_humaneval_n_shots_5_tag-result.json')
@@ -112,3 +114,5 @@ model_result_files = [
 generate_comparison_plot(model_result_files,['Llama 7b Chat Model : Human Eval(0-shot)']
                          ,output_dir=report_path
                          ,output_tag='0-shot-7b-human-eval')
+
+# %%
