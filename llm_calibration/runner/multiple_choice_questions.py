@@ -51,6 +51,8 @@ def run_inference(model, tokenizer, dataset,
   target_labels = []
 
   for question_idx, item  in enumerate(dataset):
+    if question_idx % 100 == 0:
+      print("Processing question %d" % question_idx)
     item = dataset_item_parser(item)
     prompt, selections = generate_n_shot_prompt(dataset, question_idx, n_shots=n_shots, item_parser=dataset_item_parser)
     if verbose: 
@@ -88,4 +90,4 @@ def run_inference(model, tokenizer, dataset,
       result["prompt_template"] = prompt 
     results.append(result)
 
-    return results, prediction_probabilities, target_labels 
+  return results, prediction_probabilities, target_labels 
