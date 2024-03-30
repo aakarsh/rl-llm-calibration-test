@@ -12,6 +12,7 @@ import numpy as np
 import pandas as pd
 import json
 import random
+import pathlib
 
 
 import torch
@@ -131,11 +132,8 @@ def get_log_prob_of_completion(
     ).cpu()
     return completion_log_prob
 
-
+# TODO: Few shot
 def trivia_qa_questions(dataset):
-    #dataset = datasets.load_dataset("mandarjoshi/trivia_qa", name="rc.nocontext")
-    # TODO: Change to "train"
-    #split = "validation"
   split = "train"
   wrong_answers = [rec["answer"]["value"] for rec in dataset[split]]
   questions = []
@@ -161,6 +159,16 @@ def trivia_qa_questions(dataset):
                       "choice_names": choice_names,
                       "correct_choice": correct_choice})
   return questions
+
+def dump_questions(questions, file_name="trivia_qa-questions.json"):
+    with open(file_name, 'w', encoding="utf-8") as fout:
+        json.dump(questions, fout, indent="\t")
+
+def load_questions(file_name="trivia_qa-questions.json"):
+    questions = None
+    with open(file_name, 'r', encoding="utf-8") as fin:
+        questions = json.load(fin)
+    return questions
 
 def question_probs(model, question):
     res = []
@@ -200,23 +208,31 @@ def get_prob_of_completion(model, tokenizer, prompt, completion):
         tokenizer=tokenizer,
         prompt=prompt, completion=completion))
 
-# TODO
+
 def run(dump_start=0, dump_step=250, dump_end=2000,
         model_name="meta-llama/Llama-2-7b-chat-hf",
         file_prefix="trivia_qa-llama-2-7b-chat",
-        quantized=True):
+        quantized=True,
+        question_dump="trivia_qa-questions.json"):
     print("=== Loading Model")
     model = load_model(model_name=model_name, quantized=quantized)
+
     print("=== Loading data")
-    data = datasets.load_dataset("mandarjoshi/trivia_qa", name="rc.nocontext")
-    print("=== transforming data")
-    questions = trivia_qa_questions(data)
-    data = None
-    print("--- sanity check: ")
+    qdump = pathlib.Path(question_dump)
+    questions = None
+    if qdump.is_file():
+        questions = load_questions(file_name=question_dump)
+    else:
+        data = datasets.load_dataset("mandarjoshi/trivia_qa", name="rc.nocontext")
+        print("    --- transforming data")
+        questions = trivia_qa_questions(data)
+        dump_questions(questions)
+        data = None
+    print("   --- sanity check: ")
     print(questions[:5])
     print("=== running inference")
     i_prev = dump_start
-    for i in range(i_prev+dump_step, dump_end if dump_end > 0 else len(questions), dump_step):
+    for i in range(i_prev+dump_step, dump_end+1 if dump_end > 0 else len(questions), dump_step):
         results = run_on_questions(model, questions[i_prev:i])
         output = [{"raw_prob": choice["raw_prob"],
                    "prob": choice["norm_prob"],
