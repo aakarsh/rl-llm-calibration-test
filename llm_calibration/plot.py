@@ -1,9 +1,75 @@
 #%%
 import seaborn as sns
 import json
-from llm_calibration.model.model_probability import get_normalized_probabilities
 import numpy as np
 import matplotlib.pyplot as plt
+
+import itertools
+import functools
+
+#%%
+from llm_calibration.model.model_probability import get_normalized_probabilities
+
+#%%
+#%% 
+def plot_calibration_equally_weighted_bins(prediction_probabilities, 
+                                           actual_labels,
+                                           samples_per_bin=100, 
+                                           range_start=0, 
+                                           range_end=1, 
+                                           model_label="Model Calibration", 
+                                           out_file=None, 
+                                           figure=None, 
+                                           show_figure=False):
+  """
+  Each bin will have an equal number of samples, given by the 
+  bin_density parameter. Thus it would be expected that regions 
+  of the plot will have more samples and bins than others.
+  """
+  sns.set_theme();
+  # Sort predictions and corresponding actual labels.
+  sorted_indices = np.argsort(prediction_probabilities)
+  prediction_probabilities = np.array(prediction_probabilities)
+  actual_labels = np.array(actual_labels)
+  sorted_probs = prediction_probabilities[sorted_indices.astype(int)]
+  sorted_labels = actual_labels[sorted_indices.astype(int)]
+
+  num_parts = len(sorted_probs) // samples_per_bin
+  
+  terminal_bin_size = num_parts * samples_per_bin 
+  grouped_prediction_probabilities = np.split(sorted_probs[:terminal_bin_size], num_parts)
+  grouped_actual_labels = np.split(sorted_labels[:terminal_bin_size], num_parts)
+
+  bin_size =  np.shape(grouped_actual_labels)[1] 
+  # TODO: Fix for the last bin: actual labels are 0 or 1, 
+  # So summing them up will give the number of correct predictions.
+  bin_accuracy = np.sum(grouped_actual_labels, axis=1) / bin_size
+
+  bin_start_edge = [group[0] for group in grouped_prediction_probabilities]
+  bin_stop_edge = [group[-1] for group in grouped_prediction_probabilities]
+ 
+  bin_mean_probability = [ (start+end)/2.0 for start, end in zip(bin_start_edge, bin_stop_edge)]
+ 
+  if not figure:
+    figure = plt.figure(figsize=(10, 7))
+    
+  plt.plot(bin_mean_probability, bin_mean_probability, '--', color='gray', label='Perfect Calibration')  
+  plt.plot(bin_mean_probability, bin_accuracy, 'o-', label=model_label)
+  plt.xlim(0,1)
+  plt.ylim(0,1)
+
+  plt.xlabel('Prediction Probability (P(True))')
+  plt.ylabel('Frequency of Correct Predictions')
+  plt.title('Calibration Chart')
+  plt.legend()
+
+  if out_file: 
+    plt.savefig(out_file)
+  if show_figure: 
+    plt.show()
+  
+  return figure;
+
 
 #%%
 def plot_calibration(prediction_probabilities, actual_labels,
@@ -18,7 +84,6 @@ def plot_calibration(prediction_probabilities, actual_labels,
     Plots the prediction probability against the frequency of correct predictions.  
   """
   sns.set_theme()
-
   # Sort predictions and corresponding actual labels
   sorted_indices = np.argsort(prediction_probabilities)
   prediction_probabilities = np.array(prediction_probabilities)
@@ -70,12 +135,17 @@ def plot_calibration(prediction_probabilities, actual_labels,
     plt.show()
   
   return figure
-
 #%%
 def plot_calibration_comparison(model_tags, model_labels, 
                                 prediction_probabilities, 
-                                actual_labels, 
-                                num_bins=10, range_start = 0 , range_end=1, out_file=None, show_figure=False):
+                                actual_labels,
+                                dynamic_bins=True, 
+                                samples_per_bin=100,
+                                num_bins=10, 
+                                range_start = 0 , 
+                                range_end=1, 
+                                out_file=None, 
+                                show_figure=False):
   """
   Plot the calibration comparison plot.
   """
@@ -84,11 +154,21 @@ def plot_calibration_comparison(model_tags, model_labels,
     probabilities = prediction_probabilities[model_key]
     truth_values = actual_labels[model_key] 
     assert len(probabilities) == len(truth_values)
-    plot_calibration(probabilities, truth_values, 
-                     num_bins, range_start, range_end,
-                     model_label=model_labels[idx], 
-                     figure=save_fig, 
-                     show_figure=False) 
+    if dynamic_bins:
+      #probabilities = probabilities[:100]
+      #truth_values = truth_values[:100]
+      plot_calibration_equally_weighted_bins(probabilities, truth_values, 
+                                             samples_per_bin=samples_per_bin, 
+                                             range_start=0, range_end=1, 
+                                             model_label=model_labels[idx], 
+                                             figure=save_fig, 
+                                             show_figure=False)
+    else:
+      plot_calibration(probabilities, truth_values, 
+                      num_bins, range_start, range_end,
+                      model_label=model_labels[idx], 
+                      figure=save_fig, 
+                      show_figure=False) 
   if out_file: 
     save_fig.savefig(out_file)
   if show_figure: 
@@ -96,6 +176,8 @@ def plot_calibration_comparison(model_tags, model_labels,
   return save_fig
 
 def generate_comparison_plot(file_paths,  model_labels=[], 
+                             dynamic_bins=True,
+                             samples_per_bin=100,
                             output_dir=None, output_tag=None):
   """
   Generate a comparison on multiple runs of a model, 
@@ -112,18 +194,20 @@ def generate_comparison_plot(file_paths,  model_labels=[],
   
   for idx, comparison_file in enumerate(comparison_files):
       model_results = comparison_file 
-      completion_probabilities, truth_values = \
+      completion_probabilities, _, _, correct_predictions, completions= \
           get_normalized_probabilities(model_results)
       current_label: str  = model_labels[idx]
       model_completion_probabilities[current_label] = \
           completion_probabilities
-      model_truth_values[current_label] = truth_values
+      model_truth_values[current_label] = correct_predictions #actual_labels # truth_values
       
-  assert len(completion_probabilities) == len(truth_values)
+  assert len(completion_probabilities) == len(correct_predictions) #len(actual_labels)
   
   plot_calibration_comparison(model_labels, model_labels, 
                               model_completion_probabilities,
                               model_truth_values,
+                              dynamic_bins=dynamic_bins,
+                              samples_per_bin=samples_per_bin,
                               range_start=0, range_end=1, 
                               out_file=output_dir+"/"+output_tag+".png")
 
@@ -131,9 +215,9 @@ def generate_calibration_plot(file_path, output_dir=None, output_tag=None):
   with open(file_path) as f:
     test_data = json.load(f)
   model_results = test_data[0]['results']
-  completion_probabilities, truth_values = get_normalized_probabilities(model_results)
-  assert len(completion_probabilities) == len(truth_values)
+  completion_probabilities, _, _, correct_predictions, _ = get_normalized_probabilities(model_results)
+  assert len(completion_probabilities) == len(correct_predictions)
   
   plot_calibration(np.array(completion_probabilities), 
-                  np.array(truth_values, dtype=np.int32), 
+                  np.array(correct_predictions, dtype=np.int32), 
                   num_bins=10, range_start=0, range_end=1, out_file=output_dir+"/"+output_tag+".png")

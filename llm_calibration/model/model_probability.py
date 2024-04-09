@@ -1,21 +1,77 @@
 import numpy as np
 import torch
 
-def get_normalized_probabilities(model_results):
+def get_normalized_probabilities(model_results, include_true_negatives=False):
   """
   Takes model results and returns normalized probabilities and truth values.
   """
   completions = list(sorted(model_results[0]['selection_results'].keys()))
   completion_probabilities = []
+  predicted_probability = []
   truth_value = []
+  actual_labels = []
+  correct_predictions = []
   for model_result in model_results:
     model_log_prob_of_completion = torch.tensor([model_result['selection_results'][completion] for completion in completions])
+    if model_log_prob_of_completion.isnan().any():
+            print('Skipping NaN in model results.')
+            continue
     model_completion_probability = torch.nn.functional.softmax(model_log_prob_of_completion, dim=0)
+    # convert to probability 
     completion_probabilities += model_completion_probability.tolist()
-    truth_value += [ (completion == model_result['answer']) 
-                        and (model_result['answer'] == model_result['chosen']) for completion in completions ]
-  return completion_probabilities, truth_value  
-  
+    # The truth value is when the model answer is also the CORRECT answer. 
+    # Question: But then are the model unchosen correct answers also correct ?
+    # Question: Should we use a ROC curve to evaluate the model ?
+    # Question: Should we consider the KL-divergence of model predictions ?
+    # Question: We get swamped by true negatives, thus we don't include 
+    # them unless explicitly required to. 
+    for completion_idx, completion in enumerate(completions):
+        if completion == model_result['chosen']:
+                # Correct answer: TP.
+                if completion == model_result['answer']: 
+                        truth_value.append(1) 
+                        actual_labels.append(1)
+                        correct_predictions.append(1)
+                        predicted_probability.append(model_completion_probability[completion_idx].item())
+                else: # Incorrect answer: FN.
+                        predicted_probability.append(model_completion_probability[completion_idx].item())
+                        correct_predictions.append(0)
+                        actual_labels.append(0)
+                        truth_value.append(0) 
+        else: # Completion was not chosen.
+                # Incorrect answer: FN.
+                if completion == model_result['answer']:
+                        predicted_probability.append(model_completion_probability[completion_idx].item())
+                        correct_predictions.append(0)
+                        actual_labels.append(1)
+                        truth_value.append(0)
+                # Correct Answer: True Negative
+                elif include_true_negatives:
+                        """ 
+                        As we have a abundance of true negatives, 
+                        treating them as correct predictions leads to 
+                        noisy results. Thus we don't include them, unless
+                        explicitly required to.
+                        """
+                        predicted_probability.append(model_completion_probability[completion_idx].item())
+                        correct_predictions.append(1)
+                        actual_labels.append(0)
+                        truth_value.append(0)
+  return predicted_probability, \
+          truth_value, \
+          actual_labels, \
+          correct_predictions,\
+          completions
+
+def summarize_model_results(model_results):
+        completion_probabilities, truth_values, actual_values, predicted_probabilities, completions = get_normalized_probabilities(model_results)
+        correct_predictions = np.sum(truth_values)  
+        print("Correct Predictions", correct_predictions)
+        print("Incorrect Predictions", len(truth_values) - correct_predictions)
+        for i in range(len(completion_probabilities), len(completions)):
+                for j in range(len(completions)):
+                        print("Completion: ", completions[j], "Probability: ", completion_probabilities[i+j], "Truth Value: ", truth_values[i+j])
+                        
 def get_log_prob_of_completion(
         model,
         tokenizer,

@@ -1,9 +1,15 @@
-import llm_calibration.model.model_probability as mp
+import os
+import json
 import numpy as np
+
+import llm_calibration.model.model_probability as mp
+import llm_calibration.plot as plot
+import llm_calibration.runner.logic_qa as logic_qa_runner
 import llm_calibration.runner.mmlu as mmlu_runner
 import llm_calibration.runner.multiple_choice_questions as mcq
-import llm_calibration.runner.logic_qa as logic_qa_runner
 import llm_calibration.runner.true_false_questions as tfq
+
+file_path = os.path.abspath(os.path.dirname(__file__))
 
 model_results =  [{
             "prompt_template": "Select one (A, B, C, D). Question: This question refers to the following information.\nNo task is more urgent than that of preserving peace. Without peace our independence means little. The rehabilitation and upbuilding of our countries will have little meaning. Our revolutions will not be allowed to run their course. What can we do? We can do much! We can inject the voice of reason into world affairs. We can mobilize all the spiritual, all the moral, all the political strength of Asia and Africa on the side of peace. Yes, we! We, the peoples of Asia and Africa, 1.4 billion strong.\nIndonesian leader Sukarno, keynote address to the Bandung Conference, 1955\nThe passage above is most associated with which of the following developments?\n\nA. The formation of the non-aligned movement\nB. Global disarmanent and nuclear non-proliferation\nC. The Green Revolution in agriculture\nD. Mobilization of pan-Asian ideology",
@@ -25,10 +31,52 @@ def create_dummy_dataset():
               "choices":["ans-1", "ans-2", "ans-3", "ans-4"]}
         dummy_dataset.append(ds)
     return dummy_dataset
- 
+
+def assert_valid_computed_normalized_probabilities(completion_probabilities, truth_values, actual_values, completions):
+    """
+    """
+    for i in range(len(completion_probabilities), len(completions)):
+        # Take a slice of the completion probabilities, truth values and actual values
+        completion_probabilities = completion_probabilities[i:i+len(completions)]
+        truth_values = truth_values[i:i+len(completions)]
+        actual_values = actual_values[i:i+len(completions)]
+
+        # The sum of the completion probabilities should be 1
+        assert np.all(np.array(completion_probabilities) <= 1) and np.all(np.array(completion_probabilities) >= 0)
+        # The number of truth values should be equal to the number of label values
+        assert len(truth_values) == len(actual_values)
+        # The sum of the truth values should be greater than the sum of the actual values, 
+        # model can't have more correct answers
+        assert np.sum(actual_values) >= np.sum(truth_values)
+
+def assert_validate_model_result_file(file_path:str):   
+    """
+    Validate a model result file can be used to compute normalized probabilities. 
+    """ 
+    model_results = None
+    with open(file_path) as f:
+            model_results = json.load(f)
+    completion_probabilities, truth_values, actual_values, predicted_probability, completions = \
+        mp.get_normalized_probabilities(model_results)
+    assert_valid_computed_normalized_probabilities(completion_probabilities, truth_values, actual_values, completions)
+    # Try to 
+    mp.summarize_model_results(model_results)
+        
 def test_get_normalized_probabilities():
-    completion_probabilities, _ = mp.get_normalized_probabilities(model_results)
-    assert np.isclose(np.sum(completion_probabilities), 1)
+    """
+    Given the model results.
+    """
+    completion_probabilities, truth_values, actual_values, predicted_probabilities, completions = mp.get_normalized_probabilities(model_results)
+    
+    assert_valid_computed_normalized_probabilities(completion_probabilities, truth_values, actual_values, completions)
+
+def test_with_generated_model_result_file():
+    """
+    Test computation with actual file.
+    """
+    file_under_test = os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-13b-hf_ds_all_tag-result.json') 
+    assert_validate_model_result_file(file_under_test)
+   
     
 def test_n_shot_prompt():
     dummy_dataset = create_dummy_dataset() 
