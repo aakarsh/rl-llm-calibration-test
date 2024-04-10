@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export PYTHONPATH=$PYTHONPATH:
+export PYTHONPATH=$PYTHONPATH:..
 
 python  ../llm_calibration/run_experiment.py --model_name='meta-llama/Llama-2-13b-hf' --dataset='STEM' 
 python  ../llm_calibration/run_experiment.py --model_name='meta-llama/Llama-2-13b-hf' --dataset='HUMANITIES'
