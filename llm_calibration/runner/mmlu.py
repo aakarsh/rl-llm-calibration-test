@@ -72,6 +72,7 @@ DATASET_GROUPS = {
   ]
 }
 
+# TODO Use proto class
 def load_dataset(name, split="test"):
   """
   Load the dataset, by either its name or its group name. 
@@ -121,17 +122,16 @@ def generate_n_shot_prompt(dataset,
   question_buffer += format_question(question_idx, with_answer=False)
   return question_buffer, formatted_options
 
-def run_single_inference(model, tokenizer, prompt, selections, item, alphanumeric_options, verbose=False):
+def run_single_inference(model, tokenizer, prompt, selections, item, verbose=False):
     """
     Run single inference.
     """
     if verbose: print(prompt)
-    alphanumeric_options = ['A', 'B', 'C', 'D'] 
 
     selection_log_prob_opt_option = []
     for _, selection  in enumerate(selections):
       # run inference here for each selection.
-      log_prob_opt_option = get_log_prob_of_completion( model=model, tokenizer=tokenizer, 
+      log_prob_opt_option = get_log_prob_of_completion(model=model, tokenizer=tokenizer, 
                                                        prompt=prompt, completion=selection)
       if verbose:
         print("selection",selection, "log_prob:",log_prob_opt_option)
@@ -140,8 +140,9 @@ def run_single_inference(model, tokenizer, prompt, selections, item, alphanumeri
     
     selection_results = (dict(zip(selections, np.float64(selection_log_prob_opt_option))))
     chosen_selection = np.argmax(selection_log_prob_opt_option)
-
-    target_labels = [i == item['answer'] for i in range(len(alphanumeric_options))]
+    # dataset specific.
+    alphanumeric_options = ['A', 'B', 'C', 'D'] 
+    target_labels = [alpha_char == item['answer'] for alpha_char in range(len(alphanumeric_options))]
     prediction_probabilities = (np.float64(selection_log_prob_opt_option)).tolist()
 
     result = {
@@ -150,7 +151,8 @@ def run_single_inference(model, tokenizer, prompt, selections, item, alphanumeri
       "answer": selections[item['answer']] 
     }
     return (result , prediction_probabilities, target_labels)
-    
+
+# TODO do chunked writing.    
 def run_inference(model, tokenizer, dataset,
                   tag="default_tag", include_prompt=False, 
                   verbose = False, 
@@ -168,11 +170,9 @@ def run_inference(model, tokenizer, dataset,
     prediction_probabilities += single_prediction_probabilities 
     if tag:
       result["model_tag"] = tag
-
     if include_prompt:
       result["prompt_template"] = prompt 
     # save iteration.
     results.append(result)
     # save output file in chunks.
-    
   return results, prediction_probabilities, target_labels
