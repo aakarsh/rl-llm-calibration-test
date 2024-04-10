@@ -260,7 +260,7 @@ def run(dump_start=0, dump_step=250, dump_end=2000,
         file_prefix="trivia_qa-llama-2-7b-chat",
         quantized=True,
         question_dump="trivia_qa-questions.json",
-        fewshot=False:
+        fewshot=False):
     print("=== Loading Model")
     model = load_model(model_name=model_name, quantized=quantized)
 
