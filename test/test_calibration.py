@@ -173,9 +173,10 @@ def test_make_boolean_question():
            assert "This is canonical solution %d"  % selected_question_idx in question
         print(question)
         
-def test_bin_prediction_probabilities_by_samples_per_bin():
+def test_bin_prediction_probabilities_by_samples_per_bin_perfect_calibration():
     """
-    Bin prediction probabilities by samples per bin. 
+    Given a perfect calibration model the bin accuracy should be 
+    close to the bin mean probability. 
     """
     num_probabilities = 200000
     samples_per_bin = 1000 
