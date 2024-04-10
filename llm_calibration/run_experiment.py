@@ -74,8 +74,8 @@ def generate_model_tag(model_name, dataset_name, n_shots=1, include_date=False):
 
 def run_experiment(model_name, dataset_name, runner, output_dir, output_tag, n_shots=1):
     """
-        - Thinking-Step-By-Step.
     """
+    logger.info(f"Running experiment with model {model_name} on dataset {dataset_name}")
     tokenizer, model = load_model(name=model_name)
     dataset = runner.load_dataset(name=dataset_name)
 
@@ -85,11 +85,12 @@ def run_experiment(model_name, dataset_name, runner, output_dir, output_tag, n_s
                            tag=model_tag,
                            include_prompt=False, n_shots=n_shots)
 
-    # Save the results to a JSON file
+    # Save the results to a JSON file, this need to be done as part of the inference.
     output_file = output_dir+"model_results_"+output_tag+"-result.json"
     with open(output_file, "w") as f:
         json.dump(model_results, f, indent=4)
 
+    logger.info(f"Model results saved to {output_file}")
     pretty_print_model_results(model_results)
     return True
 
@@ -113,7 +114,7 @@ def main():
                         help="Path to save the predictions JSON file (default: result.json)")
 
     args = parser.parse_args()
-
+    logger.info('run_experiment with arguments', args)
     run_experiment(args.model_name, args.dataset, mmlu_runner, args.output_dir, args.output_tag)    
 
 if __name__ == "__main__":
