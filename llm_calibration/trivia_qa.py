@@ -13,6 +13,7 @@ import pandas as pd
 import json
 import random
 import pathlib
+import gc
 
 
 import torch
@@ -132,13 +133,51 @@ def get_log_prob_of_completion(
     ).cpu()
     return completion_log_prob
 
-# TODO: Few shot
-def trivia_qa_questions(dataset):
+FIVE_SHOT_PROMPT = """
+What year was Sputnik 1 launched into space?
+  (A) 2005
+  (B) 1957
+  (C) 1969
+  (D) 1959
+Answer: (B)
+
+What country did the Scientists called "The Martians" originally come from?
+  (A) Egypt
+  (B) Mars
+  (C) Hungary
+  (D) Germany
+Answer: (C)
+
+What TV character lives in a pineapple under the sea?
+  (A) SpongeBob SquarePants
+  (B) Peter Parker
+  (C) Patrick Star
+  (D) Bruce Wayne
+Answer: (A)
+
+What day is celebrated as the International Women's Day?
+  (A) February 7
+  (B) Tuesday
+  (C) March 8
+Answer: (C)
+
+Ludwig Wittgenstein revolutionized the Philosophy of Language with which book?
+  (A) The Bibel
+  (B) Tractatus Logico-Philosophicus
+  (C) Ulysses
+  (D) Pride and Prejudice
+  (E) Moby Dick
+Answer: (B)
+
+"""
+
+def trivia_qa_questions(dataset, fewshot=False):
   split = "train"
   wrong_answers = [rec["answer"]["value"] for rec in dataset[split]]
   questions = []
   nalternatives = 3
   for rec in dataset[split]:
+      prompt = "" if not fewshot else FIVE_SHOT_PROMPT
       #if ("answer" not in rec) or ("normalized_value" not in rec["answer"]):
       #  continue
     choices = ([rec["answer"]["value"]] +
@@ -149,7 +188,7 @@ def trivia_qa_questions(dataset):
     choices, correct_choice = zip(*shuffled)
     choice_names = choices
     choices = []
-    prompt = rec["question"] + "\n"
+    prompt += rec["question"] + "\n"
     for letter, choice in zip("ABCDEFGHIJKLMOPQRS", choice_names):
         prompt += "  ({}) {}\n".format(letter, choice)
         choices.append("("+letter+")")
@@ -208,12 +247,20 @@ def get_prob_of_completion(model, tokenizer, prompt, completion):
         tokenizer=tokenizer,
         prompt=prompt, completion=completion))
 
+# NEXT: TODO: Clear (V)RAM
+def delete_model(model):
+    del model
+    gc.collect()
+    torch.cuda.empty_cache()
+
 
 def run(dump_start=0, dump_step=250, dump_end=2000,
         model_name="meta-llama/Llama-2-7b-chat-hf",
-        file_prefix="trivia_qa-llama-2-7b-chat",
+        #file_prefix="trivia_qa-llama-2-7b-chat",
+        file_prefix="trivia_qa-llama-2-7b-chat--fewshot",
         quantized=True,
-        question_dump="trivia_qa-questions.json"):
+        question_dump="trivia_qa-questions.json",
+        fewshot=True):
     print("=== Loading Model")
     model = load_model(model_name=model_name, quantized=quantized)
 
@@ -225,7 +272,7 @@ def run(dump_start=0, dump_step=250, dump_end=2000,
     else:
         data = datasets.load_dataset("mandarjoshi/trivia_qa", name="rc.nocontext")
         print("    --- transforming data")
-        questions = trivia_qa_questions(data)
+        questions = trivia_qa_questions(data,fewshot=fewshot)
         dump_questions(questions)
         data = None
     print("   --- sanity check: ")
@@ -249,4 +296,4 @@ def run(dump_start=0, dump_step=250, dump_end=2000,
 
 if __name__ == "__main__":
     run()
-    
+
