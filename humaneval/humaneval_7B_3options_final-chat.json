@@ -1,0 +1,1983 @@
+{
+    "model": "llama-7B-chat",
+    "prompt-type": [
+        "Prompt:\n\ndef is_palindrome(string: str) -> bool:\n    \"\"\" Test if given string is a palindrome \"\"\"\n    return string == string[::-1]\n\n\ndef make_palindrome(string: str) -> str:\n    \"\"\" Find the shortest palindrome that begins with a supplied string.\n    Algorithm idea is simple:\n    - Find the longest postfix of supplied string that is a palindrome.\n    - Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.\n    >>> make_palindrome('')\n    ''\n    >>> make_palindrome('cat')\n    'catac'\n    >>> make_palindrome('cata')\n    'catac'\n    \"\"\"\nSelect the correct completion:\nA.    return sum([lst[i] for i in range(1, len(lst), 2) if lst[i]%2 == 0])\n\nB.    if not string:\n        return ''\n\n    beginning_of_suffix = 0\n\n    while not is_palindrome(string[beginning_of_suffix:]):\n        beginning_of_suffix += 1\n\n    return string + string[:beginning_of_suffix][::-1]\n\nC.    res = []\n    for arr in lst:\n        n = sum(int(d)%2==1 for d in arr)\n        res.append(\"the number of odd elements \" + str(n) + \"n the str\"+ str(n) +\"ng \"+ str(n) +\" of the \"+ str(n) +\"nput.\")\n    return res\n\nD: None of the above",
+        "B",
+        [
+            "A",
+            "B",
+            "C",
+            "D"
+        ]
+    ],
+    "results": [
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.614795684814453,
+                "B": -9.739795684814453,
+                "C": -10.755420684814453,
+                "D": -10.450733184814453
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.007125854492188,
+                "B": -7.9719696044921875,
+                "C": -10.085250854492188,
+                "D": -8.362594604492188
+            },
+            "chosen": "B",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.356646537780762,
+                "B": -9.395709037780762,
+                "C": -10.829302787780762,
+                "D": -9.387896537780762
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.199756622314453,
+                "B": -8.457569122314453,
+                "C": -10.844287872314453,
+                "D": -9.356006622314453
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.13961410522461,
+                "B": -8.10055160522461,
+                "C": -10.50680160522461,
+                "D": -8.76461410522461
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -6.721710205078125,
+                "B": -8.081085205078125,
+                "C": -9.327178955078125,
+                "D": -8.471710205078125
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.577225685119629,
+                "B": -8.178788185119629,
+                "C": -9.842850685119629,
+                "D": -8.702225685119629
+            },
+            "chosen": "B",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.397147178649902,
+                "B": -9.701834678649902,
+                "C": -11.158865928649902,
+                "D": -10.178397178649902
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.680033683776855,
+                "B": -10.515971183776855,
+                "C": -11.445658683776855,
+                "D": -10.109721183776855
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.559286117553711,
+                "B": -8.824911117553711,
+                "C": -10.625692367553711,
+                "D": -9.535848617553711
+            },
+            "chosen": "B",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.988887786865234,
+                "B": -9.574825286865234,
+                "C": -11.176387786865234,
+                "D": -10.332637786865234
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -11.281654357910156,
+                "B": -11.141029357910156,
+                "C": -12.148841857910156,
+                "D": -10.922279357910156
+            },
+            "chosen": "D",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.338449478149414,
+                "B": -8.873605728149414,
+                "C": -11.561105728149414,
+                "D": -8.334543228149414
+            },
+            "chosen": "D",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -7.767483711242676,
+                "B": -8.759671211242676,
+                "C": -9.650296211242676,
+                "D": -6.306546211242676
+            },
+            "chosen": "D",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.299574851989746,
+                "B": -9.893324851989746,
+                "C": -11.104262351989746,
+                "D": -10.283949851989746
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.174423217773438,
+                "B": -8.908798217773438,
+                "C": -10.432235717773438,
+                "D": -9.018173217773438
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.040971755981445,
+                "B": -10.150346755981445,
+                "C": -11.470659255981445,
+                "D": -10.783159255981445
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.2771577835083,
+                "B": -9.6521577835083,
+                "C": -10.9685640335083,
+                "D": -10.0896577835083
+            },
+            "chosen": "B",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.949790000915527,
+                "B": -10.051352500915527,
+                "C": -11.676352500915527,
+                "D": -11.195883750915527
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.44597339630127,
+                "B": -9.62566089630127,
+                "C": -10.99284839630127,
+                "D": -10.28972339630127
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.932768821716309,
+                "B": -10.307768821716309,
+                "C": -11.635893821716309,
+                "D": -11.003081321716309
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.42732048034668,
+                "B": -9.47419548034668,
+                "C": -10.77888298034668,
+                "D": -9.61482048034668
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.880057334899902,
+                "B": -8.630057334899902,
+                "C": -10.063651084899902,
+                "D": -9.481619834899902
+            },
+            "chosen": "B",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.01112174987793,
+                "B": -9.95643424987793,
+                "C": -10.60487174987793,
+                "D": -9.45643424987793
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.449722290039062,
+                "B": -9.223159790039062,
+                "C": -9.816909790039062,
+                "D": -8.949722290039062
+            },
+            "chosen": "D",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.975768089294434,
+                "B": -9.991393089294434,
+                "C": -11.089049339294434,
+                "D": -10.038268089294434
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.582704544067383,
+                "B": -8.973329544067383,
+                "C": -10.352235794067383,
+                "D": -8.942079544067383
+            },
+            "chosen": "D",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.94288158416748,
+                "B": -10.63819408416748,
+                "C": -11.64600658416748,
+                "D": -10.71631908416748
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.386296272277832,
+                "B": -10.151921272277832,
+                "C": -11.132390022277832,
+                "D": -10.089421272277832
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.623276710510254,
+                "B": -9.373276710510254,
+                "C": -10.986557960510254,
+                "D": -10.373276710510254
+            },
+            "chosen": "B",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.246475219726562,
+                "B": -9.871475219726562,
+                "C": -11.476943969726562,
+                "D": -10.223037719726562
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.223649978637695,
+                "B": -9.301774978637695,
+                "C": -11.461931228637695,
+                "D": -8.723649978637695
+            },
+            "chosen": "D",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.255528450012207,
+                "B": -9.036778450012207,
+                "C": -10.204747200012207,
+                "D": -9.107090950012207
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.35305404663086,
+                "B": -9.07961654663086,
+                "C": -10.68117904663086,
+                "D": -8.23586654663086
+            },
+            "chosen": "D",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.784608840942383,
+                "B": -9.511171340942383,
+                "C": -11.261171340942383,
+                "D": -9.409608840942383
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.49611759185791,
+                "B": -8.67580509185791,
+                "C": -10.62111759185791,
+                "D": -9.23049259185791
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.256790161132812,
+                "B": -9.873977661132812,
+                "C": -10.651321411132812,
+                "D": -9.334915161132812
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.028314590454102,
+                "B": -9.629877090454102,
+                "C": -11.071283340454102,
+                "D": -7.833002090454102
+            },
+            "chosen": "D",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.066182136535645,
+                "B": -8.425557136535645,
+                "C": -10.073994636535645,
+                "D": -9.109150886535645
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.73204517364502,
+                "B": -8.40392017364502,
+                "C": -9.90782642364502,
+                "D": -8.72423267364502
+            },
+            "chosen": "B",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.884322166442871,
+                "B": -9.845259666442871,
+                "C": -11.493697166442871,
+                "D": -9.071822166442871
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.533470153808594,
+                "B": -9.322532653808594,
+                "C": -9.842063903808594,
+                "D": -9.447532653808594
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.68420124053955,
+                "B": -10.34045124053955,
+                "C": -11.41857624053955,
+                "D": -11.50060749053955
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.474170684814453,
+                "B": -9.771045684814453,
+                "C": -11.138233184814453,
+                "D": -8.997608184814453
+            },
+            "chosen": "D",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.481942176818848,
+                "B": -8.786629676818848,
+                "C": -10.860848426818848,
+                "D": -8.263192176818848
+            },
+            "chosen": "D",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -7.584532260894775,
+                "B": -9.287656784057617,
+                "C": -9.147031784057617,
+                "D": -9.279844284057617
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.913442611694336,
+                "B": -10.225942611694336,
+                "C": -11.128286361694336,
+                "D": -9.241567611694336
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.368500709533691,
+                "B": -10.040375709533691,
+                "C": -11.634125709533691,
+                "D": -10.118500709533691
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -7.927479267120361,
+                "B": -8.279041290283203,
+                "C": -10.665760040283203,
+                "D": -8.716541290283203
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.748679161071777,
+                "B": -11.420554161071777,
+                "C": -12.545554161071777,
+                "D": -9.936179161071777
+            },
+            "chosen": "D",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.051216125488281,
+                "B": -9.363716125488281,
+                "C": -10.937934875488281,
+                "D": -10.539497375488281
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.408514022827148,
+                "B": -10.955389022827148,
+                "C": -11.904607772827148,
+                "D": -10.892889022827148
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.15473461151123,
+                "B": -9.48285961151123,
+                "C": -11.22114086151123,
+                "D": -10.11567211151123
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.271026611328125,
+                "B": -10.169464111328125,
+                "C": -11.755401611328125,
+                "D": -10.700714111328125
+            },
+            "chosen": "B",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.24899673461914,
+                "B": -9.95212173461914,
+                "C": -12.02634048461914,
+                "D": -10.14743423461914
+            },
+            "chosen": "B",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.82604694366455,
+                "B": -10.06823444366455,
+                "C": -11.71667194366455,
+                "D": -10.67760944366455
+            },
+            "chosen": "B",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.324396133422852,
+                "B": -9.363458633422852,
+                "C": -11.898614883422852,
+                "D": -11.433771133422852
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -7.664128303527832,
+                "B": -8.914128303527832,
+                "C": -10.394597053527832,
+                "D": -9.836003303527832
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.773487091064453,
+                "B": -9.078174591064453,
+                "C": -11.128955841064453,
+                "D": -9.632862091064453
+            },
+            "chosen": "B",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.55129623413086,
+                "B": -9.41848373413086,
+                "C": -11.00832748413086,
+                "D": -9.36379623413086
+            },
+            "chosen": "D",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.435833930969238,
+                "B": -10.537396430969238,
+                "C": -11.756146430969238,
+                "D": -10.912396430969238
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.2540864944458,
+                "B": -10.3478364944458,
+                "C": -11.6564302444458,
+                "D": -11.1642427444458
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.473670959472656,
+                "B": -8.918983459472656,
+                "C": -10.543983459472656,
+                "D": -9.395545959472656
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.887210845947266,
+                "B": -9.902835845947266,
+                "C": -11.137210845947266,
+                "D": -10.160648345947266
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -11.488783836364746,
+                "B": -10.313002586364746,
+                "C": -12.043471336364746,
+                "D": -10.039565086364746
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.902735710144043,
+                "B": -8.328516960144043,
+                "C": -10.996485710144043,
+                "D": -9.195704460144043
+            },
+            "chosen": "B",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.62197208404541,
+                "B": -8.93056583404541,
+                "C": -9.79775333404541,
+                "D": -8.61415958404541
+            },
+            "chosen": "D",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.323338508605957,
+                "B": -10.003026008605957,
+                "C": -11.280369758605957,
+                "D": -9.917088508605957
+            },
+            "chosen": "D",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.92663288116455,
+                "B": -9.44225788116455,
+                "C": -10.04772663116455,
+                "D": -9.30163288116455
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.841278076171875,
+                "B": -9.294403076171875,
+                "C": -11.181121826171875,
+                "D": -10.419403076171875
+            },
+            "chosen": "B",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.626982688903809,
+                "B": -9.462920188903809,
+                "C": -11.607451438903809,
+                "D": -11.025420188903809
+            },
+            "chosen": "B",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.34390640258789,
+                "B": -8.81265640258789,
+                "C": -11.12906265258789,
+                "D": -9.92203140258789
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.114648818969727,
+                "B": -10.302148818969727,
+                "C": -11.763086318969727,
+                "D": -10.224023818969727
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.93290901184082,
+                "B": -9.33134651184082,
+                "C": -10.38603401184082,
+                "D": -9.53447151184082
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.823174476623535,
+                "B": -9.713799476623535,
+                "C": -11.354424476623535,
+                "D": -9.690361976623535
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.197120666503906,
+                "B": -9.189308166503906,
+                "C": -10.482276916503906,
+                "D": -9.822120666503906
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.356826782226562,
+                "B": -9.559951782226562,
+                "C": -11.259170532226562,
+                "D": -9.286514282226562
+            },
+            "chosen": "D",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.021485328674316,
+                "B": -10.138672828674316,
+                "C": -11.560547828674316,
+                "D": -10.060547828674316
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.924565315246582,
+                "B": -10.838627815246582,
+                "C": -11.307377815246582,
+                "D": -10.190190315246582
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.518867492675781,
+                "B": -8.354804992675781,
+                "C": -11.011054992675781,
+                "D": -9.003242492675781
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -7.052751064300537,
+                "B": -8.845719337463379,
+                "C": -8.685563087463379,
+                "D": -7.591813564300537
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.742953300476074,
+                "B": -10.336703300476074,
+                "C": -11.133578300476074,
+                "D": -9.539828300476074
+            },
+            "chosen": "D",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.154881477355957,
+                "B": -8.779881477355957,
+                "C": -11.033787727355957,
+                "D": -9.490818977355957
+            },
+            "chosen": "B",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.723406791687012,
+                "B": -8.520281791687012,
+                "C": -10.223406791687012,
+                "D": -9.489031791687012
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.396561622619629,
+                "B": -9.927811622619629,
+                "C": -10.966874122619629,
+                "D": -9.044999122619629
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.648930549621582,
+                "B": -9.000493049621582,
+                "C": -9.508305549621582,
+                "D": -7.227055549621582
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.944007873535156,
+                "B": -8.881507873535156,
+                "C": -10.908851623535156,
+                "D": -8.772132873535156
+            },
+            "chosen": "D",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.21058177947998,
+                "B": -9.19495677947998,
+                "C": -10.71058177947998,
+                "D": -7.8277692794799805
+            },
+            "chosen": "D",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.812545776367188,
+                "B": -9.320358276367188,
+                "C": -11.230514526367188,
+                "D": -10.457077026367188
+            },
+            "chosen": "B",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.314332008361816,
+                "B": -8.447144508361816,
+                "C": -10.204957008361816,
+                "D": -8.533082008361816
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.650236129760742,
+                "B": -10.564298629760742,
+                "C": -12.052579879760742,
+                "D": -11.439298629760742
+            },
+            "chosen": "B",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.803380966186523,
+                "B": -9.444005966186523,
+                "C": -11.479162216186523,
+                "D": -9.498693466186523
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.562686920166016,
+                "B": -9.871280670166016,
+                "C": -11.359561920166016,
+                "D": -10.340030670166016
+            },
+            "chosen": "B",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.382453918457031,
+                "B": -10.890266418457031,
+                "C": -11.687141418457031,
+                "D": -10.054328918457031
+            },
+            "chosen": "D",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -7.951163291931152,
+                "B": -8.978507041931152,
+                "C": -9.572257041931152,
+                "D": -8.564444541931152
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.405779838562012,
+                "B": -9.155779838562012,
+                "C": -11.073748588562012,
+                "D": -9.476092338562012
+            },
+            "chosen": "B",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.658571243286133,
+                "B": -9.697633743286133,
+                "C": -11.119508743286133,
+                "D": -9.713258743286133
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.996892929077148,
+                "B": -9.004705429077148,
+                "C": -10.887517929077148,
+                "D": -9.950017929077148
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.48150634765625,
+                "B": -9.04400634765625,
+                "C": -11.23541259765625,
+                "D": -9.71588134765625
+            },
+            "chosen": "B",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.8307466506958,
+                "B": -10.9869966506958,
+                "C": -12.0534029006958,
+                "D": -10.8776216506958
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.480960845947266,
+                "B": -8.754398345947266,
+                "C": -9.754398345947266,
+                "D": -7.449710369110107
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.324931144714355,
+                "B": -8.637431144714355,
+                "C": -10.391337394714355,
+                "D": -9.418681144714355
+            },
+            "chosen": "B",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.736067771911621,
+                "B": -9.657942771911621,
+                "C": -11.251692771911621,
+                "D": -9.431380271911621
+            },
+            "chosen": "D",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.668052673339844,
+                "B": -9.050865173339844,
+                "C": -10.902427673339844,
+                "D": -8.910240173339844
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.505338668823242,
+                "B": -8.653776168823242,
+                "C": -11.138151168823242,
+                "D": -9.005338668823242
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -6.975444793701172,
+                "B": -7.772319793701172,
+                "C": -9.424663543701172,
+                "D": -9.147319793701172
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.064005851745605,
+                "B": -9.814005851745605,
+                "C": -11.591349601745605,
+                "D": -9.579630851745605
+            },
+            "chosen": "D",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.232721328735352,
+                "B": -9.803033828735352,
+                "C": -10.318658828735352,
+                "D": -9.498346328735352
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.269044876098633,
+                "B": -10.339357376098633,
+                "C": -11.753419876098633,
+                "D": -10.526857376098633
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.337451934814453,
+                "B": -10.399951934814453,
+                "C": -12.149951934814453,
+                "D": -9.587451934814453
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.818997383117676,
+                "B": -8.963528633117676,
+                "C": -11.350247383117676,
+                "D": -9.635403633117676
+            },
+            "chosen": "B",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.004161834716797,
+                "B": -10.246349334716797,
+                "C": -11.383068084716797,
+                "D": -9.215099334716797
+            },
+            "chosen": "D",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.23669147491455,
+                "B": -9.13512897491455,
+                "C": -10.98669147491455,
+                "D": -7.611691474914551
+            },
+            "chosen": "D",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.73691177368164,
+                "B": -9.35409927368164,
+                "C": -11.13144302368164,
+                "D": -8.68222427368164
+            },
+            "chosen": "D",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.889015197753906,
+                "B": -7.920265197753906,
+                "C": -10.783546447753906,
+                "D": -9.537452697753906
+            },
+            "chosen": "B",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.308961868286133,
+                "B": -10.324586868286133,
+                "C": -11.765993118286133,
+                "D": -10.308961868286133
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -7.362349510192871,
+                "B": -8.272505760192871,
+                "C": -8.432662010192871,
+                "D": -8.038130760192871
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -7.099218845367432,
+                "B": -7.782812595367432,
+                "C": -8.470312118530273,
+                "D": -5.521093845367432
+            },
+            "chosen": "D",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.561629295349121,
+                "B": -10.139754295349121,
+                "C": -11.796004295349121,
+                "D": -10.702254295349121
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.78519058227539,
+                "B": -10.14456558227539,
+                "C": -12.06644058227539,
+                "D": -10.06644058227539
+            },
+            "chosen": "D",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.168676376342773,
+                "B": -10.059301376342773,
+                "C": -11.403051376342773,
+                "D": -10.371801376342773
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.851912498474121,
+                "B": -8.859724998474121,
+                "C": -10.012068748474121,
+                "D": -8.430037498474121
+            },
+            "chosen": "D",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.098297119140625,
+                "B": -9.590484619140625,
+                "C": -11.141265869140625,
+                "D": -9.660797119140625
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.038121223449707,
+                "B": -8.905308723449707,
+                "C": -10.413121223449707,
+                "D": -9.256871223449707
+            },
+            "chosen": "B",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.19490909576416,
+                "B": -9.07772159576416,
+                "C": -10.93319034576416,
+                "D": -8.39022159576416
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.559081077575684,
+                "B": -9.871581077575684,
+                "C": -10.469237327575684,
+                "D": -10.176268577575684
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.331605911254883,
+                "B": -10.886293411254883,
+                "C": -11.605043411254883,
+                "D": -11.456605911254883
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.509672164916992,
+                "B": -9.904203414916992,
+                "C": -11.142484664916992,
+                "D": -10.939359664916992
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.665045738220215,
+                "B": -8.657233238220215,
+                "C": -11.497076988220215,
+                "D": -8.977545738220215
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -11.40229606628418,
+                "B": -11.15229606628418,
+                "C": -12.44917106628418,
+                "D": -12.61713981628418
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.018356323242188,
+                "B": -9.748825073242188,
+                "C": -11.588668823242188,
+                "D": -9.780075073242188
+            },
+            "chosen": "B",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -7.707516193389893,
+                "B": -8.363765716552734,
+                "C": -10.348140716552734,
+                "D": -8.598140716552734
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.588750839233398,
+                "B": -11.018438339233398,
+                "C": -12.471563339233398,
+                "D": -10.682500839233398
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.40276050567627,
+                "B": -9.69182300567627,
+                "C": -10.66057300567627,
+                "D": -10.22307300567627
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.138667106628418,
+                "B": -9.443354606628418,
+                "C": -11.431635856628418,
+                "D": -9.833979606628418
+            },
+            "chosen": "B",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.281763076782227,
+                "B": -9.266138076782227,
+                "C": -10.238794326782227,
+                "D": -7.828637599945068
+            },
+            "chosen": "D",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.091304779052734,
+                "B": -8.763179779052734,
+                "C": -10.329586029052734,
+                "D": -8.599117279052734
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.087013244628906,
+                "B": -10.524513244628906,
+                "C": -11.794044494628906,
+                "D": -10.446388244628906
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.373258590698242,
+                "B": -7.662321090698242,
+                "C": -9.537321090698242,
+                "D": -8.967008590698242
+            },
+            "chosen": "B",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.25389575958252,
+                "B": -9.29295825958252,
+                "C": -10.73045825958252,
+                "D": -10.55467700958252
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -7.889117240905762,
+                "B": -6.939898490905762,
+                "C": -10.064898490905762,
+                "D": -5.072710990905762
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.750843048095703,
+                "B": -9.750843048095703,
+                "C": -10.977405548095703,
+                "D": -8.953968048095703
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.291202545166016,
+                "B": -8.931827545166016,
+                "C": -10.138858795166016,
+                "D": -9.189640045166016
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.723783493041992,
+                "B": -9.755033493041992,
+                "C": -12.262845993041992,
+                "D": -10.641752243041992
+            },
+            "chosen": "B",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.055304527282715,
+                "B": -8.789679527282715,
+                "C": -11.109992027282715,
+                "D": -10.293585777282715
+            },
+            "chosen": "B",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.043906211853027,
+                "B": -9.289999961853027,
+                "C": -11.383749961853027,
+                "D": -9.852499961853027
+            },
+            "chosen": "B",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.87247371673584,
+                "B": -9.45059871673584,
+                "C": -11.07169246673584,
+                "D": -9.17716121673584
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.447895050048828,
+                "B": -10.131488800048828,
+                "C": -11.041645050048828,
+                "D": -9.420551300048828
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.25650405883789,
+                "B": -8.49087905883789,
+                "C": -11.00259780883789,
+                "D": -9.24869155883789
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.252265930175781,
+                "B": -9.088203430175781,
+                "C": -10.908515930175781,
+                "D": -9.213203430175781
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.35921573638916,
+                "B": -9.49202823638916,
+                "C": -11.50374698638916,
+                "D": -9.89827823638916
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -7.653607368469238,
+                "B": -8.384076118469238,
+                "C": -8.997357368469238,
+                "D": -7.196576118469238
+            },
+            "chosen": "D",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.90325927734375,
+                "B": -8.99700927734375,
+                "C": -10.46575927734375,
+                "D": -8.02044677734375
+            },
+            "chosen": "D",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.53181266784668,
+                "B": -10.10993766784668,
+                "C": -12.27790641784668,
+                "D": -10.43806266784668
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.268913269042969,
+                "B": -9.268913269042969,
+                "C": -11.561882019042969,
+                "D": -9.542350769042969
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.322042465209961,
+                "B": -8.884542465209961,
+                "C": -9.958761215209961,
+                "D": -9.228292465209961
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -11.132180213928223,
+                "B": -11.382180213928223,
+                "C": -12.210305213928223,
+                "D": -11.350930213928223
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -7.921693325042725,
+                "B": -8.343568801879883,
+                "C": -9.706850051879883,
+                "D": -9.062318801879883
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.928572654724121,
+                "B": -9.834822654724121,
+                "C": -11.010603904724121,
+                "D": -10.170760154724121
+            },
+            "chosen": "B",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.402965545654297,
+                "B": -10.082653045654297,
+                "C": -11.363903045654297,
+                "D": -9.746715545654297
+            },
+            "chosen": "D",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.257780075073242,
+                "B": -9.242155075073242,
+                "C": -10.956998825073242,
+                "D": -8.726530075073242
+            },
+            "chosen": "D",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -9.687975883483887,
+                "B": -9.492663383483887,
+                "C": -11.453600883483887,
+                "D": -9.773913383483887
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -8.445394515991211,
+                "B": -8.179769515991211,
+                "C": -9.332113265991211,
+                "D": -6.812581539154053
+            },
+            "chosen": "D",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-chat",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -10.471573829650879,
+                "B": -10.549698829650879,
+                "C": -11.928605079650879,
+                "D": -11.393448829650879
+            },
+            "chosen": "A",
+            "answer": "A"
+        }
+    ]
+}
