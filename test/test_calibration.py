@@ -1,6 +1,7 @@
 import os
 import json
 import numpy as np
+import scipy 
 
 import llm_calibration.model.model_probability as mp
 import llm_calibration.plot as plot
@@ -23,6 +24,12 @@ model_results =  [{
             "answer": "A"
         }]
 
+def load_model_results(file_path:str):
+    model_results = None
+    with open(file_path) as f:
+            model_results = json.load(f)
+    return model_results
+
 def create_dummy_dataset():
     dummy_dataset=[]
     for i in range(10):
@@ -34,13 +41,16 @@ def create_dummy_dataset():
 
 def assert_valid_computed_normalized_probabilities(completion_probabilities, truth_values, actual_values, completions):
     """
+    completion_probabilities - 
+    truth_values - 
+    actual_values - 
+    completions -
     """
     for i in range(len(completion_probabilities), len(completions)):
         # Take a slice of the completion probabilities, truth values and actual values
         completion_probabilities = completion_probabilities[i:i+len(completions)]
         truth_values = truth_values[i:i+len(completions)]
         actual_values = actual_values[i:i+len(completions)]
-
         # The sum of the completion probabilities should be 1
         assert np.all(np.array(completion_probabilities) <= 1) and np.all(np.array(completion_probabilities) >= 0)
         # The number of truth values should be equal to the number of label values
@@ -49,11 +59,6 @@ def assert_valid_computed_normalized_probabilities(completion_probabilities, tru
         # model can't have more correct answers
         assert np.sum(actual_values) >= np.sum(truth_values)
 
-def load_model_results(file_path:str):
-    model_results = None
-    with open(file_path) as f:
-            model_results = json.load(f)
-    return model_results
 
 def assert_validate_model_result_file(file_path:str):   
     """
@@ -82,7 +87,6 @@ def test_with_generated_model_result_file():
     file_under_test = os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-13b-hf_ds_all_tag-result.json') 
     assert_validate_model_result_file(file_under_test)
     mp.pretty_print_model_results(file_under_test)
-   
     
 def test_n_shot_prompt():
     dummy_dataset = create_dummy_dataset() 
@@ -168,3 +172,23 @@ def test_make_boolean_question():
         if actual_answer  == 0:
            assert "This is canonical solution %d"  % selected_question_idx in question
         print(question)
+        
+def test_bin_prediction_probabilities_by_samples_per_bin():
+    """
+    Bin prediction probabilities by samples per bin. 
+    """
+    num_probabilities = 200000
+    samples_per_bin = 1000 
+    probabilities = np.random.rand(num_probabilities)
+    actual_labels = [np.random.binomial(1, p) for p in probabilities]
+    bin_accuracy, bin_mean_probability, bin_start_edge, bin_stop_edge = mp.bin_prediction_probabilities_by_samples_per_bin(probabilities, actual_labels, samples_per_bin=samples_per_bin)
+
+    assert len(bin_accuracy) == len(bin_mean_probability) == (len(probabilities) // samples_per_bin)
+    assert np.all(bin_accuracy >= 0) and np.all(bin_accuracy <= 1)
+    assert np.all(bin_mean_probability >= 0) and np.all(bin_mean_probability <= 1)
+    assert np.all(np.diff(bin_mean_probability) >= 0) # strictly increasing
+    # Assert that bin accuracy is close to bin mean probability, 
+    # linear regression should be close to y = x
+    result = scipy.stats.linregress(bin_accuracy, bin_mean_probability)
+    assert result.slope > .96 and result.slope < 1.04
+        

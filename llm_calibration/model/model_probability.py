@@ -98,19 +98,19 @@ def bin_prediction_probabilities_by_samples_per_bin(prediction_probabilities,
                                                     samples_per_bin=100):
   """
   Group the prediction probabilities into equally weighted bins, and compute 
-  the emperically observed accuracy of each bin.  
+  the empirically observed accuracy of each bin.  
   """
   # Sort predictions and corresponding actual labels.
   sorted_indices = np.argsort(prediction_probabilities)
   prediction_probabilities = np.array(prediction_probabilities)
   correct_prediction = np.array(correct_prediction)
-  sorted_probs = prediction_probabilities[sorted_indices.astype(int)]
+  sorted_prediction_probabilities = prediction_probabilities[sorted_indices.astype(int)]
   sorted_labels = correct_prediction[sorted_indices.astype(int)]
 
-  num_parts = len(sorted_probs) // samples_per_bin
+  num_parts = len(sorted_prediction_probabilities) // samples_per_bin
   
   terminal_bin_size = num_parts * samples_per_bin 
-  grouped_prediction_probabilities = np.split(sorted_probs[:terminal_bin_size], num_parts)
+  grouped_prediction_probabilities = np.split(sorted_prediction_probabilities[:terminal_bin_size], num_parts)
   grouped_actual_labels = np.split(sorted_labels[:terminal_bin_size], num_parts)
 
   bin_size =  np.shape(grouped_actual_labels)[1] 
@@ -121,11 +121,10 @@ def bin_prediction_probabilities_by_samples_per_bin(prediction_probabilities,
   bin_start_edge = [group[0] for group in grouped_prediction_probabilities]
   bin_stop_edge = [group[-1] for group in grouped_prediction_probabilities]
  
-  bin_mean_probability = [(start+end)/2.0 for start, end in zip(bin_start_edge, bin_stop_edge)]
+  bin_mean_probability = np.array([(start+end)/2.0 for start, end in zip(bin_start_edge, bin_stop_edge)])
   
   return bin_accuracy, bin_mean_probability, bin_start_edge, bin_stop_edge
 
-       
 def get_log_prob_of_completion(
         model,
         tokenizer,
