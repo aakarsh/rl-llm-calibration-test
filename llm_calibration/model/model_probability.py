@@ -68,6 +68,9 @@ def get_normalized_probabilities(model_results, include_true_negatives=False):
           completions
 
 def summarize_model_results(model_results):
+        """
+        Parse model results for summary statistics.
+        """
         model_result_summary = { }
         completion_probabilities, truth_values, actual_values, predicted_probabilities, completions = \
                 get_normalized_probabilities(model_results, include_true_negatives=True)

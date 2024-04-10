@@ -3,7 +3,8 @@ import numpy as np
 
 from llm_calibration.model.model_probability import  get_log_prob_of_completion
 
-STEM_DATASETS = [
+DATASET_GROUPS = {
+  "STEM": [
       'abstract_algebra',
       'anatomy',
       'astronomy',
@@ -22,72 +23,69 @@ STEM_DATASETS = [
       'high_school_mathematics',
       'high_school_physics',
       'high_school_statistics',
-      'machine_learning',
-]
- 
-HUMANITIES_DATASET = [
-   'formal_logic',
-   'high_school_european_history',
-   'high_school_us_history',
-   'high_school_world_history',
-   'human_sexuality',
-   'international_law',
-   'jurisprudence',
-   'logical_fallacies',
-   'moral_disputes',
-   'moral_scenarios',
-   'philosophy',
-   'prehistory',
-   'professional_law',
-   'world_religions'
-]
-
-SOCIAL_SCIENCE_DATASET = [
-  'econometrics',
-  'high_school_geography',
-  'high_school_government_and_politics',
-  'high_school_macroeconomics',
-  'high_school_microeconomics',
-  'high_school_psychology',
-  'human_sexuality',
-  'professional_psychology',
-  'public_relations',
-  'security_studies',
-  'sociology',
-  'us_foreign_policy'
-]
-
-OTHER_DATASET = [
-  'business_ethics',
-  'clinical_knowledge',
-  'college_medicine',
-  'global_facts',
-  'human_aging',
-  'management',
-  'marketing',
-  'medical_genetics',
-  'miscellaneous',
-  'nutrition',
-  'professional_accounting',
-  'professional_medicine',
-  'virology',
-]
+      'machine_learning'
+  ],
+  "HUMANITIES": [
+      'formal_logic',
+      'high_school_european_history',
+      'high_school_us_history',
+      'high_school_world_history',
+      'human_sexuality',
+      'international_law',
+      'jurisprudence',
+      'logical_fallacies',
+      'moral_disputes',
+      'moral_scenarios',
+      'philosophy',
+      'prehistory',
+      'professional_law',
+      'world_religions'
+  ],
+  "SOCIAL_SCIENCE": [
+    'econometrics',
+    'high_school_geography',
+    'high_school_government_and_politics',
+    'high_school_macroeconomics',
+    'high_school_microeconomics',
+    'high_school_psychology',
+    'human_sexuality',
+    'professional_psychology',
+    'public_relations',
+    'security_studies',
+    'sociology',
+    'us_foreign_policy'
+  ],
+  "OTHER": [
+    'business_ethics',
+    'clinical_knowledge',
+    'college_medicine',
+    'global_facts',
+    'human_aging',
+    'management',
+    'marketing',
+    'medical_genetics',
+    'miscellaneous',
+    'nutrition',
+    'professional_accounting',
+    'professional_medicine',
+    'virology',
+  ]
+}
 
 def load_dataset(name, split="test"):
+  """
+  Load the dataset, by either its name or its group name. 
+  """
+  dataset_path = 'cais/mmlu'
   datasets = []
-  if name == "STEM":
-          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset )[split] for dataset in STEM_DATASETS]
-  elif name == "HUMANITIES":
-          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset)[split] for dataset in HUMANITIES_DATASET]
-  elif name == "SOCIAL_SCIENCE":
-          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset)[split] for dataset in SOCIAL_SCIENCE_DATASET]
-  elif name == "OTHER":
-          datasets = [hugging_face_datasets.load_dataset("cais/mmlu", dataset)[split] for dataset in OTHER_DATASET]
+  if name in DATASET_GROUPS: # allow groups of datasets concatenated together.
+        datasets = [ hugging_face_datasets.load_dataset(dataset_path, dataset)[split] 
+                      for dataset in DATASET_GROUPS[name] ]
   else: # built in dataset
-    return hugging_face_datasets.load_dataset("cais/mmlu", name)[split]
+    datasets = [ hugging_face_datasets.load_dataset(dataset_path, name)[split] ]
   return hugging_face_datasets.concatenate_datasets(datasets, split=split)
 
-
+# TODO pull out to utility
 def generate_n_shot_prompt(dataset,
                            question_idx,
                            prompt_template="{question}",

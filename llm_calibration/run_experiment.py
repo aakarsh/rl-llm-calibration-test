@@ -4,53 +4,91 @@ import numpy as np
 from torch.utils.data import DataLoader
 
 import argparse
-from transformers.utils import is_accelerate_available, is_bitsandbytes_available
-import torch
 
 from huggingface_hub import login
+from transformers import LlamaForCausalLM, LlamaTokenizer, AutoTokenizer
+from transformers.utils import is_accelerate_available, is_bitsandbytes_available
+from transformers.utils import is_accelerate_available, is_bitsandbytes_available
+from trl import AutoModelForCausalLMWithValueHead, PPOConfig, PPOTrainer
+import evaluate
+import torch
 
-from llm_calibration.model.model_loader import load_model
-from llm_calibration.model.model_probability import (get_normalized_probabilities)
+from llm_calibration.model.model_probability import (get_normalized_probabilities, pretty_print_model_results)
 import llm_calibration.runner.mmlu as mmlu_runner
 from llm_calibration.plot import plot_calibration
 
-print("accelerate", is_accelerate_available())
-print("is_bitsandbytes_available", is_bitsandbytes_available())
+from huggingface_hub import login
+
+from transformers import (
+    AutoTokenizer,
+    AutoModelForCausalLM
+)
 
 login(token="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")
 
+LLAMA_MODELS = [
+    'meta-llama/Llama-2-13b-hf', 
+    'meta-llama/Llama-2-13b-chat-hf',
+    'meta-llama/Llama-2-7b-chat-hf',
+    'meta-llama/Llama-2-7b-hf'
+    'meta-llama/Llama-2-70b-hf', 
+    'meta-llama/Llama-2-70b-chat-hf',
+] 
+
+SUPPORTED_MODELS = [] + LLAMA_MODELS
+
+def load_model(name="meta-llama/Llama-2-7b-chat-hf"):
+    """
+    Add all models which we support loading and running here with default parameters.
+    
+    Returns:
+        tokenizer: Tokenizer for the model
+        model: Model to run inference on
+    """
+    if name not in SUPPORTED_MODELS:
+        raise ValueError(f"Model {name} not supported. Supported models are {SUPPORTED_MODELS}") 
+    if name in LLAMA_MODELS:
+        tokenizer = AutoTokenizer.from_pretrained(name)
+        model = AutoModelForCausalLM.from_pretrained(name,
+                    load_in_4bit=True,
+                    device_map="auto",
+                    bnb_4bit_use_double_quant=True,
+                    bnb_4bit_quant_type="nf4",
+                    bnb_4bit_compute_dtype=torch.float16)
+        return tokenizer, model
+    else:
+        raise ValueError(f"Model {name} not supported. Supported models are {SUPPORTED_MODELS}")
+
+def generate_model_tag(model_name, dataset_name, n_shots=1, include_date=False):
+    """
+    Generate a tag which uniquely describes a model dataset experiment.
+    """
+    def sanitize(s): 
+        'remove special characters from a string'
+        return s.replace("/", "_")
+    return "model_"+sanitize(model_name)+"_ds_"+sanitize(dataset_name)+"_n_shots_"+(str(n_shots))+"_tag",
 
 def run_experiment(model_name, dataset_name, runner, output_dir, output_tag, n_shots=1):
     """
-    TODO:
-        - 5-shot prompting 
-        - Subject-wise calibration plots
         - Thinking-Step-By-Step.
     """
-    sanitized_model_name = model_name.replace("/", "_") 
-    sanitized_dataset_name = dataset_name.replace("/", "_")
-    
     tokenizer, model = load_model(name=model_name)
     dataset = runner.load_dataset(name=dataset_name)
-    
+
+    model_tag = generate_model_tag(model_name, dataset_name, n_shots=n_shots)
     model_results, _, _ = \
         runner.run_inference(model, tokenizer, dataset, 
-                           tag="model_"+sanitized_model_name+"_ds_"+sanitized_dataset_name+"_n_shots_"+(str(n_shots))+"_tag", 
+                           tag=model_tag,
                            include_prompt=False, n_shots=n_shots)
-        
+
     # Save the results to a JSON file
     output_file = output_dir+"model_results_"+output_tag+"-result.json"
     with open(output_file, "w") as f:
         json.dump(model_results, f, indent=4)
 
-    completion_probabilities, truth_values = get_normalized_probabilities(model_results)
-  
-    plot_calibration(np.array(completion_probabilities), 
-                    np.array(truth_values, dtype=np.int32), 
-                    num_bins=10, range_start=0, range_end=1,
-                    out_file=output_dir+"/calibration_"+output_tag+".png")
-    
-    return model_results, completion_probabilities, truth_values
+    pretty_print_model_results(model_results)
+    return True
+
 
 def main():
     parser = argparse.ArgumentParser(description="Run PyTorch model on a dataset")

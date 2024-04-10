@@ -171,8 +171,30 @@ model_result_files = [
 ]
 generate_comparison_plot(model_result_files,['Llama 7b Chat Model : Human Eval(0-shot)'],
                          dynamic_bins=True, 
-                         samples_per_bin=500,
+                         samples_per_bin=25,
                          output_dir=report_path,
                          output_tag='0-shot-7b-human-eval')
 
-#%%
+#%% illanca  Human eval results:
+model_result_files = [ 
+    os.path.abspath(file_path+'/../output/model-output/'+model_result_file)
+                      for model_result_file in [ "humaneval_7B_3options_final-_none_chat.json"
+                                                ,"humaneval_7B_3options_final-chat.json"
+                                                ,"humaneval_7B_3options_final.json"
+                                                ,"humaneval_7B_3options_none_final.json"]]
+
+generate_comparison_plot(model_result_files,
+                         [
+                              #"humaneval_7B_3options_final-_none_chat.json"
+                              "humaneval_7B_3options_final-chat.json"
+                              #,"humaneval_7B_3options_final.json"
+                              #,"humaneval_7B_3options_none_final.json" 
+                            ],
+                         dynamic_bins=True, 
+                         samples_per_bin=25,
+                         output_dir=report_path,
+                         output_tag='0-shot-7b-human-eval')
+
+
+
+# %%
