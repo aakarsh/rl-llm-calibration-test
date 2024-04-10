@@ -177,7 +177,7 @@ def trivia_qa_questions(dataset, fewshot=False):
   questions = []
   nalternatives = 3
   for rec in dataset[split]:
-      prompt = "" if not fewshot else FIVE_SHOT_PROMPT
+    prompt = "" if not fewshot else FIVE_SHOT_PROMPT
       #if ("answer" not in rec) or ("normalized_value" not in rec["answer"]):
       #  continue
     choices = ([rec["answer"]["value"]] +
@@ -257,10 +257,10 @@ def delete_model(model):
 def run(dump_start=0, dump_step=250, dump_end=2000,
         model_name="meta-llama/Llama-2-7b-chat-hf",
         #file_prefix="trivia_qa-llama-2-7b-chat",
-        file_prefix="trivia_qa-llama-2-7b-chat--fewshot",
+        file_prefix="trivia_qa-llama-2-7b-chat",
         quantized=True,
         question_dump="trivia_qa-questions.json",
-        fewshot=True):
+        fewshot=False:
     print("=== Loading Model")
     model = load_model(model_name=model_name, quantized=quantized)
 
