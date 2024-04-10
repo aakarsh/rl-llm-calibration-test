@@ -91,6 +91,7 @@ def run_experiment(model_name, dataset_name, runner, output_dir, output_tag, n_s
         json.dump(model_results, f, indent=4)
 
     logger.info(f"Model results saved to {output_file}")
+    logger.info(f" Model Result summary:")
     pretty_print_model_results(model_results)
     return True
 
@@ -114,7 +115,6 @@ def main():
                         help="Path to save the predictions JSON file (default: result.json)")
 
     args = parser.parse_args()
-    logger.info('run_experiment with arguments', args)
     run_experiment(args.model_name, args.dataset, mmlu_runner, args.output_dir, args.output_tag)    
 
 if __name__ == "__main__":
