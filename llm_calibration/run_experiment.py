@@ -1,3 +1,4 @@
+import logging
 import torch
 import json
 import numpy as np
@@ -23,6 +24,9 @@ from transformers import (
     AutoTokenizer,
     AutoModelForCausalLM
 )
+
+logger = logging.getLogger(__name__)
+
 
 login(token="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")
 
@@ -113,4 +117,5 @@ def main():
     run_experiment(args.model_name, args.dataset, mmlu_runner, args.output_dir, args.output_tag)    
 
 if __name__ == "__main__":
+    logging.basicConfig(filename='experiment.log', level=logging.INFO)
     main()
