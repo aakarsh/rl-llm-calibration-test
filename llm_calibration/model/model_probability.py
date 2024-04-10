@@ -33,16 +33,18 @@ def get_normalized_probabilities(model_results, include_true_negatives=False):
                         actual_labels.append(1)
                         correct_predictions.append(1)
                         predicted_probability.append(model_completion_probability[completion_idx].item())
-                else: # Incorrect answer: FN.
+                else: # Incorrect answer: FP.
                         predicted_probability.append(model_completion_probability[completion_idx].item())
                         correct_predictions.append(0)
-                        actual_labels.append(0)
-                        truth_value.append(0) 
+                        
+                        actual_labels.append(0) # chosen answer is incorrect
+                        truth_value.append(1) 
         else: # Completion was not chosen.
                 # Incorrect answer: FN.
                 if completion == model_result['answer']:
                         predicted_probability.append(model_completion_probability[completion_idx].item())
                         correct_predictions.append(0)
+
                         actual_labels.append(1)
                         truth_value.append(0)
                 # Correct Answer: True Negative
@@ -55,8 +57,10 @@ def get_normalized_probabilities(model_results, include_true_negatives=False):
                         """
                         predicted_probability.append(model_completion_probability[completion_idx].item())
                         correct_predictions.append(1)
+
                         actual_labels.append(0)
                         truth_value.append(0)
+
   return predicted_probability, \
           truth_value, \
           actual_labels, \
@@ -64,14 +68,64 @@ def get_normalized_probabilities(model_results, include_true_negatives=False):
           completions
 
 def summarize_model_results(model_results):
-        completion_probabilities, truth_values, actual_values, predicted_probabilities, completions = get_normalized_probabilities(model_results)
+        model_result_summary = { }
+        completion_probabilities, truth_values, actual_values, predicted_probabilities, completions = \
+                get_normalized_probabilities(model_results, include_true_negatives=True)
         correct_predictions = np.sum(truth_values)  
-        print("Correct Predictions", correct_predictions)
-        print("Incorrect Predictions", len(truth_values) - correct_predictions)
-        for i in range(len(completion_probabilities), len(completions)):
-                for j in range(len(completions)):
-                        print("Completion: ", completions[j], "Probability: ", completion_probabilities[i+j], "Truth Value: ", truth_values[i+j])
-                        
+        model_result_summary['correct_predictions'] = correct_predictions       
+        model_result_summary['incorrect_predictions'] = len(truth_values) - correct_predictions
+       
+        model_result_summary['TN'] = np.sum([tv == 0 and av==0 for tv, av in zip(truth_values, actual_values)])
+        model_result_summary['FN'] = np.sum([tv == 0 and av==1 for tv, av in zip(truth_values, actual_values)])
+        model_result_summary['FP'] = np.sum([tv == 1 and av==0 for tv, av in zip(truth_values, actual_values)])
+        model_result_summary['TP'] = np.sum([tv == 1 and av==1 for tv, av in zip(truth_values, actual_values)])
+        # Bin statistics 
+        
+        return model_result_summary         
+
+def pretty_print_model_results(model_results):
+       model_results = summarize_model_results(model_results)
+       print("Correct: ", model_results['correct_predictions'])
+       print("Incorrect: ", model_results['incorrect_predictions'])
+
+       print("True Negatives: ", model_results['TN'])
+       print("False Negatives: ", model_results['FN'])
+       print("False Positives: ", model_results['FP'])
+       print("True Positives: ", model_results['TP'])
+
+def bin_prediction_probabilities_by_samples_per_bin(prediction_probabilities, 
+                                                    correct_prediction, 
+                                                    samples_per_bin=100):
+  """
+  Group the prediction probabilities into equally weighted bins, and compute 
+  the emperically observed accuracy of each bin.  
+  """
+  # Sort predictions and corresponding actual labels.
+  sorted_indices = np.argsort(prediction_probabilities)
+  prediction_probabilities = np.array(prediction_probabilities)
+  correct_prediction = np.array(correct_prediction)
+  sorted_probs = prediction_probabilities[sorted_indices.astype(int)]
+  sorted_labels = correct_prediction[sorted_indices.astype(int)]
+
+  num_parts = len(sorted_probs) // samples_per_bin
+  
+  terminal_bin_size = num_parts * samples_per_bin 
+  grouped_prediction_probabilities = np.split(sorted_probs[:terminal_bin_size], num_parts)
+  grouped_actual_labels = np.split(sorted_labels[:terminal_bin_size], num_parts)
+
+  bin_size =  np.shape(grouped_actual_labels)[1] 
+  # TODO: Fix for the last bin: actual labels are 0 or 1, 
+  # So summing them up will give the number of correct predictions.
+  bin_accuracy = np.sum(grouped_actual_labels, axis=1) / bin_size
+
+  bin_start_edge = [group[0] for group in grouped_prediction_probabilities]
+  bin_stop_edge = [group[-1] for group in grouped_prediction_probabilities]
+ 
+  bin_mean_probability = [(start+end)/2.0 for start, end in zip(bin_start_edge, bin_stop_edge)]
+  
+  return bin_accuracy, bin_mean_probability, bin_start_edge, bin_stop_edge
+
+       
 def get_log_prob_of_completion(
         model,
         tokenizer,

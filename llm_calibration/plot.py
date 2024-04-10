@@ -8,53 +8,44 @@ import itertools
 import functools
 
 #%%
-from llm_calibration.model.model_probability import get_normalized_probabilities
+from llm_calibration.model.model_probability import (get_normalized_probabilities, 
+                                                     bin_prediction_probabilities_by_samples_per_bin)
 
-#%%
+def add_calibration_line_to_plot(calibration_line_num_points  = 1000):
+    calibration_line_num_points  = 1000 
+    y_space = np.linspace(0, 1, calibration_line_num_points)
+    x_space = np.linspace(0, 1, calibration_line_num_points)
+    plt.plot(x_space, y_space, '--', color='gray', label='Perfect Calibration')  
+  
 #%% 
 def plot_calibration_equally_weighted_bins(prediction_probabilities, 
                                            actual_labels,
                                            samples_per_bin=100, 
                                            range_start=0, 
                                            range_end=1, 
+                                           show_calibration_line=False,
                                            model_label="Model Calibration", 
                                            out_file=None, 
                                            figure=None, 
                                            show_figure=False):
   """
   Each bin will have an equal number of samples, given by the 
-  bin_density parameter. Thus it would be expected that regions 
+  samples_per_bin parameter. Thus it would be expected that regions 
   of the plot will have more samples and bins than others.
   """
   sns.set_theme();
-  # Sort predictions and corresponding actual labels.
-  sorted_indices = np.argsort(prediction_probabilities)
-  prediction_probabilities = np.array(prediction_probabilities)
-  actual_labels = np.array(actual_labels)
-  sorted_probs = prediction_probabilities[sorted_indices.astype(int)]
-  sorted_labels = actual_labels[sorted_indices.astype(int)]
-
-  num_parts = len(sorted_probs) // samples_per_bin
   
-  terminal_bin_size = num_parts * samples_per_bin 
-  grouped_prediction_probabilities = np.split(sorted_probs[:terminal_bin_size], num_parts)
-  grouped_actual_labels = np.split(sorted_labels[:terminal_bin_size], num_parts)
-
-  bin_size =  np.shape(grouped_actual_labels)[1] 
-  # TODO: Fix for the last bin: actual labels are 0 or 1, 
-  # So summing them up will give the number of correct predictions.
-  bin_accuracy = np.sum(grouped_actual_labels, axis=1) / bin_size
-
-  bin_start_edge = [group[0] for group in grouped_prediction_probabilities]
-  bin_stop_edge = [group[-1] for group in grouped_prediction_probabilities]
- 
-  bin_mean_probability = [ (start+end)/2.0 for start, end in zip(bin_start_edge, bin_stop_edge)]
+  bin_accuracy,bin_mean_probability, _, _ =\
+    bin_prediction_probabilities_by_samples_per_bin(prediction_probabilities, actual_labels, samples_per_bin)
  
   if not figure:
-    figure = plt.figure(figsize=(10, 7))
-    
-  plt.plot(bin_mean_probability, bin_mean_probability, '--', color='gray', label='Perfect Calibration')  
+    figure = plt.figure(figsize=(10, 10))
+
+  if show_calibration_line:   
+    add_calibration_line_to_plot()
+
   plt.plot(bin_mean_probability, bin_accuracy, 'o-', label=model_label)
+
   plt.xlim(0,1)
   plt.ylim(0,1)
 
@@ -143,7 +134,7 @@ def plot_calibration_comparison(model_tags, model_labels,
                                 samples_per_bin=100,
                                 num_bins=10, 
                                 range_start = 0 , 
-                                range_end=1, 
+                                range_end=1,
                                 out_file=None, 
                                 show_figure=False):
   """
@@ -157,9 +148,11 @@ def plot_calibration_comparison(model_tags, model_labels,
     if dynamic_bins:
       #probabilities = probabilities[:100]
       #truth_values = truth_values[:100]
+      show_calibration_line = idx == 0
       plot_calibration_equally_weighted_bins(probabilities, truth_values, 
                                              samples_per_bin=samples_per_bin, 
                                              range_start=0, range_end=1, 
+                                             show_calibration_line=show_calibration_line,
                                              model_label=model_labels[idx], 
                                              figure=save_fig, 
                                              show_figure=False)

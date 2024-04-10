@@ -49,18 +49,23 @@ def assert_valid_computed_normalized_probabilities(completion_probabilities, tru
         # model can't have more correct answers
         assert np.sum(actual_values) >= np.sum(truth_values)
 
+def load_model_results(file_path:str):
+    model_results = None
+    with open(file_path) as f:
+            model_results = json.load(f)
+    return model_results
+
 def assert_validate_model_result_file(file_path:str):   
     """
     Validate a model result file can be used to compute normalized probabilities. 
     """ 
-    model_results = None
-    with open(file_path) as f:
-            model_results = json.load(f)
+    model_results = load_model_results(file_path)    
     completion_probabilities, truth_values, actual_values, predicted_probability, completions = \
         mp.get_normalized_probabilities(model_results)
     assert_valid_computed_normalized_probabilities(completion_probabilities, truth_values, actual_values, completions)
     # Try to 
     mp.summarize_model_results(model_results)
+    mp.pretty_print_model_results(model_results)
         
 def test_get_normalized_probabilities():
     """
@@ -76,6 +81,7 @@ def test_with_generated_model_result_file():
     """
     file_under_test = os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-13b-hf_ds_all_tag-result.json') 
     assert_validate_model_result_file(file_under_test)
+    mp.pretty_print_model_results(file_under_test)
    
     
 def test_n_shot_prompt():
