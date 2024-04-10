@@ -249,6 +249,8 @@ def get_prob_of_completion(model, tokenizer, prompt, completion):
 
 # NEXT: TODO: Clear (V)RAM
 def delete_model(model):
+    del model["model"]
+    del model["tokenizer"]
     del model
     gc.collect()
     torch.cuda.empty_cache()
@@ -263,35 +265,38 @@ def run(dump_start=0, dump_step=250, dump_end=2000,
         fewshot=False):
     print("=== Loading Model")
     model = load_model(model_name=model_name, quantized=quantized)
-
-    print("=== Loading data")
-    qdump = pathlib.Path(question_dump)
-    questions = None
-    if qdump.is_file():
-        questions = load_questions(file_name=question_dump)
-    else:
-        data = datasets.load_dataset("mandarjoshi/trivia_qa", name="rc.nocontext")
-        print("    --- transforming data")
-        questions = trivia_qa_questions(data,fewshot=fewshot)
-        dump_questions(questions)
-        data = None
-    print("   --- sanity check: ")
-    print(questions[:5])
-    print("=== running inference")
-    i_prev = dump_start
-    for i in range(i_prev+dump_step, dump_end+1 if dump_end > 0 else len(questions), dump_step):
-        results = run_on_questions(model, questions[i_prev:i])
-        output = [{"raw_prob": choice["raw_prob"],
-                   "prob": choice["norm_prob"],
-                   "label": choice["label"],
-                   "prediction": choice["prediction"]}
-                  for choice in results]
-        fname = "{}-{:06}-{:06}.json".format(file_prefix, i_prev, i)
-        with open(fname, 'w', encoding="utf-8") as fout:
-            json.dump(output, fout, indent="\t")
-        print("   --- wrote predictions {}-{}".format(i_prev, i))
-        i_prev = i
-    print("=== done.")
+    try:
+        print("=== Loading data")
+        qdump = pathlib.Path(question_dump)
+        questions = None
+        if qdump.is_file():
+            questions = load_questions(file_name=question_dump)
+        else:
+            data = datasets.load_dataset("mandarjoshi/trivia_qa", name="rc.nocontext")
+            print("    --- transforming data")
+            questions = trivia_qa_questions(data,fewshot=fewshot)
+            dump_questions(questions)
+            data = None
+        print("   --- sanity check: ")
+        print(questions[:5])
+        print("=== running inference")
+        i_prev = dump_start
+        for i in range(i_prev+dump_step, dump_end+1 if dump_end > 0 else len(questions), dump_step):
+            results = run_on_questions(model, questions[i_prev:i])
+            output = [{"raw_prob": choice["raw_prob"],
+                       "prob": choice["norm_prob"],
+                       "label": choice["label"],
+                       "prediction": choice["prediction"]}
+                      for choice in results]
+            fname = "{}-{:06}-{:06}.json".format(file_prefix, i_prev, i)
+            with open(fname, 'w', encoding="utf-8") as fout:
+                json.dump(output, fout, indent="\t")
+                print("   --- wrote predictions {}-{}".format(i_prev, i))
+            i_prev = i
+    finally:
+        print("=== deleting model")
+        delete_model(model)
+        print("=== done.")
 
 
 if __name__ == "__main__":
