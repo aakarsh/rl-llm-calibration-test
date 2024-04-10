@@ -182,12 +182,14 @@ def test_bin_prediction_probabilities_by_samples_per_bin_perfect_calibration():
     samples_per_bin = 1000 
     probabilities = np.random.rand(num_probabilities)
     actual_labels = [np.random.binomial(1, p) for p in probabilities]
-    bin_accuracy, bin_mean_probability, bin_start_edge, bin_stop_edge = mp.bin_prediction_probabilities_by_samples_per_bin(probabilities, actual_labels, samples_per_bin=samples_per_bin)
+    bin_accuracy, bin_mean_probability, bin_widths  = mp.bin_prediction_probabilities_by_samples_per_bin(probabilities, actual_labels, samples_per_bin=samples_per_bin)
 
     assert len(bin_accuracy) == len(bin_mean_probability) == (len(probabilities) // samples_per_bin)
+    
     assert np.all(bin_accuracy >= 0) and np.all(bin_accuracy <= 1)
     assert np.all(bin_mean_probability >= 0) and np.all(bin_mean_probability <= 1)
     assert np.all(np.diff(bin_mean_probability) >= 0) # strictly increasing
+    assert np.all(bin_widths > 0)
     # Assert that bin accuracy is close to bin mean probability, 
     # linear regression should be close to y = x
     result = scipy.stats.linregress(bin_accuracy, bin_mean_probability)

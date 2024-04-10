@@ -122,8 +122,8 @@ def bin_prediction_probabilities_by_samples_per_bin(prediction_probabilities,
   bin_stop_edge = [group[-1] for group in grouped_prediction_probabilities]
  
   bin_mean_probability = np.array([(start+end)/2.0 for start, end in zip(bin_start_edge, bin_stop_edge)])
-  
-  return bin_accuracy, bin_mean_probability, bin_start_edge, bin_stop_edge
+  bin_widths = np.array([end-start for start, end in zip(bin_start_edge, bin_stop_edge)])
+  return bin_accuracy, bin_mean_probability, bin_widths 
 
 def get_log_prob_of_completion(
         model,

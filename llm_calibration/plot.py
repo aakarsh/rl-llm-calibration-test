@@ -35,7 +35,7 @@ def plot_calibration_equally_weighted_bins(prediction_probabilities,
   """
   sns.set_theme();
   
-  bin_accuracy,bin_mean_probability, _, _ =\
+  bin_accuracy,bin_mean_probability, _=\
     bin_prediction_probabilities_by_samples_per_bin(prediction_probabilities, actual_labels, samples_per_bin)
  
   if not figure:
