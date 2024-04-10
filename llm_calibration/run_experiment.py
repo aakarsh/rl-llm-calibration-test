@@ -16,6 +16,9 @@ import torch
 
 from llm_calibration.model.model_probability import (get_normalized_probabilities, pretty_print_model_results)
 import llm_calibration.runner.mmlu as mmlu_runner
+import llm_calibration.runner.logic_qa as logic_qa_runner 
+import llm_calibration.runner.human_eval as human_eval_runner 
+
 from llm_calibration.plot import plot_calibration
 
 from huggingface_hub import login
@@ -38,6 +41,12 @@ LLAMA_MODELS = [
     'meta-llama/Llama-2-70b-hf', 
     'meta-llama/Llama-2-70b-chat-hf',
 ] 
+
+RUNNERS = {
+    'mmlu': mmlu_runner,
+    'logic_qa': logic_qa_runner,
+    'human_eval': human_eval_runner
+}
 
 SUPPORTED_MODELS = [] + LLAMA_MODELS
 
@@ -85,6 +94,7 @@ def run_experiment(model_name, dataset_name, runner, output_dir, output_tag, n_s
                            tag=model_tag,
                            include_prompt=False, n_shots=n_shots)
 
+    # TODO move output generation into runner.
     # Save the results to a JSON file, this need to be done as part of the inference.
     output_file = output_dir+"model_results_"+output_tag+"-result.json"
     with open(output_file, "w") as f:
@@ -106,7 +116,10 @@ def main():
     # Dataset arguments
     parser.add_argument("--dataset", type=str, default="high_school_world_history",
                         help="Dataset name")
-    
+
+    parser.add_argument("--runner_name", type=str,  default="mmlu",
+                        help="name of inference runner")
+     
     # Output arguments
     parser.add_argument("--output-dir", type=str, default="output",
                         help="Path to save the predictions JSON file (default: result.json)")
@@ -115,7 +128,7 @@ def main():
                         help="Path to save the predictions JSON file (default: result.json)")
 
     args = parser.parse_args()
-    run_experiment(args.model_name, args.dataset, mmlu_runner, args.output_dir, args.output_tag)    
+    run_experiment(args.model_name, args.dataset, RUNNERS[args.runner_name], args.output_dir, args.output_tag)    
 
 if __name__ == "__main__":
     logging.basicConfig(filename='experiment.log', level=logging.INFO)
