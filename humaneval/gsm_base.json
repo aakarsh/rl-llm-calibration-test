@@ -1,0 +1,5704 @@
+{
+    "model": "LLama 7B-base",
+    "prompt_format": "T/F format",
+    "results": [
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0010505965910851955,
+                "B": 0.0010044462978839874
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001913050771690905,
+                "B": 0.0013381355674937367
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.003781137987971306,
+                "B": 0.004284590948373079
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0024510237853974104,
+                "B": 0.002681428100913763
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0014229727676138282,
+                "B": 0.002078516874462366
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0027248754631727934,
+                "B": 0.0017490333411842585
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.003960906062275171,
+                "B": 0.003414514707401395
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.003314116271212697,
+                "B": 0.0020983677823096514
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0010895661544054747,
+                "B": 0.0009175066370517015
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0018300805240869522,
+                "B": 0.0013310933718457818
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002135081449523568,
+                "B": 0.0024005365557968616
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0011869206791743636,
+                "B": 0.0008490827167406678
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001606095116585493,
+                "B": 0.0017230884404852986
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002852680627256632,
+                "B": 0.0023101712577044964
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0017633147072046995,
+                "B": 0.001411339151673019
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.00121023366227746,
+                "B": 0.002369522349908948
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0010319355642423034,
+                "B": 0.0019430305110290647
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0023932927288115025,
+                "B": 0.002116202609613538
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002271717181429267,
+                "B": 0.0018980909371748567
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0018633028957992792,
+                "B": 0.001119167311117053
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0015717502683401108,
+                "B": 0.0007795939454808831
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0014511699555441737,
+                "B": 0.001562971738167107
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001157971448265016,
+                "B": 0.0012350641191005707
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0011394285829737782,
+                "B": 0.001588131533935666
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0015393579378724098,
+                "B": 0.0013852720148861408
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001161202322691679,
+                "B": 0.0011657470604404807
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0025663208216428757,
+                "B": 0.0016440469771623611
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0017431187443435192,
+                "B": 0.0015263257082551718
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0010049650445580482,
+                "B": 0.0014881457900628448
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002159078372642398,
+                "B": 0.001322398311458528
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0005354337044991553,
+                "B": 0.0006566679803654552
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0027065840549767017,
+                "B": 0.005820070393383503
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0010654465295374393,
+                "B": 0.000545240705832839
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0013591679744422436,
+                "B": 0.0011557660764083266
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001994139514863491,
+                "B": 0.002845336217433214
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.00301596918143332,
+                "B": 0.004058430436998606
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0015578235033899546,
+                "B": 0.0009653872693888843
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001582799362950027,
+                "B": 0.001626676064915955
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0014640657464042306,
+                "B": 0.0006043823668733239
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0038506470154970884,
+                "B": 0.0030224076472222805
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0016630719183012843,
+                "B": 0.001858917879872024
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0015119857853278518,
+                "B": 0.0012807018356397748
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002638358622789383,
+                "B": 0.002497948007658124
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0007117120549082756,
+                "B": 0.0009958642767742276
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0025965336244553328,
+                "B": 0.001538395299576223
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001921910559758544,
+                "B": 0.0019636484794318676
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0062307086773216724,
+                "B": 0.0066325548104941845
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.003396005602553487,
+                "B": 0.0016326068434864283
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0022340374998748302,
+                "B": 0.0021151441615074873
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002513727406039834,
+                "B": 0.0016777771525084972
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0014918830711394548,
+                "B": 0.001588101265951991
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0016459530452266335,
+                "B": 0.001036064000800252
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002759877359494567,
+                "B": 0.00278152315877378
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0012788614258170128,
+                "B": 0.000745953235309571
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0018788985908031464,
+                "B": 0.0018210907001048326
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0011569156777113676,
+                "B": 0.0014454401098191738
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001804719096980989,
+                "B": 0.002419046824797988
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002164616947993636,
+                "B": 0.0011496193474158645
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0015651658177375793,
+                "B": 0.0009661558433435857
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001149259740486741,
+                "B": 0.0011380912037566304
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0032713101245462894,
+                "B": 0.004283291753381491
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0022586542181670666,
+                "B": 0.0022410773672163486
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002015503356233239,
+                "B": 0.0012786320876330137
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0028409655205905437,
+                "B": 0.0011704934295266867
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0020202817395329475,
+                "B": 0.0020440961234271526
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.003511012764647603,
+                "B": 0.0036508759949356318
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0013319466961547732,
+                "B": 0.001563298050314188
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0015545072965323925,
+                "B": 0.0016710032941773534
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.000879070139490068,
+                "B": 0.0012966464273631573
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002978619886562228,
+                "B": 0.003523408668115735
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0026058880612254143,
+                "B": 0.0016117247287184
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002413248410448432,
+                "B": 0.002676445059478283
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0012857922120019794,
+                "B": 0.0014484814601019025
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0024451459757983685,
+                "B": 0.0022970023564994335
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0011886811116710305,
+                "B": 0.00095699931262061
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002790844300761819,
+                "B": 0.0025710463523864746
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0025671448092907667,
+                "B": 0.0017643708270043135
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0035326224751770496,
+                "B": 0.0017556195380166173
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.000927398563362658,
+                "B": 0.0007495648460462689
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0019726832397282124,
+                "B": 0.0022794308606535196
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0011368182022124529,
+                "B": 0.001830878434702754
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001217290060594678,
+                "B": 0.001070066587999463
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.00099721341393888,
+                "B": 0.0005029015592299402
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0023528512101620436,
+                "B": 0.0021930986549705267
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0020966585725545883,
+                "B": 0.001100553898140788
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0021808878518640995,
+                "B": 0.001989603042602539
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0013152237515896559,
+                "B": 0.001608301536180079
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0011801867512986064,
+                "B": 0.0016971559962257743
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0012512302491813898,
+                "B": 0.001512222341261804
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0020555262453854084,
+                "B": 0.001953749917447567
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0017470945604145527,
+                "B": 0.002473441418260336
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002606624038890004,
+                "B": 0.001647191122174263
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0029178925324231386,
+                "B": 0.0013100698124617338
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0013161904644221067,
+                "B": 0.000785933225415647
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0009507888462394476,
+                "B": 0.0008923116256482899
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0006653026212006807,
+                "B": 0.0006627088878303766
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0016175591154024005,
+                "B": 0.0009020674042403698
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0012028453638777137,
+                "B": 0.0015811105258762836
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0015165202785283327,
+                "B": 0.0009715194464661181
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0019075950840488076,
+                "B": 0.001406572526320815
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0012535137357190251,
+                "B": 0.0018671032739803195
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001391424797475338,
+                "B": 0.0014272064436227083
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0014689903473481536,
+                "B": 0.0009050187072716653
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0015481493901461363,
+                "B": 0.002075140830129385
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0010775364935398102,
+                "B": 0.0013621336547657847
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0024748453870415688,
+                "B": 0.003503751242533326
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001609634142369032,
+                "B": 0.0008924035937525332
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0019000604515895247,
+                "B": 0.0011637542629614472
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0006046541966497898,
+                "B": 0.000627514033112675
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002217831090092659,
+                "B": 0.0020193581003695726
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0018568634986877441,
+                "B": 0.0027122946921736
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0018066046759486198,
+                "B": 0.0009745900752022862
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0017989915795624256,
+                "B": 0.0013739572605118155
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002202315255999565,
+                "B": 0.0027731333393603563
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001359515474177897,
+                "B": 0.0021056586410850286
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0013052006252110004,
+                "B": 0.0012551991967484355
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0012924124021083117,
+                "B": 0.0008659916929900646
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0032650858629494905,
+                "B": 0.0042418730445206165
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.00221117096953094,
+                "B": 0.0017288016388192773
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0012339944951236248,
+                "B": 0.002002971014007926
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002093454822897911,
+                "B": 0.0030818635132163763
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0013843938941136003,
+                "B": 0.0026580856647342443
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0008548686164431274,
+                "B": 0.0011325168889015913
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0013601002283394337,
+                "B": 0.0012702313251793385
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0028291286434978247,
+                "B": 0.003047091653570533
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.000955311581492424,
+                "B": 0.0019755458924919367
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002198024420067668,
+                "B": 0.001711823046207428
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001652135862968862,
+                "B": 0.0019466916564852
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0024918902199715376,
+                "B": 0.0019905921071767807
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0028189404401928186,
+                "B": 0.002054340671747923
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001603952026925981,
+                "B": 0.0014405841939151287
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0018178001046180725,
+                "B": 0.0011805570684373379
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0012698400532826781,
+                "B": 0.0014558788388967514
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001413556281477213,
+                "B": 0.0015924114268273115
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.005265603307634592,
+                "B": 0.00769139314070344
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0016503027873113751,
+                "B": 0.0024870941415429115
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.010616334155201912,
+                "B": 0.006962361745536327
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001889862585812807,
+                "B": 0.0014209814835339785
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0019106166437268257,
+                "B": 0.0015685638645663857
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0013235451187938452,
+                "B": 0.0008646180504001677
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0014619436115026474,
+                "B": 0.001024595694616437
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0016461060149595141,
+                "B": 0.0013278601691126823
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001482020248658955,
+                "B": 0.0023682620376348495
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0020954401697963476,
+                "B": 0.0027064098976552486
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0005593780078925192,
+                "B": 0.0005550248897634447
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0020731440745294094,
+                "B": 0.0013622590340673923
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0020176093094050884,
+                "B": 0.0013948300620540977
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001884687109850347,
+                "B": 0.0026371513959020376
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0016398417064920068,
+                "B": 0.002040816005319357
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0008063685381785035,
+                "B": 0.0005488226306624711
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001549126231111586,
+                "B": 0.0008455418283119798
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0015344754792749882,
+                "B": 0.0007700772839598358
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0006226140540093184,
+                "B": 0.0003820859419647604
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001439482788555324,
+                "B": 0.0017844809917733073
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0009938989533111453,
+                "B": 0.0014071076875552535
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.00278909201733768,
+                "B": 0.0025494368746876717
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0012014455860480666,
+                "B": 0.0008824366959743202
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002742880955338478,
+                "B": 0.0033344952389597893
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001520628808066249,
+                "B": 0.001473844051361084
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.004567073658108711,
+                "B": 0.0052361758425831795
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0014306990196928382,
+                "B": 0.0007643038406968117
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0015211771242320538,
+                "B": 0.0010373527184128761
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0019109718268737197,
+                "B": 0.0018270271830260754
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0012572166742756963,
+                "B": 0.0024233488366007805
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0018079619621858,
+                "B": 0.001192658208310604
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0021807008888572454,
+                "B": 0.0026718503795564175
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0016706592869013548,
+                "B": 0.0012222804361954331
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0011556167155504227,
+                "B": 0.0008825877448543906
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0019783549942076206,
+                "B": 0.003965286538004875
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002447061473503709,
+                "B": 0.002574535319581628
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0009202868095599115,
+                "B": 0.0010246509918943048
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0011135116219520569,
+                "B": 0.0005983525770716369
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0012336991494521499,
+                "B": 0.0022339404094964266
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0009644724777899683,
+                "B": 0.000955099705606699
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0011561623541638255,
+                "B": 0.0016304503660649061
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0015921387821435928,
+                "B": 0.001427183859050274
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002052578143775463,
+                "B": 0.0036306404508650303
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0015352301998063922,
+                "B": 0.0018018909031525254
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0025858101435005665,
+                "B": 0.001511238282546401
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0011474364437162876,
+                "B": 0.0006398930563591421
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0013519686181098223,
+                "B": 0.0022729828488081694
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0013684035511687398,
+                "B": 0.001562765915878117
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.003908933140337467,
+                "B": 0.004128656350076199
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0008142833830788732,
+                "B": 0.000997680937871337
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0008433031034655869,
+                "B": 0.0005175184342078865
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0013094197493046522,
+                "B": 0.0014954041689634323
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0008042104891501367,
+                "B": 0.00125535496044904
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0020944580901414156,
+                "B": 0.0011910577304661274
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001579372095875442,
+                "B": 0.0014324282528832555
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0011449031298980117,
+                "B": 0.0018876262474805117
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0034211184829473495,
+                "B": 0.005257496610283852
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002090942580252886,
+                "B": 0.0027324347756803036
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002098632976412773,
+                "B": 0.0016895957523956895
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0019006066722795367,
+                "B": 0.0012295229826122522
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0009698734502308071,
+                "B": 0.0010486833052709699
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0027821226976811886,
+                "B": 0.0021289654541760683
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.00119288160931319,
+                "B": 0.0016561520751565695
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0027225881349295378,
+                "B": 0.003158257808536291
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.00245468458160758,
+                "B": 0.0011916536604985595
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0006144751678220928,
+                "B": 0.0007798096048645675
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0013263041619211435,
+                "B": 0.0009741425747051835
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0029402016662061214,
+                "B": 0.005365774501115084
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0014305340591818094,
+                "B": 0.0018368420423939824
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0016596970381215215,
+                "B": 0.0014447887660935521
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.003383119124919176,
+                "B": 0.001772363088093698
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002000235253944993,
+                "B": 0.0013092267327010632
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001733887242153287,
+                "B": 0.002043018350377679
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001417176448740065,
+                "B": 0.0018483466701582074
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002540976507589221,
+                "B": 0.00505333486944437
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.00870844442397356,
+                "B": 0.0040026213973760605
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0013517719926312566,
+                "B": 0.004279174376279116
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0012083780020475388,
+                "B": 0.0010705635650083423
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0012301212409511209,
+                "B": 0.0013589633163064718
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001230579917319119,
+                "B": 0.0009715694468468428
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002327859401702881,
+                "B": 0.0012435821117833257
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0015484313480556011,
+                "B": 0.0022093781735748053
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0013206162257120013,
+                "B": 0.0010446935193613172
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001113744219765067,
+                "B": 0.0024231569841504097
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0016355335246771574,
+                "B": 0.0011218913132324815
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0015042731538414955,
+                "B": 0.001814499730244279
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0011327426182106137,
+                "B": 0.0007060886709950864
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0011520981788635254,
+                "B": 0.0018195987213402987
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0026185910683125257,
+                "B": 0.0017927130684256554
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002900282619521022,
+                "B": 0.0026510730385780334
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0017083046259358525,
+                "B": 0.0020525751169770956
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0020190838258713484,
+                "B": 0.0009407968609593809
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0005124378949403763,
+                "B": 0.0005617047427222133
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001760089653544128,
+                "B": 0.0013285853201523423
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0028624380938708782,
+                "B": 0.0037333231884986162
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001860422664321959,
+                "B": 0.0017442952375859022
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0027224039658904076,
+                "B": 0.0024403471034020185
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0018670265562832355,
+                "B": 0.0021827754098922014
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0018106165807694197,
+                "B": 0.0029046812560409307
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0018430977361276746,
+                "B": 0.0016392851248383522
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0020580319687724113,
+                "B": 0.003597876988351345
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0011200894368812442,
+                "B": 0.0015190663980320096
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0048490785993635654,
+                "B": 0.004458464216440916
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002684703329578042,
+                "B": 0.0014553776709362864
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0015182726783677936,
+                "B": 0.000775457767304033
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0022127574775367975,
+                "B": 0.001736813341267407
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001297058304771781,
+                "B": 0.000724039738997817
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0015116757713258266,
+                "B": 0.001852144137956202
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0024749187286943197,
+                "B": 0.0021628825925290585
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0021216385066509247,
+                "B": 0.0020264596678316593
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001720735221169889,
+                "B": 0.0009958852315321565
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002398355631157756,
+                "B": 0.0027658874168992043
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0022128112614154816,
+                "B": 0.0038911968003958464
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0013135728659108281,
+                "B": 0.0010679271072149277
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0017449840670451522,
+                "B": 0.0018430703785270452
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0012445686152204871,
+                "B": 0.0024083582684397697
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0016496372409164906,
+                "B": 0.0018547370564192533
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0016820259625092149,
+                "B": 0.001148162642493844
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001244030543603003,
+                "B": 0.0007861341582611203
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0025097117759287357,
+                "B": 0.005010691937059164
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002461900468915701,
+                "B": 0.0017871480667963624
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0006135787116363645,
+                "B": 0.000828891817945987
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002249615965411067,
+                "B": 0.0012969018425792456
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0008322530775330961,
+                "B": 0.0005821422091685236
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0010466764215379953,
+                "B": 0.0006530772661790252
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0015969501109793782,
+                "B": 0.0017166269244626164
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0016599700320512056,
+                "B": 0.0009221097570843995
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0019681290723383427,
+                "B": 0.0016412247205153108
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.003916332498192787,
+                "B": 0.0015547698130831122
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0011042262194678187,
+                "B": 0.0021367822773754597
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0009202249348163605,
+                "B": 0.0005111829377710819
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0014297730522230268,
+                "B": 0.001351040555164218
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0015388419851660728,
+                "B": 0.0021616544108837843
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0017930932808667421,
+                "B": 0.0026917520444840193
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0019433102570474148,
+                "B": 0.0026252444367855787
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.006387544330209494,
+                "B": 0.0036253242287784815
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.008924848400056362,
+                "B": 0.008582943119108677
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0012693030294030905,
+                "B": 0.002408714033663273
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0016360769513994455,
+                "B": 0.001098410226404667
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0031570547726005316,
+                "B": 0.0023324170615524054
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0016377700958400965,
+                "B": 0.002195268403738737
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001890428364276886,
+                "B": 0.002316201338544488
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0033652870915830135,
+                "B": 0.0023956859949976206
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0022415968123823404,
+                "B": 0.002312752651050687
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.000891800329554826,
+                "B": 0.0018370173638686538
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0026890875305980444,
+                "B": 0.0030352554749697447
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001354113221168518,
+                "B": 0.0011650408850982785
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0022670640610158443,
+                "B": 0.0017179673304781318
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001531498972326517,
+                "B": 0.001829387852922082
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0027776584029197693,
+                "B": 0.0023117722012102604
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0015465947799384594,
+                "B": 0.0015648254193365574
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0023453899193555117,
+                "B": 0.0022821270395070314
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001083108247257769,
+                "B": 0.001619598944671452
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0008604123722761869,
+                "B": 0.0007834144053049386
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0021401604171842337,
+                "B": 0.001848540734499693
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0012820791453123093,
+                "B": 0.001872715074568987
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0028816177509725094,
+                "B": 0.0013348523061722517
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0014455895870923996,
+                "B": 0.0012292546452954412
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0011639220174401999,
+                "B": 0.0029375518206506968
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0016881325282156467,
+                "B": 0.002325500827282667
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0015191540587693453,
+                "B": 0.0024087096098810434
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002074012067168951,
+                "B": 0.0016993845347315073
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0010878280736505985,
+                "B": 0.0011179837165400386
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.000907598645426333,
+                "B": 0.001338726608082652
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0012600976042449474,
+                "B": 0.001982411602512002
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0049806442111730576,
+                "B": 0.00403344864025712
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0010223201243206859,
+                "B": 0.0012648646952584386
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0016100018983706832,
+                "B": 0.0012441128492355347
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0028632613830268383,
+                "B": 0.004022103734314442
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0012808667961508036,
+                "B": 0.0019454741850495338
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001364600844681263,
+                "B": 0.0017182917799800634
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0034311232157051563,
+                "B": 0.004171185195446014
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002529707970097661,
+                "B": 0.0016205917345359921
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001718116574920714,
+                "B": 0.0012183270882815123
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0009827717440202832,
+                "B": 0.0008406091947108507
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0010738064302131534,
+                "B": 0.0009274887852370739
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0011462683323770761,
+                "B": 0.00100370601285249
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001738554099574685,
+                "B": 0.002490363782271743
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0029950011521577835,
+                "B": 0.004675131291151047
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0014256950234994292,
+                "B": 0.001963977934792638
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0024996267165988684,
+                "B": 0.0015703486278653145
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0016556374030187726,
+                "B": 0.0015372073976323009
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0016741201980039477,
+                "B": 0.0014097505481913686
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002441416960209608,
+                "B": 0.0018573319539427757
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0015247254632413387,
+                "B": 0.0027075200341641903
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0030633907299488783,
+                "B": 0.0014107645256444812
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0010437259916216135,
+                "B": 0.0012154821306467056
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0021290171425789595,
+                "B": 0.0015698387287557125
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0012315461644902825,
+                "B": 0.000931437243707478
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0013475007144734263,
+                "B": 0.002328272443264723
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0016929709818214178,
+                "B": 0.0014452491886913776
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0019610722083598375,
+                "B": 0.002031242474913597
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0016648252494633198,
+                "B": 0.0014606196200475097
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0014694202691316605,
+                "B": 0.0012158154277130961
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0009974867571145296,
+                "B": 0.0006440258584916592
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001795003772713244,
+                "B": 0.0019332951633259654
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0015704234829172492,
+                "B": 0.0017587908077985048
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001242477330379188,
+                "B": 0.0006253672181628644
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.014144659973680973,
+                "B": 0.01181830558925867
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0006741073448210955,
+                "B": 0.0006623613880947232
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0018361697439104319,
+                "B": 0.0026716110296547413
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0021904283203184605,
+                "B": 0.0014879187801852822
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0015416423557326198,
+                "B": 0.0015177414752542973
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0009286300628446043,
+                "B": 0.000652097980491817
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0024440749548375607,
+                "B": 0.0030775549821555614
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001893291831947863,
+                "B": 0.003133727703243494
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0018046252662315965,
+                "B": 0.0017697205767035484
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0010146390413865447,
+                "B": 0.0008712635026313365
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0014826515689492226,
+                "B": 0.0022344349417835474
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0021105571649968624,
+                "B": 0.001433663652278483
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0014273928245529532,
+                "B": 0.0011073207715526223
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0018069777870550752,
+                "B": 0.00133498664945364
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002209451049566269,
+                "B": 0.0012369713513180614
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0007506432011723518,
+                "B": 0.0009983328636735678
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001591209089383483,
+                "B": 0.0005309103289619088
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001770782400853932,
+                "B": 0.0007161598186939955
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0013536328915506601,
+                "B": 0.0006065655616112053
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.000975786941125989,
+                "B": 0.001000880147330463
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0013337082928046584,
+                "B": 0.0011885438580065966
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0016218950040638447,
+                "B": 0.00101892848033458
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0011884293053299189,
+                "B": 0.0014085409929975867
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0028742128051817417,
+                "B": 0.0017263569170609117
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0012012451188638806,
+                "B": 0.0013453307328745723
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0026190178468823433,
+                "B": 0.0027716420590877533
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0018182804342359304,
+                "B": 0.0020126530434936285
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0018553446279838681,
+                "B": 0.002224898198619485
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0022244113497436047,
+                "B": 0.0019553829915821552
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0015880906721577048,
+                "B": 0.0019193479092791677
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0025899154134094715,
+                "B": 0.0014699361054226756
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001614618580788374,
+                "B": 0.0016855086432769895
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.00041009552660398185,
+                "B": 0.00037632478051818907
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.000973111076746136,
+                "B": 0.0015071837697178125
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0013434215215966105,
+                "B": 0.0017937031807377934
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0026236665435135365,
+                "B": 0.0024840375408530235
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0023684673942625523,
+                "B": 0.0020983456633985043
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0018350299214944243,
+                "B": 0.0014802588848397136
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0007590046152472496,
+                "B": 0.0007861629710532725
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002572902012616396,
+                "B": 0.003408541204407811
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001867382787168026,
+                "B": 0.0016035084845498204
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0024738614447414875,
+                "B": 0.0012659949716180563
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0018303757533431053,
+                "B": 0.004108733963221312
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0021018385887145996,
+                "B": 0.0015742044197395444
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0011864809785038233,
+                "B": 0.000960841600317508
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0009892589878290892,
+                "B": 0.0014115235535427928
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0006749887252226472,
+                "B": 0.0009065243066288531
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0011511393822729588,
+                "B": 0.0014382231747731566
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002945779822766781,
+                "B": 0.0030156371649354696
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0029414554592221975,
+                "B": 0.002177382120862603
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0017716835718601942,
+                "B": 0.0013531009899452329
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0008669208618812263,
+                "B": 0.0008771398570388556
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0022027648519724607,
+                "B": 0.0016084326198324561
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0009607985848560929,
+                "B": 0.001476533361710608
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0013295847456902266,
+                "B": 0.0008410188602283597
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0024107813369482756,
+                "B": 0.0020863572135567665
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0013451240956783295,
+                "B": 0.0006479236180894077
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0009703739196993411,
+                "B": 0.0007141127716749907
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0010379296727478504,
+                "B": 0.0009865382453426719
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0007331545930355787,
+                "B": 0.001135532045736909
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0033936467953026295,
+                "B": 0.0027590154204517603
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0022812392562627792,
+                "B": 0.0012402883730828762
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0016491756541654468,
+                "B": 0.002052432158961892
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0014078565873205662,
+                "B": 0.0018724070396274328
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0012151645496487617,
+                "B": 0.0011846990091726184
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001369065372273326,
+                "B": 0.0009048969950526953
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0008754517184570432,
+                "B": 0.0006871499354019761
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.009785043075680733,
+                "B": 0.005564471241086721
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0016162993852049112,
+                "B": 0.0009977198205888271
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0010772744426503778,
+                "B": 0.0008741090423427522
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0010588517179712653,
+                "B": 0.0007868718239478767
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0014208025531843305,
+                "B": 0.0013824787456542253
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001143601373769343,
+                "B": 0.0008515138761140406
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0020262468606233597,
+                "B": 0.001653774525038898
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0017765903612598777,
+                "B": 0.001981929875910282
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.000769505393691361,
+                "B": 0.0013852536212652922
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0018649802077561617,
+                "B": 0.0019092068541795015
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0022721225395798683,
+                "B": 0.0019320951541885734
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002729119500145316,
+                "B": 0.0015368892345577478
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002523823408409953,
+                "B": 0.003092253115028143
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001569567946717143,
+                "B": 0.0014544507721439004
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0026095889043062925,
+                "B": 0.0015162251656875014
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002679389202967286,
+                "B": 0.0012243202654644847
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0006480218726210296,
+                "B": 0.0013090401189401746
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001178351347334683,
+                "B": 0.000816220068372786
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0009077860740944743,
+                "B": 0.001695967628620565
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001656421460211277,
+                "B": 0.0015805684961378574
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0013611188624054193,
+                "B": 0.0024075738620013
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0025713604409247637,
+                "B": 0.0032378314062952995
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0015075166011229157,
+                "B": 0.0021426130551844835
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.000643602863419801,
+                "B": 0.0013625072315335274
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0013328411150723696,
+                "B": 0.001314742723479867
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.00163193978369236,
+                "B": 0.0008238026057370007
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0014698352897539735,
+                "B": 0.0012425696477293968
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002116390271112323,
+                "B": 0.0016742023872211576
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0012873393716290593,
+                "B": 0.001580365002155304
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0017029993468895555,
+                "B": 0.0015415395610034466
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.003288678592070937,
+                "B": 0.0024535038974136114
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0019471197156235576,
+                "B": 0.0018615871667861938
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0014294456923380494,
+                "B": 0.0012274550972506404
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0021360558457672596,
+                "B": 0.003647774923592806
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002686531748622656,
+                "B": 0.0020598354749381542
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0016906160162761807,
+                "B": 0.0013166529824957252
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001759112230502069,
+                "B": 0.0022764604073017836
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0015652612783014774,
+                "B": 0.0015591589035466313
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0006996243610046804,
+                "B": 0.0013173219049349427
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001350544043816626,
+                "B": 0.0008909133030101657
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0014782161451876163,
+                "B": 0.004033934790641069
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0013062336947768927,
+                "B": 0.001239134930074215
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0011453804327175021,
+                "B": 0.0014033493353053927
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0013075228780508041,
+                "B": 0.0017871720483526587
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0010766725754365325,
+                "B": 0.0004050828283652663
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.00252261059358716,
+                "B": 0.0023239378351718187
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0022280970588326454,
+                "B": 0.0013807574287056923
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0009828233160078526,
+                "B": 0.0008639570442028344
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0012324450071901083,
+                "B": 0.0008629095973446965
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.00122828537132591,
+                "B": 0.0011053371708840132
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0013307087356224656,
+                "B": 0.0011674856068566442
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0010555130429565907,
+                "B": 0.0008767618564888835
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.003605227218940854,
+                "B": 0.0034468574449419975
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001195165910758078,
+                "B": 0.0005461191758513451
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001501527614891529,
+                "B": 0.0009581646299920976
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.000981453456915915,
+                "B": 0.0008280823822133243
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0015533691039308906,
+                "B": 0.0007139676599763334
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001704170717857778,
+                "B": 0.0011758423643186688
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0015075310366228223,
+                "B": 0.0033840287942439318
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0011926377192139626,
+                "B": 0.0008261160110123456
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0025523595977574587,
+                "B": 0.002015142934396863
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0016180103411898017,
+                "B": 0.0021351587492972612
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0018754746997728944,
+                "B": 0.0021335091441869736
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0044010598212480545,
+                "B": 0.0019302056171000004
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0018708157585933805,
+                "B": 0.00151503283996135
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002965444466099143,
+                "B": 0.0036475590895861387
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0014447019202634692,
+                "B": 0.0012551788240671158
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0008674347773194313,
+                "B": 0.0008932238561101258
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001246526837348938,
+                "B": 0.0007242579595185816
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0005161145236343145,
+                "B": 0.0007109777652658522
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001200811006128788,
+                "B": 0.0022521906066685915
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.003213058691471815,
+                "B": 0.003150912467390299
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0011993529042229056,
+                "B": 0.0013432115083560348
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0013221587287262082,
+                "B": 0.0012251875596120954
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0016310177743434906,
+                "B": 0.0009421188733540475
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0011589940404519439,
+                "B": 0.0009817061945796013
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0012614477891474962,
+                "B": 0.0012250274885445833
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001216765958815813,
+                "B": 0.0012504960177466273
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0019136311020702124,
+                "B": 0.0015527353389188647
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001014198875054717,
+                "B": 0.0012233573943376541
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002566451672464609,
+                "B": 0.0035911118611693382
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0016312077641487122,
+                "B": 0.0010823822813108563
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0016607475699856877,
+                "B": 0.002748826751485467
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001188743393868208,
+                "B": 0.0008478989475406706
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0012006689794361591,
+                "B": 0.0022695863153785467
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.00136462040245533,
+                "B": 0.0005059531540609896
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0011517445091158152,
+                "B": 0.000874491292051971
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.004193526692688465,
+                "B": 0.0049411822110414505
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.003206856781616807,
+                "B": 0.0020990041084587574
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0022960484493523836,
+                "B": 0.0026738871820271015
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001788825960829854,
+                "B": 0.0014178443234413862
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0011283275671303272,
+                "B": 0.0006004218012094498
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0015680043725296855,
+                "B": 0.0011539180995896459
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001529290690086782,
+                "B": 0.0006500768940895796
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0013091724831610918,
+                "B": 0.0005062118289060891
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0013020901242271066,
+                "B": 0.0020645414479076862
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001524571911431849,
+                "B": 0.0008452439797110856
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002632757415995002,
+                "B": 0.004207134712487459
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0019087580731138587,
+                "B": 0.001957843080163002
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002754888730123639,
+                "B": 0.002853462705388665
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0008850450976751745,
+                "B": 0.0007918013143353164
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001158013939857483,
+                "B": 0.0008983461302705109
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0014115262310951948,
+                "B": 0.0007489242125302553
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0012405894231051207,
+                "B": 0.0006744966958649457
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.00316146994009614,
+                "B": 0.0030642019119113684
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0010392906842753291,
+                "B": 0.0008432886097580194
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.00286733265966177,
+                "B": 0.002693610033020377
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0013917287578806281,
+                "B": 0.0011161034926772118
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0008654983248561621,
+                "B": 0.000498959154356271
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0020574727095663548,
+                "B": 0.0021062642335891724
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0015453282976523042,
+                "B": 0.000923659245017916
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0012496381532400846,
+                "B": 0.0007896777824498713
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0015828590840101242,
+                "B": 0.00120417564176023
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0011299536563456059,
+                "B": 0.001245868275873363
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0013833511620759964,
+                "B": 0.0012065805494785309
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0013968581333756447,
+                "B": 0.00099439756013453
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0019203915726393461,
+                "B": 0.001965932548046112
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.00452720420435071,
+                "B": 0.003995243459939957
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0019178887596353889,
+                "B": 0.0009568702662363648
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.003996093291789293,
+                "B": 0.003980513662099838
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002607407048344612,
+                "B": 0.0035086495336145163
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0011953369248658419,
+                "B": 0.0008393835742026567
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0011328322580084205,
+                "B": 0.0008517729584127665
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002499258378520608,
+                "B": 0.0013775285333395004
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0009447906631976366,
+                "B": 0.0010539902141317725
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0009968344820663333,
+                "B": 0.0009291518363170326
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0016961623914539814,
+                "B": 0.0015686939004808664
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0025038185995072126,
+                "B": 0.0016292659565806389
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0009911349043250084,
+                "B": 0.000874673540238291
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001522198086604476,
+                "B": 0.001021955511532724
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0012619104236364365,
+                "B": 0.0018289107829332352
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0019057232420891523,
+                "B": 0.0018398890970274806
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0012889420613646507,
+                "B": 0.002175501547753811
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001594654517248273,
+                "B": 0.000986283179372549
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0016383817419409752,
+                "B": 0.0015182176139205694
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0022624724078923464,
+                "B": 0.00207616132684052
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0011372976005077362,
+                "B": 0.002023495966568589
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0019693137146532536,
+                "B": 0.002744822297245264
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.000764144235290587,
+                "B": 0.0014500909019261599
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0012954759877175093,
+                "B": 0.0009026233456097543
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0015992309199646115,
+                "B": 0.0025555635802447796
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0015776235377416015,
+                "B": 0.003725848626345396
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002450420521199703,
+                "B": 0.0013090563006699085
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002165798097848892,
+                "B": 0.001788509776815772
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0005764428642578423,
+                "B": 0.0010356802958995104
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.003053292166441679,
+                "B": 0.010995326563715935
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.004841571673750877,
+                "B": 0.008300384506583214
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0020141582936048508,
+                "B": 0.0032820971682667732
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0027299539651721716,
+                "B": 0.002303346060216427
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0012210290879011154,
+                "B": 0.0008743361686356366
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002543562324717641,
+                "B": 0.003476637415587902
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001068376936018467,
+                "B": 0.001212996430695057
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0021651473361998796,
+                "B": 0.001414402504451573
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0006812045467086136,
+                "B": 0.0010346632916480303
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002623392501845956,
+                "B": 0.0021579440217465162
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0030074561946094036,
+                "B": 0.003757488913834095
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001880689524114132,
+                "B": 0.0026315576396882534
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.003370228223502636,
+                "B": 0.003056664252653718
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0016962443478405476,
+                "B": 0.0011658103903755546
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0012629819102585316,
+                "B": 0.0003985809162259102
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0017324012005701661,
+                "B": 0.001718919724225998
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0007727090851403773,
+                "B": 0.000988309970125556
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0023408292327076197,
+                "B": 0.002114763017743826
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.005107519216835499,
+                "B": 0.007146704010665417
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.002849186770617962,
+                "B": 0.005343815311789513
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002429972169920802,
+                "B": 0.0012755130883306265
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.003096714848652482,
+                "B": 0.002383626764640212
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0009475916158407927,
+                "B": 0.0008428054279647768
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0019018161110579967,
+                "B": 0.0013725047465413809
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002437394578009844,
+                "B": 0.0012844165321439505
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0020717899315059185,
+                "B": 0.002019848208874464
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001989990472793579,
+                "B": 0.001513904775492847
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0014959076652303338,
+                "B": 0.0012498777359724045
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0019381630700081587,
+                "B": 0.0028868853114545345
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0022028929088264704,
+                "B": 0.0025157826021313667
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.002065055537968874,
+                "B": 0.0013810076052322984
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0011789993150159717,
+                "B": 0.001294877496547997
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0023354431614279747,
+                "B": 0.0011951597407460213
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.004528106655925512,
+                "B": 0.0033257994800806046
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0018312897300347686,
+                "B": 0.001817038282752037
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0015103514306247234,
+                "B": 0.003160163527354598
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0024749315343797207,
+                "B": 0.003436101833358407
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001394269522279501,
+                "B": 0.0013330223737284541
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.00348079577088356,
+                "B": 0.003690842306241393
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.00330402422696352,
+                "B": 0.004309260286390781
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0017245245398953557,
+                "B": 0.0011309708934277296
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.001329544116742909,
+                "B": 0.00118252111133188
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0012893059756606817,
+                "B": 0.0009656455949880183
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0012781956465914845,
+                "B": 0.0010230549378320575
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0016330763464793563,
+                "B": 0.0012423789594322443
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0011764811351895332,
+                "B": 0.0009398063411936164
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0032615785021334887,
+                "B": 0.002089445712044835
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001101563568226993,
+                "B": 0.0012482351157814264
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0011192383244633675,
+                "B": 0.0010111475130543113
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.001963631482794881,
+                "B": 0.001328659476712346
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0013006137451156974,
+                "B": 0.0007919496856629848
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0028352912049740553,
+                "B": 0.002824237570166588
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0009958742884919047,
+                "B": 0.00089444121113047
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "context_results": {
+                "A": 0.0030480565037578344,
+                "B": 0.003563539357855916
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0018455848330631852,
+                "B": 0.0019341562874615192
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "gsm",
+            "context_results": {
+                "A": 0.0010519471252337098,
+                "B": 0.000906835135538131
+            },
+            "chosen": "A",
+            "answer": "A"
+        }
+    ]
+}
