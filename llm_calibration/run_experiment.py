@@ -118,7 +118,7 @@ def main():
                         help="Path to the saved PyTorch model file")
 
     # Dataset arguments
-    parser.add_argument("--dataset", type=str, default=None, help="Dataset name")
+    parser.add_argument("--dataset", type=str, default='all', help="Dataset name")
 
     parser.add_argument("--runner_name", type=str,  help="name of inference runner")
      
