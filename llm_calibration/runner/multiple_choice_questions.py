@@ -54,7 +54,9 @@ def run_inference(model, tokenizer, dataset,
     if question_idx % 100 == 0:
       print("Processing question %d" % question_idx)
     item = dataset_item_parser(item)
-    prompt, selections = generate_n_shot_prompt(dataset, question_idx, n_shots=n_shots, item_parser=dataset_item_parser)
+    prompt, selections = generate_n_shot_prompt(dataset, question_idx, 
+                                                n_shots=n_shots, 
+                                                item_parser=dataset_item_parser)
     if verbose: 
       print(prompt)
     selection_log_prob_opt_option = []
