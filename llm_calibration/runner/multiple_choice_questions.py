@@ -74,7 +74,8 @@ def run_single_inference(model, tokenizer, prompt, selections, item, verbose=Fal
     return (result , prediction_probabilities, target_labels)
 
 def run_inference(model, tokenizer, dataset,
-                  tag="default_tag", include_prompt=False, 
+                  tag="default_tag", 
+                  include_prompt=False, 
                   dataset_item_parser = lambda x: x,
                   alphanumeric_options = ['A', 'B', 'C', 'D'],
                   start_idx=0,

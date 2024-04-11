@@ -83,7 +83,9 @@ def generate_model_tag(model_name, dataset_name, n_shots=1, include_date=False):
     return "model_"+sanitize(model_name)+"_ds_"+sanitize(dataset_name)+"_n_shots_"+(str(n_shots))+"_tag"
 
 def run_experiment(model_name, dataset_name, runner, output_dir, output_tag, 
-                   n_shots=1, write_chunks=True):
+                   n_shots=1, 
+                   write_chunks=True,
+                   start_idx=0):
     """
     """
     logger.info(f"Running experiment with model {model_name} on dataset {dataset_name}")
@@ -97,6 +99,7 @@ def run_experiment(model_name, dataset_name, runner, output_dir, output_tag,
                            include_prompt=False, 
                            write_chunks=write_chunks,
                            chunk_size=100,
+                           start_idx=start_idx,
                            output_dir=output_dir,
                            n_shots=n_shots)
 
@@ -135,6 +138,9 @@ def main():
 
     parser.add_argument("--write-chunks", type=bool, default=True,
                         help="Path to save the predictions JSON file (default: result.json)")
+
+    parser.add_argument("--start-idx", type=bool, default=True,
+                        help="Start index to resume execution from")
 
 
     args = parser.parse_args()

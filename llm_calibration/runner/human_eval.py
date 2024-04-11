@@ -11,6 +11,7 @@ def run_inference(model, tokenizer, dataset,
                   tag="default_tag", include_prompt=False, 
                   alphanumeric_options = ['A', 'B'],
                   verbose = False, 
+
                   start_idx=0,
                   stop_idx=-1,
                   chunk_size=100,
