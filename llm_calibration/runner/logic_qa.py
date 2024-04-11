@@ -4,8 +4,8 @@ import numpy as np
 import llm_calibration.runner.multiple_choice_questions as mcq
 from llm_calibration.runner.multiple_choice_questions import  (run_inference) 
                                 
-def load_dataset(name="lucamccabe/logiqa", split='train'):
-    return hugging_face_datasets.load_dataset(name)[split]
+def load_dataset(name=None, split='train'):
+    return hugging_face_datasets.load_dataset("lucamccabe/logiqa")[split]
 
 def parse_dataset_item(item):
     context = item["context"]
