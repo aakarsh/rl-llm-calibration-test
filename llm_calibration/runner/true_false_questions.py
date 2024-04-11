@@ -54,7 +54,9 @@ def run_inference(model, tokenizer, dataset,
                   tag="default_tag", include_prompt=False, 
                   dataset_item_parser = lambda x: x,
                   alphanumeric_options = ['A', 'B'],
-                  verbose = False, 
+                  verbose = False,
+                  write_chunks=False,
+                  chunk_size=100,
                   n_shots=1):
   results = []
   prediction_probabilities = []

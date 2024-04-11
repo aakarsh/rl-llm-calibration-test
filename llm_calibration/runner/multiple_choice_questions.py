@@ -1,6 +1,6 @@
 import datasets as hugging_face_datasets
 import numpy as np
-
+import json
 from llm_calibration.model.model_probability import  get_log_prob_of_completion
 
 def generate_n_shot_prompt(dataset,
@@ -73,6 +73,11 @@ def run_inference(model, tokenizer, dataset,
                   tag="default_tag", include_prompt=False, 
                   dataset_item_parser = lambda x: x,
                   alphanumeric_options = ['A', 'B', 'C', 'D'],
+                  start_idx=0,
+                  stop_idx=-1,
+                  chunk_size=100,
+                  write_chunks=True,
+                  output_dir="",
                   verbose = False, 
                   n_shots=1):
   """
@@ -81,8 +86,14 @@ def run_inference(model, tokenizer, dataset,
   results = []
   prediction_probabilities = []
   target_labels = []
-
+  chunk_start=start_idx
+  chunk_stop=chunk_start+chunk_size
   for question_idx, item  in enumerate(dataset):
+    if start_idx > 0 and question_idx < start_idx:
+      continue
+    if stop_idx > 0 and question_idx > stop_idx:
+      break
+    
     if question_idx % 100 == 0:
       print("Processing question %d" % question_idx)
     item = dataset_item_parser(item)
@@ -101,4 +112,14 @@ def run_inference(model, tokenizer, dataset,
     # save iteration.
     # TODO: Write output in chunks.
     results.append(result)
+
+    if write_chunks:
+        if question_idx >= chunk_stop:
+          output_file_name = "model_results_"+tag+"-result-chunk-"+str(chunk_start)+"-to-"+str(chunk_stop)+".json"
+          output_file = output_dir+"/"+output_file_name
+          with open(output_file, "w") as f:
+            print("Writing chunk to file: ", output_file)
+            json.dump(results[chunk_start:chunk_stop], f, indent=4)
+          chunk_start = chunk_stop
+          chunk_stop = chunk_start+chunk_size
   return results, prediction_probabilities, target_labels 

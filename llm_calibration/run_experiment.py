@@ -94,11 +94,16 @@ def run_experiment(model_name, dataset_name, runner, output_dir, output_tag, n_s
         runner.run_inference(model, tokenizer, dataset, 
                            tag=model_tag,
                            include_prompt=False, 
+                           write_chunks=True,
+                           chunk_size=100,
+                           output_dir=output_dir,
                            n_shots=n_shots)
 
-    # TODO move output generation into runner.
-    # Save the results to a JSON file, this need to be done as part of the inference.
-    output_file = output_dir+"model_results_"+output_tag+"-result.json"
+    # TODO Move output generation into runner.
+    # Save the results to a JSON file, 
+    # This need to be done as part of the inference.
+    output_file_name = "model_results_"+output_tag+"-result.json"
+    output_file = output_dir+"/"+output_file_name
     with open(output_file, "w") as f:
         json.dump(model_results, f, indent=4)
 
