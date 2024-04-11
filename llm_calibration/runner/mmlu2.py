@@ -83,8 +83,10 @@ def load_dataset(name=None, split="test"):
   if name in DATASET_GROUPS: # allow groups of datasets concatenated together.
         datasets = [ hugging_face_datasets.load_dataset(dataset_path, dataset)[split] 
                       for dataset in DATASET_GROUPS[name] ]
-  else: # built in dataset
+  elif name is not None: # built in dataset
     datasets = [ hugging_face_datasets.load_dataset(dataset_path, name)[split] ]
+  else: # load all datasets
+    datasets = [ hugging_face_datasets.load_dataset(dataset_path)[split] ]
   return hugging_face_datasets.concatenate_datasets(datasets, split=split)
 
 def parse_dataset_item(item):
