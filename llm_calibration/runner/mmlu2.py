@@ -86,7 +86,7 @@ def load_dataset(name=None, split="test"):
   elif name is not None: # built in dataset
     datasets = [ hugging_face_datasets.load_dataset(dataset_path, name)[split] ]
   else: # load all datasets
-    datasets = [ hugging_face_datasets.load_dataset(dataset_path)[split] ]
+    datasets = [ hugging_face_datasets.load_dataset(dataset_path,'all')[split] ]
   return hugging_face_datasets.concatenate_datasets(datasets, split=split)
 
 def parse_dataset_item(item):
