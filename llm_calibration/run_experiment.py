@@ -139,7 +139,7 @@ def main():
     parser.add_argument("--write-chunks", type=bool, default=True,
                         help="Path to save the predictions JSON file (default: result.json)")
 
-    parser.add_argument("--start-idx", type=bool, default=True,
+    parser.add_argument("--start-idx", type=int, default=0,
                         help="Start index to resume execution from")
 
 
@@ -148,7 +148,9 @@ def main():
                    args.dataset, RUNNERS[args.runner_name], 
                    args.output_dir, 
                    args.output_tag,
-                   write_chunks=args.write_chunks)    
+                   start_idx=args.start_idx, 
+                   write_chunks=args.write_chunks
+                   )    
 
 if __name__ == "__main__":
     logging.basicConfig(filename='experiment.log', 
