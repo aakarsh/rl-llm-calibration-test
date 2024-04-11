@@ -99,5 +99,6 @@ def run_inference(model, tokenizer, dataset,
     if include_prompt:
       result["prompt_template"] = prompt 
     # save iteration.
+    # TODO: Write output in chunks.
     results.append(result)
   return results, prediction_probabilities, target_labels 
