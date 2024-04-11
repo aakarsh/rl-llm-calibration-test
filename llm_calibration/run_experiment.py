@@ -18,6 +18,7 @@ from llm_calibration.model.model_probability import (get_normalized_probabilitie
 
 import llm_calibration.runner.mmlu as mmlu_runner
 import llm_calibration.runner.logic_qa as logic_qa_runner 
+import llm_calibration.runner.truthful_qa as truthful_qa_runner 
 import llm_calibration.runner.human_eval as human_eval_runner 
 
 from llm_calibration.plot import plot_calibration
@@ -46,7 +47,8 @@ LLAMA_MODELS = [
 RUNNERS = {
     'mmlu': mmlu_runner,
     'logic_qa': logic_qa_runner,
-    'human_eval': human_eval_runner
+    'human_eval': human_eval_runner,
+    'truthful_qa' :truthful_qa_runner
 }
 
 SUPPORTED_MODELS = [] + LLAMA_MODELS
