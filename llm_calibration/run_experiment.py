@@ -82,7 +82,7 @@ def generate_model_tag(model_name, dataset_name, n_shots=1, include_date=False):
         return s.replace("/", "_")
     return "model_"+sanitize(model_name)+"_ds_"+sanitize(dataset_name)+"_n_shots_"+(str(n_shots))+"_tag"
 
-def run_experiment(model_name, dataset_name, runner, output_dir, output_tag, 
+def run_experiment(model_name, dataset_name, runner, output_dir, 
                    n_shots=1, 
                    write_chunks=True,
                    start_idx=0):
@@ -106,7 +106,7 @@ def run_experiment(model_name, dataset_name, runner, output_dir, output_tag,
     # TODO Move output generation into runner.
     # Save the results to a JSON file, 
     # This need to be done as part of the inference.
-    output_file_name = "model_results_"+output_tag+"-result.json"
+    output_file_name = "model_results_"+model_tag+"-result.json"
     output_file = output_dir+"/"+output_file_name
     with open(output_file, "w") as f:
         json.dump(model_results, f, indent=4)
@@ -123,17 +123,13 @@ def main():
     # Model arguments
     parser.add_argument("--model_name", type=str,  default="meta-llama/Llama-2-7b-chat-hf",
                         help="Path to the saved PyTorch model file")
-
     # Dataset arguments
-    parser.add_argument("--dataset", type=str, default='all', help="Dataset name")
+    parser.add_argument("--dataset", type=str, default='', help="Dataset name")
 
     parser.add_argument("--runner_name", type=str,  help="name of inference runner")
      
     # Output arguments
     parser.add_argument("--output-dir", type=str, default="output",
-                        help="Path to save the predictions JSON file (default: result.json)")
-
-    parser.add_argument("--output-tag", type=str, default="llama",
                         help="Path to save the predictions JSON file (default: result.json)")
 
     parser.add_argument("--write-chunks", type=bool, default=True,
@@ -147,7 +143,6 @@ def main():
     run_experiment(args.model_name, 
                    args.dataset, RUNNERS[args.runner_name], 
                    args.output_dir, 
-                   args.output_tag,
                    start_idx=args.start_idx, 
                    write_chunks=args.write_chunks
                    )    
