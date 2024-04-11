@@ -74,7 +74,7 @@ DATASET_GROUPS = {
 }
 
 # TODO Use proto class
-def load_dataset(name, split="test"):
+def load_dataset(name=None, split="test"):
   """
   Load the dataset, by either its name or its group name. 
   """
