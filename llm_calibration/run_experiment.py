@@ -136,5 +136,7 @@ def main():
     run_experiment(args.model_name, args.dataset, RUNNERS[args.runner_name], args.output_dir, args.output_tag)    
 
 if __name__ == "__main__":
-    logging.basicConfig(filename='experiment.log', level=logging.INFO)
+    logging.basicConfig(filename='experiment.log', 
+                        level=logging.INFO, 
+                        format='%(asctime)s %(message)s')
     main()
