@@ -8,6 +8,7 @@
 
 # import libraries
 import sys
+import os
 import numpy as np
 import pandas as pd
 import json
@@ -254,6 +255,15 @@ def delete_model(model):
     del model
     gc.collect()
     torch.cuda.empty_cache()
+def load_results(folder):
+    files = os.listdir(folder)
+    results = []
+    for f in files:
+        data = []
+        with open(folder+"/"+f, 'r', encoding="utf-8") as fin:
+            data = json.load(fin)
+        results += data
+    return results
 
 
 def run(dump_start=0, dump_step=250, dump_end=2000,
