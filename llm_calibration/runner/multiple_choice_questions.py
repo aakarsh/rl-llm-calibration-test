@@ -119,10 +119,11 @@ def run_inference(model, tokenizer, dataset,
 
     if write_chunks:
         if question_idx >= chunk_stop:
+          print(tag, chunk_start, chunk_stop)
           output_file_name = "model_results_"+tag+"-result-chunk-"+str(chunk_start)+"-to-"+str(chunk_stop)+".json"
           output_file = output_dir+"/"+output_file_name
           with open(output_file, "w") as f:
-            logger.info("Writing chunk to file: ", output_file)
+            logger.info("Writing chunk to file: "+ str(output_file))
             json.dump(results[chunk_start:chunk_stop], f, indent=4)
           chunk_start = chunk_stop
           chunk_stop = chunk_start+chunk_size

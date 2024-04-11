@@ -80,7 +80,7 @@ def generate_model_tag(model_name, dataset_name, n_shots=1, include_date=False):
     def sanitize(s): 
         'remove special characters from a string'
         return s.replace("/", "_")
-    return "model_"+sanitize(model_name)+"_ds_"+sanitize(dataset_name)+"_n_shots_"+(str(n_shots))+"_tag",
+    return "model_"+sanitize(model_name)+"_ds_"+sanitize(dataset_name)+"_n_shots_"+(str(n_shots))+"_tag"
 
 def run_experiment(model_name, dataset_name, runner, output_dir, output_tag, 
                    n_shots=1, write_chunks=True):

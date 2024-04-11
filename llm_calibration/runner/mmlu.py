@@ -111,6 +111,6 @@ def run_inference(model, tokenizer, dataset,
                          alphanumeric_options=alphanumeric_options,
                          write_chunks=True,
                          chunk_size=100,
-                         output_dir=None,
+                         output_dir=output_dir,
                          verbose=verbose, 
                          n_shots=n_shots) 
