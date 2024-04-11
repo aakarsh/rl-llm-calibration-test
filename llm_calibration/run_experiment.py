@@ -17,7 +17,6 @@ import torch
 from llm_calibration.model.model_probability import (get_normalized_probabilities, pretty_print_model_results)
 
 import llm_calibration.runner.mmlu as mmlu_runner
-import llm_calibration.runner.mmlu2 as mmlu2_runner
 import llm_calibration.runner.logic_qa as logic_qa_runner 
 import llm_calibration.runner.human_eval as human_eval_runner 
 
@@ -46,7 +45,6 @@ LLAMA_MODELS = [
 
 RUNNERS = {
     'mmlu': mmlu_runner,
-    'mmlu2': mmlu2_runner,
     'logic_qa': logic_qa_runner,
     'human_eval': human_eval_runner
 }
