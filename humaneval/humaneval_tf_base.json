@@ -1,0 +1,1646 @@
+{
+    "model": "LLama 7B-chat",
+    "prompt_format": "T/F format",
+    "results": [
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0005154983373358846,
+                "B": 0.00029429636197164655
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0008801090298220515,
+                "B": 0.0003763186978176236
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.000840237713418901,
+                "B": 0.0009049716172739863
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0003392321814317256,
+                "B": 0.00012418867845553905
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0014295370783656836,
+                "B": 0.0007696726243011653
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.001869897241704166,
+                "B": 0.001998285762965679
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0009551547700539231,
+                "B": 0.0007511753356084228
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.001671832287684083,
+                "B": 0.0009675822220742702
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0007440047338604927,
+                "B": 0.00031874480191618204
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0007654482615180314,
+                "B": 0.000591492629610002
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0010017515160143375,
+                "B": 0.000750277133192867
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.001347250770777464,
+                "B": 0.0008732550195418298
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0007012917194515467,
+                "B": 0.0005051214247941971
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.00047838673344813287,
+                "B": 0.00030259997583925724
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0005422807298600674,
+                "B": 0.00041986131691373885
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0021379634272307158,
+                "B": 0.0012205565581098199
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0007727901684120297,
+                "B": 0.0005816261400468647
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0005891562905162573,
+                "B": 0.00024285413383040577
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.001304270583204925,
+                "B": 0.0006041774759069085
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0021884143352508545,
+                "B": 0.0010582481045275927
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0016868225065991282,
+                "B": 0.0006670517032034695
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0008700939361006021,
+                "B": 0.0004102013190276921
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0012199361808598042,
+                "B": 0.001241569989360869
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0015962840989232063,
+                "B": 0.0010028387187048793
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.00042327700066380203,
+                "B": 0.00021534590632654727
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0015963243786245584,
+                "B": 0.0007209264440461993
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0009209997369907796,
+                "B": 0.000430821644840762
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.000985866179689765,
+                "B": 0.0007297772681340575
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0014950012555345893,
+                "B": 0.0008585071191191673
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0015508602373301983,
+                "B": 0.0010617341613397002
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0015372481429949403,
+                "B": 0.0009179328917525709
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0018987017683684826,
+                "B": 0.0012747280998155475
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0021961701568216085,
+                "B": 0.0010661549167707562
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0018283928511664271,
+                "B": 0.0011003462132066488
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0012850880157202482,
+                "B": 0.0010086771799251437
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0020013621542602777,
+                "B": 0.00169191206805408
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0006784400902688503,
+                "B": 0.0004098904610145837
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.00152763188816607,
+                "B": 0.0011781592620536685
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0024251833092421293,
+                "B": 0.0017536308150738478
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0015136225847527385,
+                "B": 0.0007581299869343638
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.001102276029996574,
+                "B": 0.0004375996068120003
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0012695853365585208,
+                "B": 0.0007376553840003908
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.002855774015188217,
+                "B": 0.00269325147382915
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.000828961783554405,
+                "B": 0.00042838306399062276
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0016565470723435283,
+                "B": 0.0015622727805748582
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0009088580845855176,
+                "B": 0.00070505979238078
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0007257500546984375,
+                "B": 0.00035163588472642004
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0019860989414155483,
+                "B": 0.0013360106386244297
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0011507837334647775,
+                "B": 0.0008160278666764498
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0020494835916906595,
+                "B": 0.0017530162585899234
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0012444712920114398,
+                "B": 0.0010582340182736516
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0033408531453460455,
+                "B": 0.0020105610601603985
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0008543868898414075,
+                "B": 0.0004627110902220011
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0014971987111493945,
+                "B": 0.0009818868711590767
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0012303469702601433,
+                "B": 0.0007232836214825511
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0025348493363708258,
+                "B": 0.0014528011670336127
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0007838381570763886,
+                "B": 0.0005790959694422781
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0006001367000862956,
+                "B": 0.00044685567263513803
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.001931125414557755,
+                "B": 0.0018462950829416513
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0011870656162500381,
+                "B": 0.0007129946607165039
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.001591203035786748,
+                "B": 0.0010558372596278787
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0007964148535393178,
+                "B": 0.000563640845939517
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0010656899539753795,
+                "B": 0.0006001375732012093
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0020108965691179037,
+                "B": 0.0010473225265741348
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0013468461111187935,
+                "B": 0.001016652793623507
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0034732073545455933,
+                "B": 0.0027314811013638973
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.002293559955433011,
+                "B": 0.0012765583815053105
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.001988772302865982,
+                "B": 0.0014664286281913519
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.002603246597573161,
+                "B": 0.001734136021696031
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.001115618273615837,
+                "B": 0.000894675322342664
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0013002913910895586,
+                "B": 0.0005941551644355059
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.002262927358970046,
+                "B": 0.0019205218413844705
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0037352871149778366,
+                "B": 0.0013475571759045124
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.002295623766258359,
+                "B": 0.0012287588324397802
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.003181867301464081,
+                "B": 0.001791851595044136
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.002064675558358431,
+                "B": 0.000990642118267715
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0009423691080883145,
+                "B": 0.0005286211962811649
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0005785698303952813,
+                "B": 0.00022305855236481875
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.000735255831386894,
+                "B": 0.0006501295720227063
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0009541197214275599,
+                "B": 0.0010038224281743169
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.001734363380819559,
+                "B": 0.0011735290754586458
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.001956373453140259,
+                "B": 0.0014538532122969627
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0012084183981642127,
+                "B": 0.0007473987061530352
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0017267148941755295,
+                "B": 0.001123594818636775
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0004603845882229507,
+                "B": 0.0005247498629614711
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.003132306970655918,
+                "B": 0.0021995529532432556
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.001493460382334888,
+                "B": 0.0017944335704669356
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0035796351730823517,
+                "B": 0.0030261524952948093
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0013477294705808163,
+                "B": 0.0008126635220833123
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0020379354245960712,
+                "B": 0.0016535971080884337
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0010799936717376113,
+                "B": 0.0008345544338226318
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0007328721694648266,
+                "B": 0.0005146338371559978
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0009885078761726618,
+                "B": 0.0008791971486061811
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0015021099243313074,
+                "B": 0.0009641690994612873
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0021860343404114246,
+                "B": 0.0017565280431881547
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0015973324188962579,
+                "B": 0.0006843258161097765
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.001757343066856265,
+                "B": 0.0013213406782597303
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0013217426603659987,
+                "B": 0.000827125390060246
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.000858064740896225,
+                "B": 0.000692172849085182
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0025895177386701107,
+                "B": 0.0016982473898679018
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0026976228691637516,
+                "B": 0.0016914296429604292
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0014637615531682968,
+                "B": 0.000898281519766897
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0022720680572092533,
+                "B": 0.0019510090351104736
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0016901943599805236,
+                "B": 0.0017034509219229221
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0021793474443256855,
+                "B": 0.0021708509884774685
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0026687132194638252,
+                "B": 0.002840830245986581
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0021884937305003405,
+                "B": 0.0011004437692463398
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0010553490137681365,
+                "B": 0.0008219066075980663
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.002024066401645541,
+                "B": 0.001374912215396762
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.002442676806822419,
+                "B": 0.0018152431584894657
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0018556887516751885,
+                "B": 0.001158994622528553
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0038890638388693333,
+                "B": 0.0025604928378015757
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0008246294455602765,
+                "B": 0.00047539829392917454
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.00270672095939517,
+                "B": 0.0018822290003299713
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0018371233018115163,
+                "B": 0.0020736174192279577
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0028605430852621794,
+                "B": 0.0013941172510385513
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0014867443824186921,
+                "B": 0.0011266459478065372
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0021286820992827415,
+                "B": 0.0012105199275538325
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0018245875835418701,
+                "B": 0.0014265517238527536
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.001305155921727419,
+                "B": 0.0009775166399776936
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0007399844471365213,
+                "B": 0.0004070650029461831
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.001208334811963141,
+                "B": 0.0012130640679970384
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0008132690563797951,
+                "B": 0.0007684852462261915
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0011923806741833687,
+                "B": 0.0006860652938485146
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.002414402784779668,
+                "B": 0.0026208097115159035
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.001477163634262979,
+                "B": 0.0006542083574458957
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0017112413188442588,
+                "B": 0.0009903904283419251
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.00188066519331187,
+                "B": 0.0008248173980973661
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.002666296437382698,
+                "B": 0.0017623142339289188
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.002132043708115816,
+                "B": 0.0015628859400749207
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0015149794053286314,
+                "B": 0.001231669681146741
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.002780567156150937,
+                "B": 0.0012905606999993324
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0011405092664062977,
+                "B": 0.0005293511785566807
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0020412704907357693,
+                "B": 0.0017088796012103558
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0008754146401770413,
+                "B": 0.0005707567906938493
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0011148402700200677,
+                "B": 0.0007632305496372283
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.002409797627478838,
+                "B": 0.0008987185428850353
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.004125196486711502,
+                "B": 0.0019948147237300873
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0012117777951061726,
+                "B": 0.0006093201227486134
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0020158053375780582,
+                "B": 0.0016071400605142117
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0027572240214794874,
+                "B": 0.0029008553829044104
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0013331703376024961,
+                "B": 0.0009772751946002245
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0013498228508979082,
+                "B": 0.000848003604914993
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0012214501621201634,
+                "B": 0.0005532455397769809
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0015539824962615967,
+                "B": 0.0009955186396837234
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0016214243369176984,
+                "B": 0.001305398065596819
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0020044564735144377,
+                "B": 0.0013830333482474089
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0025765751488506794,
+                "B": 0.001321136485785246
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.004498641472309828,
+                "B": 0.002389210741966963
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0033484369050711393,
+                "B": 0.002204553224146366
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0022780760191380978,
+                "B": 0.0015841532731428742
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.001109443954192102,
+                "B": 0.0005857788491994143
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0018674441380426288,
+                "B": 0.0008516450179740787
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0018655083840712905,
+                "B": 0.0019322591833770275
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0017182115698233247,
+                "B": 0.0008357554906979203
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0017242918256670237,
+                "B": 0.0011486259754747152
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.001772966468706727,
+                "B": 0.0013022067723795772
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0015746610006317496,
+                "B": 0.0006799038965255022
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0014597715344280005,
+                "B": 0.0009351649205200374
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0020041335374116898,
+                "B": 0.0013720494462177157
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.002404702128842473,
+                "B": 0.0010102911619469523
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.002561010420322418,
+                "B": 0.0014649310614913702
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0010771634988486767,
+                "B": 0.0007683119620196521
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-base",
+            "dataset": "opennai",
+            "context_results": {
+                "A": 0.0023542551789432764,
+                "B": 0.0023268272634595633
+            },
+            "chosen": "A",
+            "answer": "B"
+        }
+    ]
+}
