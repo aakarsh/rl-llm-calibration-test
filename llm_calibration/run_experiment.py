@@ -82,7 +82,8 @@ def generate_model_tag(model_name, dataset_name, n_shots=1, include_date=False):
         return s.replace("/", "_")
     return "model_"+sanitize(model_name)+"_ds_"+sanitize(dataset_name)+"_n_shots_"+(str(n_shots))+"_tag",
 
-def run_experiment(model_name, dataset_name, runner, output_dir, output_tag, n_shots=1):
+def run_experiment(model_name, dataset_name, runner, output_dir, output_tag, 
+                   n_shots=1, write_chunks=True):
     """
     """
     logger.info(f"Running experiment with model {model_name} on dataset {dataset_name}")
@@ -94,7 +95,7 @@ def run_experiment(model_name, dataset_name, runner, output_dir, output_tag, n_s
         runner.run_inference(model, tokenizer, dataset, 
                            tag=model_tag,
                            include_prompt=False, 
-                           write_chunks=True,
+                           write_chunks=write_chunks,
                            chunk_size=100,
                            output_dir=output_dir,
                            n_shots=n_shots)
@@ -132,8 +133,16 @@ def main():
     parser.add_argument("--output-tag", type=str, default="llama",
                         help="Path to save the predictions JSON file (default: result.json)")
 
+    parser.add_argument("--write-chunks", type=bool, default=True,
+                        help="Path to save the predictions JSON file (default: result.json)")
+
+
     args = parser.parse_args()
-    run_experiment(args.model_name, args.dataset, RUNNERS[args.runner_name], args.output_dir, args.output_tag)    
+    run_experiment(args.model_name, 
+                   args.dataset, RUNNERS[args.runner_name], 
+                   args.output_dir, 
+                   args.output_tag,
+                   write_chunks=args.write_chunks)    
 
 if __name__ == "__main__":
     logging.basicConfig(filename='experiment.log', 

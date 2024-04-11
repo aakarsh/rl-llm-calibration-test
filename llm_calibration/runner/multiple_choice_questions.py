@@ -1,7 +1,10 @@
 import datasets as hugging_face_datasets
+import logging
 import numpy as np
 import json
 from llm_calibration.model.model_probability import  get_log_prob_of_completion
+
+logger = logging.getLogger(__name__)
 
 def generate_n_shot_prompt(dataset,
                            question_idx,
@@ -43,7 +46,8 @@ def run_single_inference(model, tokenizer, prompt, selections, item, verbose=Fal
     """
     Run single inference.
     """
-    if verbose: print(prompt)
+    if verbose: 
+      logger.info(prompt)
 
     selection_log_prob_opt_option = []
     for _, selection  in enumerate(selections):
@@ -51,7 +55,7 @@ def run_single_inference(model, tokenizer, prompt, selections, item, verbose=Fal
       log_prob_opt_option = get_log_prob_of_completion(model=model, tokenizer=tokenizer, 
                                                        prompt=prompt, completion=selection)
       if verbose:
-        print("selection",selection, "log_prob:",log_prob_opt_option)
+        logger.info("selection",selection, "log_prob:",log_prob_opt_option)
 
       selection_log_prob_opt_option.append(np.float64(log_prob_opt_option.detach().numpy()))
     
@@ -95,7 +99,7 @@ def run_inference(model, tokenizer, dataset,
       break
     
     if question_idx % 100 == 0:
-      print("Processing question %d" % question_idx)
+      logger.info("Processing question %d" % question_idx)
     item = dataset_item_parser(item)
     prompt, selections = generate_n_shot_prompt(dataset, question_idx, 
                                                 n_shots=n_shots, 
@@ -118,7 +122,7 @@ def run_inference(model, tokenizer, dataset,
           output_file_name = "model_results_"+tag+"-result-chunk-"+str(chunk_start)+"-to-"+str(chunk_stop)+".json"
           output_file = output_dir+"/"+output_file_name
           with open(output_file, "w") as f:
-            print("Writing chunk to file: ", output_file)
+            logger.info("Writing chunk to file: ", output_file)
             json.dump(results[chunk_start:chunk_stop], f, indent=4)
           chunk_start = chunk_stop
           chunk_stop = chunk_start+chunk_size
