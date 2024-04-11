@@ -17,8 +17,10 @@ def generate_n_shot_prompt(dataset,
   """
   Generate a n-shot prompt.
   """
+
   def format_question(current_idx, with_answer=True):
     item = item_parser(dataset[current_idx]) 
+    alphanumeric_options = [chr(item).upper() for item in range(ord("a"), ord("z") + 1)][0:len(item['choices'])]
     question_template = prompt_template.format(question=item["question"])
     choices_template = "\n"+"\n".join(["%s. %s" % (options_template.format(choice=alpha), choice) for alpha, choice in zip(alphanumeric_options, item['choices'])])
     question_prompt = "%s\n%s\n" % (question_template, choices_template)
@@ -28,6 +30,9 @@ def generate_n_shot_prompt(dataset,
       question_prompt += "\n"+ answer_template.format(answer="")
     return question_prompt
  
+  item = item_parser(dataset[question_idx]) 
+  alphanumeric_options = [chr(item).upper() for item in range(ord("a"), ord("z") + 1)][0:len(item['choices'])]
+
   formatted_options = ["(%s)" % choice for choice in alphanumeric_options ]
   current_idx = 0 
   question_buffer = ""
@@ -61,15 +66,18 @@ def run_single_inference(model, tokenizer, prompt, selections, item, verbose=Fal
     
     selection_results = (dict(zip(selections, np.float64(selection_log_prob_opt_option))))
     chosen_selection = np.argmax(selection_log_prob_opt_option)
-    # dataset specific.
-    alphanumeric_options = ['A', 'B', 'C', 'D'] 
+    # Dataset specific
+    alphanumeric_options = [chr(item).upper() for item in range(ord("a"), ord("z") + 1)][0:len(selection_results.keys())]
+    #['A', 'B', 'C', 'D'] 
     target_labels = [alpha_char == item['answer'] for alpha_char in range(len(alphanumeric_options))]
     prediction_probabilities = (np.float64(selection_log_prob_opt_option)).tolist()
 
+    if item['answer'] >= len(selections):
+      print("getting out of bounds", item['answer'], selections)
     result = {
       "selection_results": selection_results ,
       "chosen": selections[chosen_selection],
-      "answer": selections[item['answer']] 
+      "answer": selections[item['answer']]  # getting out of bounds here
     }
     return (result , prediction_probabilities, target_labels)
 

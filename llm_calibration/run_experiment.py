@@ -130,6 +130,8 @@ def main():
 
     parser.add_argument("--runner_name", type=str,  help="name of inference runner")
      
+    parser.add_argument("--n-shots", type=int,default=1 , help=1)
+
     # Output arguments
     parser.add_argument("--output-dir", type=str, default="output",
                         help="Path to save the predictions JSON file (default: result.json)")
@@ -146,7 +148,8 @@ def main():
                    args.dataset, RUNNERS[args.runner_name], 
                    args.output_dir, 
                    start_idx=args.start_idx, 
-                   write_chunks=args.write_chunks
+                   write_chunks=args.write_chunks,
+                   n_shots=args.n_shots
                    )    
 
 if __name__ == "__main__":
