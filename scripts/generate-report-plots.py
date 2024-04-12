@@ -135,7 +135,7 @@ model_result_files = [ os.path.abspath(file_path+('/../output/model-output/model
 generate_comparison_plot(model_result_files, 
                           ["Llama 13-b Chat Model %s (0-shot)" % subject.upper() for subject in subjects], 
                          dynamic_bins=True, 
-                         samples_per_bin=500,
+                         samples_per_bin=300,
                          output_dir=report_path, 
                          output_tag="0-shot-13-b-chat-vs-subjects")
 #%% 5-shot subject specific.
@@ -145,7 +145,7 @@ model_result_files = [os.path.abspath(file_path+('/../output/model-output/model_
 generate_comparison_plot(model_result_files, 
                           ["Llama 13-b Chat Model %s (5-shot)" % subject.upper() for subject in subjects], 
                          dynamic_bins=True, 
-                         samples_per_bin=500,
+                         samples_per_bin=300,
                          output_dir=report_path, 
                          output_tag="5-shot-13-b-chat-vs-subjects")
 #%% 5-shot logic-qa 
@@ -175,14 +175,14 @@ model_result_files = [
 generate_comparison_plot(model_result_files, 
                           [
                              'Llama 7b Chat Model (5-shot)', 
-                           'Llama 7b Base Model (0-shot)', 
-                           'Llama 7b Base  (5-shot)',
-                           'Llama 13b Chat Model (5-shot)', 
+                             'Llama 7b Base Model (0-shot)', 
+                              'Llama 7b Base  (5-shot)',
+                              'Llama 13b Chat Model (5-shot)', 
                            ], 
                          dynamic_bins=True, 
                          samples_per_bin=100,
                          output_dir=report_path, 
-                         output_tag="7b-truthful_qa")
+                         output_tag="7b-13b-truthful_qa")
 #%% Running on human eval
 model_result_files = [
     os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_openai_humaneval_n_shots_5_tag-result.json')
