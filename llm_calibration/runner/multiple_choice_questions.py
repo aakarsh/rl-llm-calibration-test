@@ -75,8 +75,6 @@ def run_single_inference(model, tokenizer, prompt, selections, item, verbose=Fal
     chosen_selection = np.argmax(selection_log_prob_opt_option)
     # Dataset specific
     alphanumeric_options = get_alphabet_options(len(selection_results.keys()))
-    #[chr(item).upper() for item in range(ord("a"), ord("z") + 1)][0:len(selection_results.keys())]
-    #['A', 'B', 'C', 'D'] 
     target_labels = [alpha_char == item['answer'] for alpha_char in range(len(alphanumeric_options))]
     prediction_probabilities = (np.float64(selection_log_prob_opt_option)).tolist()
 
@@ -85,7 +83,7 @@ def run_single_inference(model, tokenizer, prompt, selections, item, verbose=Fal
     result = {
       "selection_results": selection_results ,
       "chosen": selections[chosen_selection],
-      "answer": selections[item['answer']]  # getting out of bounds here
+      "answer": selections[item['answer']]  
     }
     return (result , prediction_probabilities, target_labels)
 
