@@ -123,12 +123,12 @@ def main():
     parser = argparse.ArgumentParser(description="Run PyTorch model on a dataset")
 
     # Model arguments
-    parser.add_argument("--model_name", type=str,  default="meta-llama/Llama-2-7b-chat-hf",
+    parser.add_argument("--model-name", type=str,  default="meta-llama/Llama-2-7b-chat-hf",
                         help="Path to the saved PyTorch model file")
     # Dataset arguments
     parser.add_argument("--dataset", type=str, default='', help="Dataset name")
 
-    parser.add_argument("--runner_name", type=str,  help="name of inference runner")
+    parser.add_argument("--runner-name", type=str,  help="name of inference runner")
      
     parser.add_argument("--n-shots", type=int,default=1 , help=1)
 
