@@ -162,9 +162,27 @@ generate_comparison_plot(model_result_files,
                            'Llama 13b Chat Model (5-shot)'
                            ], 
                          dynamic_bins=True, 
-                         samples_per_bin=500,
+                         samples_per_bin=200,
                          output_dir=report_path, 
                          output_tag="5-shot-7b-13b-logic-qa")
+#%%
+model_result_files = [
+    os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_truthful_qa_n_shots_5_tag-result.json'),
+    os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-hf_ds_truthful_qa_n_shots_1_tag-result.json'),
+    os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-hf_ds_truthful_qa_n_shots_5_tag-result.json'),
+    os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_truthful_qa_n_shots_5_tag-result.json')
+]
+generate_comparison_plot(model_result_files, 
+                          [
+                             'Llama 7b Chat Model (5-shot)', 
+                           'Llama 7b Base Model (0-shot)', 
+                           'Llama 7b Base  (5-shot)',
+                           'Llama 13b Chat Model (5-shot)', 
+                           ], 
+                         dynamic_bins=True, 
+                         samples_per_bin=100,
+                         output_dir=report_path, 
+                         output_tag="7b-truthful_qa")
 #%% Running on human eval
 model_result_files = [
     os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_openai_humaneval_n_shots_5_tag-result.json')
