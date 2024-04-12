@@ -150,13 +150,17 @@ generate_comparison_plot(model_result_files,
                          output_tag="5-shot-13-b-chat-vs-subjects")
 #%% 5-shot logic-qa 
 model_result_files = [
+    os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_logic_qa_n_shots_1_tag-result.json'),
     os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_lucasmccabe_logiqa_n_shots_5_tag-result.json'),
     os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-hf_ds_lucasmccabe_logiqa_n_shots_5_tag-result.json'),
     os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-13b-hf_ds_lucasmccabe_logiqa_n_shots_5_tag-result.json'), 
     os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_lucasmccabe_logiqa_n_shots_5_tag-result.json') 
 ]
 generate_comparison_plot(model_result_files, 
-                          ['Llama 7b Chat Model (5-shot)', 
+                          [
+                           'Llama 7b Chat Model (0-shot)', 
+                           # WIP 'Llama 7b Base Model (0-shot)', 
+                           'Llama 7b Chat Model (5-shot)', 
                            'Llama 7b Base Model (5-shot)', 
                            'Llama 13b Base Model (5-shot)',
                            'Llama 13b Chat Model (5-shot)'
