@@ -18,6 +18,7 @@ from llm_calibration.model.model_probability import (get_normalized_probabilitie
 
 import llm_calibration.runner.mmlu as mmlu_runner
 import llm_calibration.runner.logic_qa as logic_qa_runner 
+import llm_calibration.runner.truthful_qa as truthful_qa_runner 
 import llm_calibration.runner.human_eval as human_eval_runner 
 
 from llm_calibration.plot import plot_calibration
@@ -38,7 +39,7 @@ LLAMA_MODELS = [
     'meta-llama/Llama-2-13b-hf', 
     'meta-llama/Llama-2-13b-chat-hf',
     'meta-llama/Llama-2-7b-chat-hf',
-    'meta-llama/Llama-2-7b-hf'
+    'meta-llama/Llama-2-7b-hf',
     'meta-llama/Llama-2-70b-hf', 
     'meta-llama/Llama-2-70b-chat-hf',
 ] 
@@ -46,7 +47,8 @@ LLAMA_MODELS = [
 RUNNERS = {
     'mmlu': mmlu_runner,
     'logic_qa': logic_qa_runner,
-    'human_eval': human_eval_runner
+    'human_eval': human_eval_runner,
+    'truthful_qa' :truthful_qa_runner
 }
 
 SUPPORTED_MODELS = [] + LLAMA_MODELS
@@ -121,13 +123,15 @@ def main():
     parser = argparse.ArgumentParser(description="Run PyTorch model on a dataset")
 
     # Model arguments
-    parser.add_argument("--model_name", type=str,  default="meta-llama/Llama-2-7b-chat-hf",
+    parser.add_argument("--model-name", type=str,  default="meta-llama/Llama-2-7b-chat-hf",
                         help="Path to the saved PyTorch model file")
     # Dataset arguments
     parser.add_argument("--dataset", type=str, default='', help="Dataset name")
 
-    parser.add_argument("--runner_name", type=str,  help="name of inference runner")
+    parser.add_argument("--runner-name", type=str,  help="name of inference runner")
      
+    parser.add_argument("--n-shots", type=int,default=1 , help=1)
+
     # Output arguments
     parser.add_argument("--output-dir", type=str, default="output",
                         help="Path to save the predictions JSON file (default: result.json)")
@@ -144,7 +148,8 @@ def main():
                    args.dataset, RUNNERS[args.runner_name], 
                    args.output_dir, 
                    start_idx=args.start_idx, 
-                   write_chunks=args.write_chunks
+                   write_chunks=args.write_chunks,
+                   n_shots=args.n_shots
                    )    
 
 if __name__ == "__main__":

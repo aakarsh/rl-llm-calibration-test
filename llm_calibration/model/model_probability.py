@@ -5,13 +5,13 @@ def get_normalized_probabilities(model_results, include_true_negatives=False):
   """
   Takes model results and returns normalized probabilities and truth values.
   """
-  completions = list(sorted(model_results[0]['selection_results'].keys()))
   completion_probabilities = []
   predicted_probability = []
   truth_value = []
   actual_labels = []
   correct_predictions = []
   for model_result in model_results:
+    completions = list(sorted(model_result['selection_results'].keys()))
     model_log_prob_of_completion = torch.tensor([model_result['selection_results'][completion] for completion in completions])
     if model_log_prob_of_completion.isnan().any():
             print('Skipping NaN in model results.')
