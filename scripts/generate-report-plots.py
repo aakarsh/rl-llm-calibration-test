@@ -26,13 +26,16 @@ model_result_files = [
    os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-13b-hf_ds_all_tag-result.json'),
    os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_all_tag-result.json'),
    os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_all_tag-result.json'),
+   os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-70b-chat-hf_ds_all_n_shots_1_tag-result.json'),
+   
 ]
 generate_comparison_plot(model_result_files, 
                          [
                             "Llama 7-b Base Model (0-shot)",
                             "Llama 7-b Chat Model (0-shot)",
                             "Llama 13-b Base Model (0-shot)",
-                            "Llama 13-b Chat Model (0-shot)"
+                            "Llama 13-b Chat Model (0-shot)",
+                            "Llama 70-b Chat Model (0-shot)"
                           ],
                          dynamic_bins=True, 
                          samples_per_bin=1000,
@@ -44,7 +47,8 @@ generate_roc_plot(model_result_files,
                             "Llama 7-b Base Model (0-shot)",
                             "Llama 7-b Chat Model (0-shot)",
                             "Llama 13-b Base Model (0-shot)",
-                            "Llama 13-b Chat Model (0-shot)"
+                            "Llama 13-b Chat Model (0-shot)",
+                            "Llama 70-b Chat Model (0-shot)"
                           ],
                          output_dir=report_path, 
                          output_tag="0-shot-MMLU")
@@ -88,6 +92,7 @@ generate_comparison_plot(model_result_files,
                          samples_per_bin=300,
                          output_dir=report_path, 
                          output_tag="0-shot-MMLU-subjects")
+
 generate_roc_plot(model_result_files, 
                           ["Llama 13-b Chat Model %s (0-shot)" % subject.upper() for subject in subjects], 
                          output_dir=report_path, 
@@ -109,7 +114,7 @@ generate_comparison_plot(model_result_files,
 generate_roc_plot(model_result_files, 
                           ["Llama 13-b Chat Model %s (0-shot)" % subject.upper() for subject in subjects], 
                          output_dir=report_path, 
-                         output_tag="0-shot-MMLU-subjects")
+                         output_tag="5-shot-MMLU-subjects")
 #%% LogicQA
 #%% Logic-QA 0-shot
 model_result_files = [
