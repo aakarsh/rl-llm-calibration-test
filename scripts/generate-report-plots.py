@@ -256,7 +256,7 @@ generate_roc_plot(model_result_files, [
                           "Llama 13-b Chat Model (5-shot)"
                          ],
                          output_dir=report_path, 
-                         output_tag="5-shot-MMLU-ROC")
+                         output_tag="5-shot-MMLU")
 
 #%% MMLU-BySubject TODO: 7-b 5-shot
 subjects = ["STEM", "SOCIAL_SCIENCE", "HUMANITIES", "OTHER"]
@@ -295,7 +295,7 @@ generate_roc_plot(model_result_files,
                              'Llama 13b  Base Model (5-shot)', 
                            ],
                          output_dir=report_path, 
-                         output_tag="5-shot-TruthfulQA-roc")
+                         output_tag="5-shot-TruthfulQA")
 
 #%% Logic-QA 5-shot logic-qa 
 model_result_files = [
@@ -324,7 +324,7 @@ generate_roc_plot(model_result_files,
                            'Llama 13b Chat Model (5-shot)'
                            ], 
                          output_dir=report_path, 
-                         output_tag="5-shot-logic-qa-roc")
+                         output_tag="5-shot-logic-qa")
 
 #%% 5-shot truthful-qa
 
@@ -345,6 +345,17 @@ generate_comparison_plot(model_result_files,
                          output_dir=report_path, 
                          output_tag="0-shot-MMLU")
 
+generate_roc_plot(model_result_files, 
+
+                         [
+                            "Llama 7-b Chat Model (0-shot)",
+                            "Llama 13-b Base Model (0-shot)",
+                            "Llama 13-b Chat Model (0-shot)"
+                          ],
+                         output_dir=report_path, 
+                         output_tag="0-shot-MMLU")
+
+
 #%% 0-shot subject specific
 subjects = ["STEM", "SOCIAL_SCIENCE", "HUMANITIES", "OTHER"]
 model_result_files = [ os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_%s_tag-result.json'% subject)) for subject in subjects]
@@ -362,13 +373,15 @@ generate_comparison_plot(model_result_files,
 #model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_logic_qa_n_shots_1_tag-result.json
 #%%
 model_result_files = [
+    os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_logic_qa_n_shots_1_tag-result.json'),
     os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-13b-hf_ds_logic_qa_n_shots_1_tag-result.json'),
     os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-hf_ds_logic_qa_n_shots_1_tag-result.json'),
     os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_logic_qa_n_shots_1_tag-result.json')
 ]
 
 generate_comparison_plot(model_result_files, 
-                          [ 
+                           [
+                           'Llama 13b Chat Model (0-shot)',
                            'Llama 13b Base Model (0-shot)',
                            'Llama 7b Base Model (0-shot)',
                            'Llama 7b Chat Model (0-shot)' 
@@ -377,6 +390,18 @@ generate_comparison_plot(model_result_files,
                          samples_per_bin=300,
                          output_dir=report_path, 
                          output_tag="0-shot-logic-qa")
+
+generate_roc_plot(model_result_files, 
+                          [ 
+                           'Llama 13b Chat Model (0-shot)',
+                           'Llama 13b Base Model (0-shot)',
+                           'Llama 7b Base Model (0-shot)',
+                           'Llama 7b Chat Model (0-shot)' 
+                           ], 
+                         output_dir=report_path, 
+                         output_tag="0-shot-logic-qa")
+
+
 #%% TruthQA 0-shot
 model_result_files = [
     os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-hf_ds_truthful_qa_n_shots_1_tag-result.json'),

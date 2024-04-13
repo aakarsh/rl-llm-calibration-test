@@ -210,8 +210,9 @@ def generate_comparison_plot(file_paths,  model_labels=[],
 
 def generate_roc_plot(file_paths, model_labels=[], 
                         output_dir=None, 
-                        figure=None,
-                        output_tag=None):
+                        output_tag=None,
+                        show_figure=True,
+                        figure=None):
   """
   Plot the classification ROC
   """
@@ -237,8 +238,17 @@ def generate_roc_plot(file_paths, model_labels=[],
       model_truth_values[current_label] = correct_predictions #actual_labels # truth_values
       fpr, tpr, thresholds = sk_metrics.roc_curve(actual_labels, completion_probabilities)  
       roc_display = RocCurveDisplay.from_predictions(actual_labels, completion_probabilities, name=model_labels[idx], ax = plt.gca())
-  plt.plot(np.linspace(0,1), np.linspace(0,1), 'Random Classifier')
+      
+  chance_points = np.linspace(0, 1, 300) 
+  plt.plot(chance_points,chance_points, linestyle='--', color='gray', scalex=False, scaley=False, label='Chance')
   plt.legend()
+
+  if output_dir: 
+    out_file=output_dir+"/"+output_tag+"-roc.png" 
+    plt.savefig(out_file)
+  if show_figure: 
+    plt.show()
+  
   plt.show() 
   return None
 
