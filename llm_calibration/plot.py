@@ -7,6 +7,10 @@ import matplotlib.pyplot as plt
 import itertools
 import functools
 
+import sklearn.metrics as sk_metrics
+from sklearn.metrics import RocCurveDisplay, roc_curve
+
+
 #%%
 from llm_calibration.model.model_probability import (get_normalized_probabilities, 
                                                      bin_prediction_probabilities_by_samples_per_bin)
@@ -204,6 +208,41 @@ def generate_comparison_plot(file_paths,  model_labels=[],
                               range_start=0, range_end=1, 
                               out_file=output_dir+"/"+output_tag+".png")
 
+def generate_roc_plot(file_paths, model_labels=[], 
+                        output_dir=None, 
+                        figure=None,
+                        output_tag=None):
+  """
+  Plot the classification ROC
+  """
+  comparison_files = []
+  for file_path in file_paths: 
+      with open(file_path) as f:
+          comparison_files.append(json.load(f))
+      
+  model_completion_probabilities={}
+  model_truth_values = {}
+
+  if not figure:
+    figure = plt.figure(figsize=(10, 10))
+ 
+  for idx, comparison_file in enumerate(comparison_files):
+      model_results = comparison_file 
+ 
+      completion_probabilities, truth_value, actual_labels, correct_predictions, completions= \
+          get_normalized_probabilities(model_results, include_true_negatives=True)
+      current_label: str  = model_labels[idx]
+      model_completion_probabilities[current_label] = \
+          completion_probabilities
+      model_truth_values[current_label] = correct_predictions #actual_labels # truth_values
+      fpr, tpr, thresholds = sk_metrics.roc_curve(actual_labels, completion_probabilities)  
+      roc_display = RocCurveDisplay.from_predictions(actual_labels, completion_probabilities, name=model_labels[idx], ax = plt.gca())
+  plt.plot(np.linspace(0,1), np.linspace(0,1), 'Random Classifier')
+  plt.legend()
+  plt.show() 
+  return None
+
+
 def generate_calibration_plot(file_path, output_dir=None, output_tag=None):
   with open(file_path) as f:
     test_data = json.load(f)
@@ -214,3 +253,5 @@ def generate_calibration_plot(file_path, output_dir=None, output_tag=None):
   plot_calibration(np.array(completion_probabilities), 
                   np.array(correct_predictions, dtype=np.int32), 
                   num_bins=10, range_start=0, range_end=1, out_file=output_dir+"/"+output_tag+".png")
+
+# %%
