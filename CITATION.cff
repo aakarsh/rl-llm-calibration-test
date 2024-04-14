@@ -1,0 +1,62 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Examining Calibration Large Language Model in Question
+  Answering
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: aakarsh
+    family-names: nair
+    email: aakarsh.nair@student.uni-tuebingen.de
+    affiliation: Eberhard Karls Universität Tübingen
+  - given-names: Ilinca
+    family-names: Vandici
+    affiliation: Eberhard Karls Universität Tübingen
+  - given-names: Linus
+    family-names: Rösener
+    affiliation: Eberhard Karls Universität Tübingen
+  - {}
+repository-code: 'https://github.com/aakarsh/rl-llm-calibration-test'
+abstract: >
+  In this paper, we examine the issue of calibration of
+  large language models. 
+
+  That is the interaction between the \emph{confidence} of a
+  predicted answer 
+
+  on a question-answering task with its \emph{empirical
+  likelihood 
+
+  of being correct}.
+
+
+  We replicate elements of previous calibration study
+  \cite{kadavath2022language} 
+
+  on several multiple-choice  (MMLU, LogicQA, TruthfulQA)
+  and 
+
+  open-ended question answering datasets translated into 
+
+  the multiple choice format (TriviaQA, HumanEval, GSM8k). 
+
+
+  We find that models do scale in their calibration ability
+  by model size. 
+
+  Moreover models fine-tuned for conversation improve in
+  calibration and 
+
+  accuracy under multi-shot prompting. However, we also
+  observe that for tasks beyond 
+
+  models reasoning  capability (complex logical and
+  scientific reasoning) fine-tuning harms models 
+
+  accuracy and leads to overconfidence in model predictions.
+license: GPL-1.0+
