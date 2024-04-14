@@ -10,8 +10,8 @@ message: >-
   metadata from this file.
 type: software
 authors:
-  - given-names: aakarsh
-    family-names: nair
+  - given-names: Aakarsh
+    family-names: Nair
     email: aakarsh.nair@student.uni-tuebingen.de
     affiliation: Eberhard Karls Universität Tübingen
   - given-names: Ilinca
