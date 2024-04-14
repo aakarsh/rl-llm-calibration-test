@@ -109,10 +109,14 @@ subjects = ["STEM", "SOCIAL_SCIENCE", "HUMANITIES", "OTHER"]
 model_result_files = [os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_%s_n_shots_5_tag-result.json'% subject)) 
                            for subject in subjects] +  \
                      [os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_%s_n_shots_5_tag-result.json'% subject)) 
+                           for subject in subjects] + \
+                     [os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-7b-hf_ds_%s_n_shots_5_tag-result.json'% subject)) 
                            for subject in subjects]          
 
 model_labels = ["Llama 13-b Chat Model %s (5-shot)" % subject.upper() for subject in subjects] + \
-               ["Llama 7-b Chat Model %s (5-shot)" % subject.upper() for subject in subjects] 
+               ["Llama 7-b Chat Model %s (5-shot)" % subject.upper() for subject in subjects]  + \
+               ["Llama 7-b Base Model %s (5-shot)" % subject.upper() for subject in subjects] 
+                  
 
 generate_comparison_plot(model_result_files,  model_labels,
                          dynamic_bins=True, 
