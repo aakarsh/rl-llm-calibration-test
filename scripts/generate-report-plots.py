@@ -83,15 +83,18 @@ generate_roc_plot(model_result_files, [
 
 #%% MMLU-Subject Specific:
 #%% MMLU-Subject Specific 0-shot 
-## TODO: 7b-Base, 13b-Base
+## TODO: 13b-Base
+## TODO: 70b-base, 70b-chat
 subjects = ["STEM", "SOCIAL_SCIENCE", "HUMANITIES", "OTHER"]
 model_result_files =  \
-   [ os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_%s_tag-result.json'% subject)) for subject in subjects] + \
-   [ os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_%s_n_shots_1_tag-result.json'% subject)) for subject in subjects] 
+   [ os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_%s_tag-result.json'% subject)) for subject in subjects ] + \
+   [ os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_%s_n_shots_1_tag-result.json'% subject)) for subject in subjects ] + \
+   [ os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-7b-hf_ds_%s_n_shots_1_tag-result.json'% subject)) for subject in subjects ]
 
-model_labels = ["Llama 13-b Chat Model %s (0-shot)" % subject.upper() for subject in subjects] + \
-               ["Llama 7-b Chat Model %s (0-shot)" % subject.upper() for subject in subjects] 
-
+model_labels = [ "Llama 13-b Chat Model %s (0-shot)" % subject.upper() for subject in subjects ] + \
+               [ "Llama 7-b Chat Model %s (0-shot)" % subject.upper() for subject in subjects ]  + \
+               [ "Llama 7-b Base Model %s (0-shot)" % subject.upper() for subject in subjects ] 
+                  
 generate_comparison_plot(model_result_files, model_labels, 
                          dynamic_bins=True, 
                          samples_per_bin=300,
@@ -103,7 +106,8 @@ generate_roc_plot(model_result_files, model_labels,
                          output_tag="0-shot-MMLU-subjects")
 
 #%% MMLU-Subject Specific 5-shot
-## TODO: 7b , 7b-chat, 13b
+## TODO: 13b
+## TODO: 70b-base, 70b-chat
 subjects = ["STEM", "SOCIAL_SCIENCE", "HUMANITIES", "OTHER"]
 
 model_result_files = [os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_%s_n_shots_5_tag-result.json'% subject)) 
