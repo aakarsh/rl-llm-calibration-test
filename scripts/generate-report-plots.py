@@ -54,6 +54,7 @@ generate_roc_plot(model_result_files,
                          output_tag="0-shot-MMLU")
 
 #%% MMLU 5-shot
+#%% 70b for MMLU - 
 model_result_files = [
    os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-hf_ds_all_n_shots_5_tag-result.json'),
    os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_all_n_shots_5_tag-result.json'),
@@ -76,24 +77,70 @@ generate_roc_plot(model_result_files, [
                           "Llama 7-b Base Model (5-shot)",
                           "Llama 7-b Chat Model (5-shot)",
                           "Llama 13-b Base Model (5-shot)",
-                          "Llama 13-b Chat Model (5-shot)"
-                         ],
+                          "Llama 13-b Chat Model (5-shot)"],
                          output_dir=report_path, 
                          output_tag="5-shot-MMLU")
 
 #%% MMLU-Subject Specific:
+#%% Need to split These into two graphs, one for 13b models and the other for 7b models. 
 #%% MMLU-Subject Specific 0-shot 
 ## TODO: 13b-Base
 ## TODO: 70b-base, 70b-chat
+#%% 7b-0-shot
 subjects = ["STEM", "SOCIAL_SCIENCE", "HUMANITIES", "OTHER"]
 model_result_files =  \
-   [ os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_%s_tag-result.json'% subject)) for subject in subjects ] + \
    [ os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_%s_n_shots_1_tag-result.json'% subject)) for subject in subjects ] + \
    [ os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-7b-hf_ds_%s_n_shots_1_tag-result.json'% subject)) for subject in subjects ]
 
-model_labels = [ "Llama 13-b Chat Model %s (0-shot)" % subject.upper() for subject in subjects ] + \
+model_labels = \
                [ "Llama 7-b Chat Model %s (0-shot)" % subject.upper() for subject in subjects ]  + \
-               [ "Llama 7-b Base Model %s (0-shot)" % subject.upper() for subject in subjects ] 
+               [ "Llama 7-b Base Model %s (0-shot)" % subject.upper() for subject in subjects ]
+                  
+generate_comparison_plot(model_result_files, model_labels, 
+                         dynamic_bins=True, 
+                         samples_per_bin=300,
+                         output_dir=report_path, 
+                         output_tag="0-shot-MMLU-subjects-7b")
+
+generate_roc_plot(model_result_files, model_labels, 
+                         output_dir=report_path, 
+                         output_tag="0-shot-MMLU-subjects-7b")
+#%% 13b
+subjects = ["STEM", "SOCIAL_SCIENCE", "HUMANITIES", "OTHER"]
+model_result_files =  \
+       [ os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_%s_tag-result.json'% subject)) for subject in subjects ] + \
+       [ os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-13b-hf_ds_%s_n_shots_1_tag-result.json'% subject)) for subject in subjects ] 
+
+model_labels = \
+               [ "Llama 13-b Chat Model %s (0-shot)" % subject.upper() for subject in subjects ]  + \
+               [ "Llama 13-b Base Model %s (0-shot)" % subject.upper() for subject in subjects ]
+                  
+generate_comparison_plot(model_result_files, model_labels, 
+                         dynamic_bins=True, 
+                         samples_per_bin=300,
+                         output_dir=report_path, 
+                         output_tag="0-shot-MMLU-subjects-13b")
+
+generate_roc_plot(model_result_files, model_labels, 
+                         output_dir=report_path, 
+                         output_tag="0-shot-MMLU-subjects-13b")
+
+
+
+
+#%% 13b
+subjects = ["STEM", "SOCIAL_SCIENCE", "HUMANITIES", "OTHER"]
+model_result_files =  \
+   [ os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_%s_tag-result.json'% subject)) for subject in subjects ] + \
+   [ os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-13b-hf_ds_%s_n_shots_1_tag-result.json'% subject)) for subject in subjects ] + \
+   [ os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_%s_n_shots_1_tag-result.json'% subject)) for subject in subjects ] + \
+   [ os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-7b-hf_ds_%s_n_shots_1_tag-result.json'% subject)) for subject in subjects ]
+
+model_labels = \
+               [ "Llama 13-b Chat Model %s (0-shot)" % subject.upper() for subject in subjects ] + \
+               [ "Llama 13-b Base Model %s (0-shot)" % subject.upper() for subject in subjects ] + \
+               [ "Llama 7-b Chat Model %s (0-shot)" % subject.upper() for subject in subjects ]  + \
+               [ "Llama 7-b Base Model %s (0-shot)" % subject.upper() for subject in subjects ]
                   
 generate_comparison_plot(model_result_files, model_labels, 
                          dynamic_bins=True, 
@@ -106,31 +153,53 @@ generate_roc_plot(model_result_files, model_labels,
                          output_tag="0-shot-MMLU-subjects")
 
 #%% MMLU-Subject Specific 5-shot
-## TODO: 13b
+## TODO: 
 ## TODO: 70b-base, 70b-chat
+#%% 7b
 subjects = ["STEM", "SOCIAL_SCIENCE", "HUMANITIES", "OTHER"]
 
-model_result_files = [os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_%s_n_shots_5_tag-result.json'% subject)) 
-                           for subject in subjects] +  \
-                     [os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_%s_n_shots_5_tag-result.json'% subject)) 
+model_result_files = [os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_%s_n_shots_5_tag-result.json'% subject)) 
                            for subject in subjects] + \
                      [os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-7b-hf_ds_%s_n_shots_5_tag-result.json'% subject)) 
-                           for subject in subjects]          
+                           for subject in subjects] 
 
-model_labels = ["Llama 13-b Chat Model %s (5-shot)" % subject.upper() for subject in subjects] + \
-               ["Llama 7-b Chat Model %s (5-shot)" % subject.upper() for subject in subjects]  + \
-               ["Llama 7-b Base Model %s (5-shot)" % subject.upper() for subject in subjects] 
+model_labels = ["Llama 7-b Chat Model %s (5-shot)" % subject.upper() for subject in subjects]  + \
+               ["Llama 7-b Base Model %s (5-shot)" % subject.upper() for subject in subjects]
                   
 
 generate_comparison_plot(model_result_files,  model_labels,
                          dynamic_bins=True, 
                          samples_per_bin=300,
                          output_dir=report_path, 
-                         output_tag="5-shot-MMLU-subjects")
+                         output_tag="5-shot-MMLU-subjects-7b")
 
 generate_roc_plot(model_result_files, model_labels, 
                          output_dir=report_path, 
-                         output_tag="5-shot-MMLU-subjects")
+                         output_tag="5-shot-MMLU-subjects-7b")
+
+#%% 13-b
+subjects = ["STEM", "SOCIAL_SCIENCE", "HUMANITIES", "OTHER"]
+
+model_result_files = [os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_%s_n_shots_5_tag-result.json'% subject)) 
+                           for subject in subjects] +  \
+                     [os.path.abspath(file_path+('/../output/model-output/model_results_model_meta-llama_Llama-2-13b-hf_ds_%s_n_shots_5_tag-result.json'% subject)) 
+                           for subject in subjects]        
+
+model_labels = ["Llama 13-b Chat Model %s (5-shot)" % subject.upper() for subject in subjects] + \
+               ["Llama 13-b Base Model %s (5-shot)" % subject.upper() for subject in subjects] 
+                  
+
+generate_comparison_plot(model_result_files,  model_labels,
+                         dynamic_bins=True, 
+                         samples_per_bin=300,
+                         output_dir=report_path, 
+                         output_tag="5-shot-MMLU-subjects-13b")
+
+generate_roc_plot(model_result_files, model_labels, 
+                         output_dir=report_path, 
+                         output_tag="5-shot-MMLU-subjects-13b")
+
+
 #%% LogicQA
 #%% Logic-QA 0-shot
 model_result_files = [
