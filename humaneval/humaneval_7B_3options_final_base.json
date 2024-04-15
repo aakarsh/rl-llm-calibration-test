@@ -1,0 +1,1983 @@
+{
+    "model": "llama-7B-hf",
+    "prompt-type": [
+        "Prompt:\n\ndef is_palindrome(string: str) -> bool:\n    \"\"\" Test if given string is a palindrome \"\"\"\n    return string == string[::-1]\n\n\ndef make_palindrome(string: str) -> str:\n    \"\"\" Find the shortest palindrome that begins with a supplied string.\n    Algorithm idea is simple:\n    - Find the longest postfix of supplied string that is a palindrome.\n    - Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.\n    >>> make_palindrome('')\n    ''\n    >>> make_palindrome('cat')\n    'catac'\n    >>> make_palindrome('cata')\n    'catac'\n    \"\"\"\nSelect the correct completion:\nA.    return bin(sum(int(i) for i in str(N)))[2:]\n\nB.    odd = 0\n    even = 0\n    for i in lst1:\n        if i%2 == 1:\n            odd += 1\n    for i in lst2:\n        if i%2 == 0:\n            even += 1\n    if even >= odd:\n        return \"YES\"\n    return \"NO\"\n            \n\nC.    if not string:\n        return ''\n\n    beginning_of_suffix = 0\n\n    while not is_palindrome(string[beginning_of_suffix:]):\n        beginning_of_suffix += 1\n\n    return string + string[:beginning_of_suffix][::-1]\n\nD: None of the above",
+        "C",
+        [
+            "A",
+            "B",
+            "C",
+            "D"
+        ]
+    ],
+    "results": [
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.730421543121338,
+                "B": -6.203077793121338,
+                "C": -6.480421543121338,
+                "D": -7.031202793121338
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.42270040512085,
+                "B": -5.65316915512085,
+                "C": -6.14535665512085,
+                "D": -6.12582540512085
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.67854118347168,
+                "B": -5.43244743347168,
+                "C": -5.93635368347168,
+                "D": -5.20588493347168
+            },
+            "chosen": "D",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.650317668914795,
+                "B": -5.943286418914795,
+                "C": -6.228442668914795,
+                "D": -5.451098918914795
+            },
+            "chosen": "D",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.8314290046691895,
+                "B": -5.9212727546691895,
+                "C": -6.3001790046691895,
+                "D": -5.9681477546691895
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -6.0718841552734375,
+                "B": -6.2398529052734375,
+                "C": -6.2203216552734375,
+                "D": -5.7515716552734375
+            },
+            "chosen": "D",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -6.068659782409668,
+                "B": -6.010066032409668,
+                "C": -5.990534782409668,
+                "D": -6.486628532409668
+            },
+            "chosen": "C",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.518203258514404,
+                "B": -5.779922008514404,
+                "C": -6.283828258514404,
+                "D": -6.838515758514404
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -6.201603412628174,
+                "B": -6.709415912628174,
+                "C": -6.404728412628174,
+                "D": -6.209415912628174
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.992347240447998,
+                "B": -6.164222240447998,
+                "C": -6.398597240447998,
+                "D": -5.531409740447998
+            },
+            "chosen": "D",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.5758256912231445,
+                "B": -5.2086381912231445,
+                "C": -6.3336381912231445,
+                "D": -6.4742631912231445
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.822452545166016,
+                "B": -6.224796295166016,
+                "C": -6.525577545166016,
+                "D": -6.252140045166016
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -6.376183986663818,
+                "B": -6.430871486663818,
+                "C": -6.485558986663818,
+                "D": -6.469933986663818
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -6.0308427810668945,
+                "B": -5.8628740310668945,
+                "C": -5.8081865310668945,
+                "D": -5.4058427810668945
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.495322227478027,
+                "B": -6.030478477478027,
+                "C": -5.913290977478027,
+                "D": -5.788290977478027
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.346010208129883,
+                "B": -5.670228958129883,
+                "C": -5.654603958129883,
+                "D": -4.877260208129883
+            },
+            "chosen": "D",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.282532215118408,
+                "B": -5.727844715118408,
+                "C": -5.622375965118408,
+                "D": -6.329407215118408
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.949533462524414,
+                "B": -5.719064712524414,
+                "C": -5.820627212524414,
+                "D": -5.926095962524414
+            },
+            "chosen": "B",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.478738307952881,
+                "B": -5.791238307952881,
+                "C": -5.775613307952881,
+                "D": -6.537332057952881
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -6.15817928314209,
+                "B": -6.33005428314209,
+                "C": -6.34177303314209,
+                "D": -6.68161678314209
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -6.590274810791016,
+                "B": -6.848087310791016,
+                "C": -6.887149810791016,
+                "D": -6.703556060791016
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.761002540588379,
+                "B": -6.272721290588379,
+                "C": -6.452408790588379,
+                "D": -6.018815040588379
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.49267053604126,
+                "B": -6.03563928604126,
+                "C": -6.05907678604126,
+                "D": -6.60204553604126
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.434739589691162,
+                "B": -6.149583339691162,
+                "C": -5.524583339691162,
+                "D": -6.426927089691162
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.454313278198242,
+                "B": -5.884000778198242,
+                "C": -5.477750778198242,
+                "D": -4.864469528198242
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.90800666809082,
+                "B": -6.31816291809082,
+                "C": -6.16581916809082,
+                "D": -4.83378791809082
+            },
+            "chosen": "D",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.867962837219238,
+                "B": -6.367962837219238,
+                "C": -6.344525337219238,
+                "D": -6.750775337219238
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.619676113128662,
+                "B": -5.420457363128662,
+                "C": -5.678269863128662,
+                "D": -5.397019863128662
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.864292144775391,
+                "B": -5.754917144775391,
+                "C": -5.653354644775391,
+                "D": -5.516635894775391
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.577780246734619,
+                "B": -5.765280246734619,
+                "C": -6.077780246734619,
+                "D": -6.273092746734619
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.587888717651367,
+                "B": -6.189451217651367,
+                "C": -6.115232467651367,
+                "D": -4.955076217651367
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.676836967468262,
+                "B": -6.254961967468262,
+                "C": -6.376055717468262,
+                "D": -5.790118217468262
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.258929252624512,
+                "B": -5.848773002624512,
+                "C": -6.044085502624512,
+                "D": -6.169085502624512
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.547749996185303,
+                "B": -6.278218746185303,
+                "C": -6.028218746185303,
+                "D": -5.289937496185303
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.8260498046875,
+                "B": -6.0291748046875,
+                "C": -6.0057373046875,
+                "D": -4.9354248046875
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.5062031745910645,
+                "B": -6.0022969245910645,
+                "C": -6.0569844245910645,
+                "D": -5.4241719245910645
+            },
+            "chosen": "D",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.316697120666504,
+                "B": -5.332322120666504,
+                "C": -5.676072120666504,
+                "D": -4.855759620666504
+            },
+            "chosen": "D",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.25999641418457,
+                "B": -6.00609016418457,
+                "C": -6.19359016418457,
+                "D": -4.95140266418457
+            },
+            "chosen": "D",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.57859992980957,
+                "B": -6.27391242980957,
+                "C": -6.40281867980957,
+                "D": -6.25828742980957
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.645930290222168,
+                "B": -6.161555290222168,
+                "C": -6.161555290222168,
+                "D": -5.423274040222168
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.2507004737854,
+                "B": -5.9538254737854,
+                "C": -5.9264817237854,
+                "D": -5.8913254737854
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.225858688354492,
+                "B": -6.202421188354492,
+                "C": -5.714139938354492,
+                "D": -6.628202438354492
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.299928188323975,
+                "B": -5.889771938323975,
+                "C": -5.936646938323975,
+                "D": -6.358521938323975
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.361880302429199,
+                "B": -6.131411552429199,
+                "C": -6.053286552429199,
+                "D": -5.717349052429199
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.8291192054748535,
+                "B": -5.9931817054748535,
+                "C": -6.0674004554748535,
+                "D": -6.3799004554748535
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.518087387084961,
+                "B": -5.818868637084961,
+                "C": -5.842306137084961,
+                "D": -5.342306137084961
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -6.84119987487793,
+                "B": -6.75916862487793,
+                "C": -6.82166862487793,
+                "D": -7.91541862487793
+            },
+            "chosen": "B",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.656346321105957,
+                "B": -6.254002571105957,
+                "C": -6.140721321105957,
+                "D": -6.574315071105957
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.344181537628174,
+                "B": -6.008244037628174,
+                "C": -6.008244037628174,
+                "D": -5.875431537628174
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.674341201782227,
+                "B": -6.084497451782227,
+                "C": -5.818872451782227,
+                "D": -5.268091201782227
+            },
+            "chosen": "D",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.63091516494751,
+                "B": -5.83404016494751,
+                "C": -6.38872766494751,
+                "D": -6.55279016494751
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.448117733001709,
+                "B": -6.475461483001709,
+                "C": -6.119992733001709,
+                "D": -6.678586483001709
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.605629920959473,
+                "B": -5.961098670959473,
+                "C": -5.953286170959473,
+                "D": -6.172036170959473
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.981167316436768,
+                "B": -6.504604816436768,
+                "C": -5.938198566436768,
+                "D": -6.559292316436768
+            },
+            "chosen": "C",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.581824779510498,
+                "B": -6.488074779510498,
+                "C": -6.163856029510498,
+                "D": -6.929481029510498
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.856602668762207,
+                "B": -6.411290168762207,
+                "C": -6.219883918762207,
+                "D": -6.801915168762207
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.463828086853027,
+                "B": -5.940390586853027,
+                "C": -5.920859336853027,
+                "D": -6.256796836853027
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.045247554779053,
+                "B": -5.916341304779053,
+                "C": -5.799153804779053,
+                "D": -4.447591304779053
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.819907188415527,
+                "B": -6.226157188415527,
+                "C": -6.191000938415527,
+                "D": -5.917563438415527
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.4185075759887695,
+                "B": -5.6841325759887695,
+                "C": -5.8208513259887695,
+                "D": -4.9185075759887695
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.979473114013672,
+                "B": -6.135723114013672,
+                "C": -5.725566864013672,
+                "D": -5.038066864013672
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.581240653991699,
+                "B": -5.842959403991699,
+                "C": -6.440615653991699,
+                "D": -6.358584403991699
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.48745059967041,
+                "B": -5.97963809967041,
+                "C": -6.33901309967041,
+                "D": -6.51479434967041
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.3565449714660645,
+                "B": -5.5284199714660645,
+                "C": -5.8682637214660645,
+                "D": -5.5987324714660645
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.547878265380859,
+                "B": -5.876003265380859,
+                "C": -5.793972015380859,
+                "D": -5.508815765380859
+            },
+            "chosen": "D",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.292489528656006,
+                "B": -6.003427028656006,
+                "C": -5.991708278656006,
+                "D": -5.604989528656006
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.463618755340576,
+                "B": -5.303462505340576,
+                "C": -5.209712505340576,
+                "D": -4.373775005340576
+            },
+            "chosen": "D",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.218331813812256,
+                "B": -5.733956813812256,
+                "C": -5.987863063812256,
+                "D": -5.995675563812256
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.970213413238525,
+                "B": -5.735838413238525,
+                "C": -5.587400913238525,
+                "D": -4.774900913238525
+            },
+            "chosen": "D",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.4048752784729,
+                "B": -5.4361252784729,
+                "C": -5.6548752784729,
+                "D": -5.2837815284729
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.663228988647461,
+                "B": -5.585103988647461,
+                "C": -5.686666488647461,
+                "D": -4.639791488647461
+            },
+            "chosen": "D",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.108137130737305,
+                "B": -5.791730880737305,
+                "C": -6.080793380737305,
+                "D": -6.518293380737305
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.440812110900879,
+                "B": -5.901749610900879,
+                "C": -5.651749610900879,
+                "D": -4.917374610900879
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.415463924407959,
+                "B": -5.610776424407959,
+                "C": -5.755307674407959,
+                "D": -5.286557674407959
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.027351379394531,
+                "B": -5.832038879394531,
+                "C": -5.703132629394531,
+                "D": -5.460945129394531
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.133603096008301,
+                "B": -5.770321846008301,
+                "C": -5.793759346008301,
+                "D": -6.563290596008301
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.743200778961182,
+                "B": -5.993200778961182,
+                "C": -5.876013278961182,
+                "D": -6.309607028961182
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.060604572296143,
+                "B": -5.962948322296143,
+                "C": -5.646542072296143,
+                "D": -5.666073322296143
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.043401718139648,
+                "B": -5.684026718139648,
+                "C": -5.863714218139648,
+                "D": -5.453557968139648
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.99979829788208,
+                "B": -5.43729829788208,
+                "C": -5.50761079788208,
+                "D": -5.16776704788208
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.324495792388916,
+                "B": -5.511995792388916,
+                "C": -5.371370792388916,
+                "D": -6.156527042388916
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.905595302581787,
+                "B": -6.702470302581787,
+                "C": -6.776689052581787,
+                "D": -5.932939052581787
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.510034561157227,
+                "B": -5.787378311157227,
+                "C": -5.595972061157227,
+                "D": -5.541284561157227
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.7258100509643555,
+                "B": -5.6945600509643555,
+                "C": -5.6359663009643555,
+                "D": -6.2765913009643555
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.209218502044678,
+                "B": -5.759999752044678,
+                "C": -5.709218502044678,
+                "D": -6.076406002044678
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.12709903717041,
+                "B": -5.10756778717041,
+                "C": -4.57631778717041,
+                "D": -4.01381778717041
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.165538787841797,
+                "B": -5.978038787841797,
+                "C": -5.942882537841797,
+                "D": -5.935070037841797
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.158045291900635,
+                "B": -5.693201541900635,
+                "C": -5.806482791900635,
+                "D": -5.622889041900635
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -3.9256680011749268,
+                "B": -5.523324012756348,
+                "C": -5.535042762756348,
+                "D": -4.441292762756348
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.348181247711182,
+                "B": -5.898962497711182,
+                "C": -5.848181247711182,
+                "D": -6.242712497711182
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.72527551651001,
+                "B": -5.53777551651001,
+                "C": -5.52215051651001,
+                "D": -5.86980676651001
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.1097588539123535,
+                "B": -5.0589776039123535,
+                "C": -5.1214776039123535,
+                "D": -4.5902276039123535
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.266776084899902,
+                "B": -5.692557334899902,
+                "C": -5.469901084899902,
+                "D": -4.329276084899902
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.92473030090332,
+                "B": -5.49113655090332,
+                "C": -5.28019905090332,
+                "D": -4.86613655090332
+            },
+            "chosen": "D",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.980965614318848,
+                "B": -6.242684364318848,
+                "C": -6.473153114318848,
+                "D": -6.187996864318848
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.611093521118164,
+                "B": -6.642343521118164,
+                "C": -6.572031021118164,
+                "D": -6.603281021118164
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.192773818969727,
+                "B": -5.931055068969727,
+                "C": -5.614648818969727,
+                "D": -6.591211318969727
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.959630489349365,
+                "B": -5.561192989349365,
+                "C": -5.397130489349365,
+                "D": -5.256505489349365
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.645195960998535,
+                "B": -5.813164710998535,
+                "C": -5.500664710998535,
+                "D": -5.547539710998535
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.470284461975098,
+                "B": -6.372628211975098,
+                "C": -5.724190711975098,
+                "D": -6.454659461975098
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.005908489227295,
+                "B": -6.048877239227295,
+                "C": -5.955127239227295,
+                "D": -6.048877239227295
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.350584506988525,
+                "B": -4.893553256988525,
+                "C": -5.073240756988525,
+                "D": -4.780272006988525
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.670221328735352,
+                "B": -6.127252578735352,
+                "C": -5.756158828735352,
+                "D": -6.088190078735352
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.922590732574463,
+                "B": -5.797590732574463,
+                "C": -6.067121982574463,
+                "D": -5.731184482574463
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.415380954742432,
+                "B": -5.942724704742432,
+                "C": -6.009130954742432,
+                "D": -5.075537204742432
+            },
+            "chosen": "D",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.167871475219727,
+                "B": -5.910058975219727,
+                "C": -5.937402725219727,
+                "D": -5.703027725219727
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.044104099273682,
+                "B": -5.899572849273682,
+                "C": -5.602697849273682,
+                "D": -5.290197849273682
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.354690074920654,
+                "B": -6.018752574920654,
+                "C": -5.874221324920654,
+                "D": -4.026565074920654
+            },
+            "chosen": "D",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.912116050720215,
+                "B": -5.697272300720215,
+                "C": -5.642584800720215,
+                "D": -5.705084800720215
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.750701427459717,
+                "B": -5.543670177459717,
+                "C": -5.438201427459717,
+                "D": -4.508513927459717
+            },
+            "chosen": "D",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.019676685333252,
+                "B": -5.449364185333252,
+                "C": -5.699364185333252,
+                "D": -5.711082935333252
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.9524946212768555,
+                "B": -5.8118696212768555,
+                "C": -5.6790571212768555,
+                "D": -5.5189008712768555
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.837376594543457,
+                "B": -5.876439094543457,
+                "C": -5.622532844543457,
+                "D": -6.606907844543457
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.486706733703613,
+                "B": -5.455456733703613,
+                "C": -5.791394233703613,
+                "D": -5.904675483703613
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.917226791381836,
+                "B": -5.772695541381836,
+                "C": -5.686758041381836,
+                "D": -5.178945541381836
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.024408340454102,
+                "B": -5.708002090454102,
+                "C": -5.625970840454102,
+                "D": -5.926752090454102
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.19365119934082,
+                "B": -5.63505744934082,
+                "C": -5.75615119934082,
+                "D": -5.13505744934082
+            },
+            "chosen": "D",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.3482866287231445,
+                "B": -5.7467241287231445,
+                "C": -5.1842241287231445,
+                "D": -4.6139116287231445
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.780764579772949,
+                "B": -5.534670829772949,
+                "C": -5.483889579772949,
+                "D": -4.909670829772949
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.941012382507324,
+                "B": -5.718356132507324,
+                "C": -5.882418632507324,
+                "D": -5.499606132507324
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.532343864440918,
+                "B": -5.544062614440918,
+                "C": -5.290156364440918,
+                "D": -4.512812614440918
+            },
+            "chosen": "D",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.335787296295166,
+                "B": -5.777193546295166,
+                "C": -5.656099796295166,
+                "D": -5.902193546295166
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.221836090087891,
+                "B": -5.694492340087891,
+                "C": -5.503086090087891,
+                "D": -4.475742340087891
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.372408390045166,
+                "B": -5.927095890045166,
+                "C": -5.739595890045166,
+                "D": -5.626314640045166
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.223577499389648,
+                "B": -5.946233749389648,
+                "C": -6.258733749389648,
+                "D": -6.004827499389648
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.737639904022217,
+                "B": -5.921233654022217,
+                "C": -5.335296154022217,
+                "D": -4.745452404022217
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.9450249671936035,
+                "B": -5.3278374671936035,
+                "C": -5.8942437171936035,
+                "D": -4.7028374671936035
+            },
+            "chosen": "D",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.285645008087158,
+                "B": -5.719238758087158,
+                "C": -6.187988758087158,
+                "D": -5.465332508087158
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.7149786949157715,
+                "B": -5.1016974449157715,
+                "C": -5.1798224449157715,
+                "D": -3.9571659564971924
+            },
+            "chosen": "D",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.190478801727295,
+                "B": -6.100635051727295,
+                "C": -6.104541301727295,
+                "D": -5.252978801727295
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.032897472381592,
+                "B": -5.790709972381592,
+                "C": -5.818053722381592,
+                "D": -5.474303722381592
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.402191638946533,
+                "B": -5.507660388946533,
+                "C": -5.624847888946533,
+                "D": -5.390472888946533
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.425296306610107,
+                "B": -5.894046306610107,
+                "C": -6.144046306610107,
+                "D": -6.120608806610107
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.931305885314941,
+                "B": -5.837555885314941,
+                "C": -5.732087135314941,
+                "D": -5.763337135314941
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.927243232727051,
+                "B": -6.063961982727051,
+                "C": -5.813961982727051,
+                "D": -5.774899482727051
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.351846218109131,
+                "B": -6.008096218109131,
+                "C": -6.105752468109131,
+                "D": -5.933877468109131
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.705657958984375,
+                "B": -5.885345458984375,
+                "C": -5.600189208984375,
+                "D": -5.643157958984375
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.919895172119141,
+                "B": -5.681613922119141,
+                "C": -5.654270172119141,
+                "D": -6.552707672119141
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.782214164733887,
+                "B": -5.665026664733887,
+                "C": -5.762682914733887,
+                "D": -6.524401664733887
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.0343403816223145,
+                "B": -5.5109028816223145,
+                "C": -5.1124653816223145,
+                "D": -5.6085591316223145
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.382620334625244,
+                "B": -6.581839084625244,
+                "C": -6.159964084625244,
+                "D": -5.972464084625244
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.336562633514404,
+                "B": -5.426406383514404,
+                "C": -5.645156383514404,
+                "D": -5.527968883514404
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -6.121450901031494,
+                "B": -6.793325901031494,
+                "C": -6.254263401031494,
+                "D": -6.176138401031494
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.58141565322876,
+                "B": -6.14782190322876,
+                "C": -6.14782190322876,
+                "D": -4.57360315322876
+            },
+            "chosen": "D",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.247262001037598,
+                "B": -5.766793251037598,
+                "C": -5.954293251037598,
+                "D": -5.520699501037598
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.028436183929443,
+                "B": -5.727654933929443,
+                "C": -5.817498683929443,
+                "D": -6.172967433929443
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.629370212554932,
+                "B": -5.652807712554932,
+                "C": -5.492651462554932,
+                "D": -6.180151462554932
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -3.442570686340332,
+                "B": -5.133976936340332,
+                "C": -5.020695686340332,
+                "D": -4.770695686340332
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.879251480102539,
+                "B": -5.488626480102539,
+                "C": -5.906595230102539,
+                "D": -5.637063980102539
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.592026710510254,
+                "B": -5.607651710510254,
+                "C": -5.717026710510254,
+                "D": -5.252182960510254
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.956080913543701,
+                "B": -5.932643413543701,
+                "C": -5.909205913543701,
+                "D": -5.752955913543701
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.153750419616699,
+                "B": -5.806094169616699,
+                "C": -5.724062919616699,
+                "D": -4.810000419616699
+            },
+            "chosen": "D",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.252507209777832,
+                "B": -5.467350959777832,
+                "C": -6.076725959777832,
+                "D": -5.127507209777832
+            },
+            "chosen": "D",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -3.6945557594299316,
+                "B": -5.768774509429932,
+                "C": -5.460180759429932,
+                "D": -4.733618259429932
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.797345161437988,
+                "B": -5.801251411437988,
+                "C": -5.379376411437988,
+                "D": -5.215313911437988
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.603916645050049,
+                "B": -5.557041645050049,
+                "C": -5.416416645050049,
+                "D": -4.693760395050049
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.465497970581055,
+                "B": -6.289716720581055,
+                "C": -6.133466720581055,
+                "D": -6.477216720581055
+            },
+            "chosen": "A",
+            "answer": "B"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.3813910484313965,
+                "B": -5.5181097984313965,
+                "C": -5.4517035484313965,
+                "D": -3.9829535484313965
+            },
+            "chosen": "D",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.928112030029297,
+                "B": -5.900768280029297,
+                "C": -5.666393280029297,
+                "D": -6.111705780029297
+            },
+            "chosen": "A",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.263199329376221,
+                "B": -5.849136829376221,
+                "C": -5.739761829376221,
+                "D": -5.407730579376221
+            },
+            "chosen": "A",
+            "answer": "D"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.3165740966796875,
+                "B": -5.8048553466796875,
+                "C": -5.9650115966796875,
+                "D": -5.3009490966796875
+            },
+            "chosen": "D",
+            "answer": "A"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -4.952159881591797,
+                "B": -5.729503631591797,
+                "C": -5.588878631591797,
+                "D": -6.225597381591797
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -5.162240028381348,
+                "B": -5.470833778381348,
+                "C": -5.880990028381348,
+                "D": -5.978646278381348
+            },
+            "chosen": "A",
+            "answer": "C"
+        },
+        {
+            "model": "llama-7B-hf",
+            "dataset": "humaneval",
+            "context_results": {
+                "A": -2.804410934448242,
+                "B": -4.546598434448242,
+                "C": -3.945035934448242,
+                "D": -3.827848434448242
+            },
+            "chosen": "A",
+            "answer": "A"
+        }
+    ]
+}
