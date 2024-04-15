@@ -27,29 +27,23 @@ model_result_files = [
    os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-13b-chat-hf_ds_all_tag-result.json'),
    os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-7b-chat-hf_ds_all_tag-result.json'),
    os.path.abspath(file_path+'/../output/model-output/model_results_model_meta-llama_Llama-2-70b-chat-hf_ds_all_n_shots_1_tag-result.json'),
-   
 ]
+
+model_labels = [
+                  "Llama 7-b Base Model (0-shot)",
+                  "Llama 7-b Chat Model (0-shot)",
+                  "Llama 13-b Base Model (0-shot)",
+                  "Llama 13-b Chat Model (0-shot)",
+                  "Llama 70-b Chat Model (0-shot)"
+               ]
 generate_comparison_plot(model_result_files, 
-                         [
-                            "Llama 7-b Base Model (0-shot)",
-                            "Llama 7-b Chat Model (0-shot)",
-                            "Llama 13-b Base Model (0-shot)",
-                            "Llama 13-b Chat Model (0-shot)",
-                            "Llama 70-b Chat Model (0-shot)"
-                          ],
+                           model_labels, 
                          dynamic_bins=True, 
                          samples_per_bin=1000,
                          output_dir=report_path, 
                          output_tag="0-shot-MMLU")
 
-generate_roc_plot(model_result_files, 
-                         [
-                            "Llama 7-b Base Model (0-shot)",
-                            "Llama 7-b Chat Model (0-shot)",
-                            "Llama 13-b Base Model (0-shot)",
-                            "Llama 13-b Chat Model (0-shot)",
-                            "Llama 70-b Chat Model (0-shot)"
-                          ],
+generate_roc_plot(model_result_files,model_labels, 
                          output_dir=report_path, 
                          output_tag="0-shot-MMLU")
 
@@ -177,6 +171,7 @@ generate_roc_plot(model_result_files, model_labels,
                          output_dir=report_path, 
                          output_tag="5-shot-MMLU-subjects-7b")
 
+
 #%% 13-b
 subjects = ["STEM", "SOCIAL_SCIENCE", "HUMANITIES", "OTHER"]
 
@@ -188,7 +183,6 @@ model_result_files = [os.path.abspath(file_path+('/../output/model-output/model_
 model_labels = ["Llama 13-b Chat Model %s (5-shot)" % subject.upper() for subject in subjects] + \
                ["Llama 13-b Base Model %s (5-shot)" % subject.upper() for subject in subjects] 
                   
-
 generate_comparison_plot(model_result_files,  model_labels,
                          dynamic_bins=True, 
                          samples_per_bin=300,
@@ -198,7 +192,6 @@ generate_comparison_plot(model_result_files,  model_labels,
 generate_roc_plot(model_result_files, model_labels, 
                          output_dir=report_path, 
                          output_tag="5-shot-MMLU-subjects-13b")
-
 
 #%% LogicQA
 #%% Logic-QA 0-shot
@@ -350,3 +343,5 @@ generate_comparison_plot(model_result_files,
                          output_dir=report_path,
                          output_tag='0-shot-7b-human-eval')
 
+
+# %%

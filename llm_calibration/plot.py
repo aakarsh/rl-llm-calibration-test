@@ -13,6 +13,8 @@ from sklearn.metrics import RocCurveDisplay, roc_curve
 
 #%%
 from llm_calibration.model.model_probability import (get_normalized_probabilities, 
+                                                     compute_ece,
+                                                     compute_rms_calibration_error,
                                                      bin_prediction_probabilities_by_samples_per_bin)
 
 def add_calibration_line_to_plot(calibration_line_num_points  = 1000):
@@ -139,6 +141,8 @@ def plot_calibration_comparison(model_tags, model_labels,
                                 num_bins=10, 
                                 range_start = 0 , 
                                 range_end=1,
+                                model_ece={},
+                                model_rms_error={},
                                 out_file=None, 
                                 show_figure=False):
   """
@@ -146,6 +150,8 @@ def plot_calibration_comparison(model_tags, model_labels,
   """
   save_fig = plt.figure(figsize=(10, 7))
   for idx, model_key in enumerate(model_tags):
+    print(model_key)
+    print(prediction_probabilities.keys())
     probabilities = prediction_probabilities[model_key]
     truth_values = actual_labels[model_key] 
     assert len(probabilities) == len(truth_values)
@@ -153,11 +159,23 @@ def plot_calibration_comparison(model_tags, model_labels,
       #probabilities = probabilities[:100]
       #truth_values = truth_values[:100]
       show_calibration_line = idx == 0
+      current_model_label = model_labels[idx] 
+      print("model_key", model_key) 
+      print("model_ece", model_ece) 
+      print("model_rms_error", model_rms_error) 
+      print("model_key in model_ece", model_key in model_ece)
+      print("model_key in model_rms_error)", model_key in model_rms_error)
+      
+      if (model_key in model_ece) and (model_key in model_rms_error):
+        ece_error = model_ece[model_key]
+        rms_error = model_rms_error[model_key]
+        current_model_label += f' ECE: {ece_error:.2f}' + f' RMSE: {rms_error:.2f}'
+        
       plot_calibration_equally_weighted_bins(probabilities, truth_values, 
                                              samples_per_bin=samples_per_bin, 
                                              range_start=0, range_end=1, 
                                              show_calibration_line=show_calibration_line,
-                                             model_label=model_labels[idx], 
+                                             model_label=current_model_label, 
                                              figure=save_fig, 
                                              show_figure=False)
     else:
@@ -188,17 +206,27 @@ def generate_comparison_plot(file_paths,  model_labels=[],
       
   model_completion_probabilities={}
   model_truth_values = {}
-  
+  model_ece = {}
+  model_rms_error = {} 
   for idx, comparison_file in enumerate(comparison_files):
       model_results = comparison_file 
-      completion_probabilities, _, _, correct_predictions, completions= \
+      completion_probabilities, _, actual_labels, correct_predictions, completions= \
           get_normalized_probabilities(model_results)
-      current_label: str  = model_labels[idx]
+
+      ece_error = compute_ece(completion_probabilities,actual_labels, correct_predictions)# , samples_per_bin=samples_per_bin)
+      rms_error = compute_rms_calibration_error(completion_probabilities,actual_labels, correct_predictions)#,samples_per_bin = samples_per_bin)
+
+      current_label: str  = model_labels[idx] 
+      model_rms_error[current_label] = rms_error
+      model_ece[current_label] = ece_error
+      
       model_completion_probabilities[current_label] = \
           completion_probabilities
       model_truth_values[current_label] = correct_predictions #actual_labels # truth_values
       
   assert len(completion_probabilities) == len(correct_predictions) #len(actual_labels)
+  print("model_ece:", model_ece)
+  print("model_rms_error:", model_rms_error)
   
   plot_calibration_comparison(model_labels, model_labels, 
                               model_completion_probabilities,
@@ -206,6 +234,8 @@ def generate_comparison_plot(file_paths,  model_labels=[],
                               dynamic_bins=dynamic_bins,
                               samples_per_bin=samples_per_bin,
                               range_start=0, range_end=1, 
+                              model_ece=model_ece,
+                              model_rms_error=model_rms_error,
                               out_file=output_dir+"/"+output_tag+".png")
 
 def generate_roc_plot(file_paths, model_labels=[], 

@@ -28,12 +28,12 @@ def get_normalized_probabilities(model_results, include_true_negatives=False):
     for completion_idx, completion in enumerate(completions):
         if completion == model_result['chosen']:
                 # Correct answer: TP.
-                if completion == model_result['answer']: 
+                if completion == model_result['answer']: # most likely prediction
                         truth_value.append(1) 
                         actual_labels.append(1)
                         correct_predictions.append(1)
                         predicted_probability.append(model_completion_probability[completion_idx].item())
-                else: # Incorrect answer: FP.
+                else: # Incorrect answer: FP.  
                         predicted_probability.append(model_completion_probability[completion_idx].item())
                         correct_predictions.append(0)
                         
@@ -41,10 +41,9 @@ def get_normalized_probabilities(model_results, include_true_negatives=False):
                         truth_value.append(1) 
         else: # Completion was not chosen.
                 # Incorrect answer: FN.
-                if completion == model_result['answer']:
+                if completion == model_result['answer']: # most likely predction
                         predicted_probability.append(model_completion_probability[completion_idx].item())
                         correct_predictions.append(0)
-
                         actual_labels.append(1)
                         truth_value.append(0)
                 # Correct Answer: True Negative
@@ -127,6 +126,34 @@ def bin_prediction_probabilities_by_samples_per_bin(prediction_probabilities,
   bin_mean_probability = np.array([(start+end)/2.0 for start, end in zip(bin_start_edge, bin_stop_edge)])
   bin_widths = np.array([end-start for start, end in zip(bin_start_edge, bin_stop_edge)])
   return bin_accuracy, bin_mean_probability, bin_widths 
+
+def compute_ece(prediction_probabilities, actual_labels, correct_prediction, samples_per_bin = 10):
+       """
+       Compute the Expected calibration error.
+       """
+       actual_labels = np.array(actual_labels)
+       most_likely = np.where(np.isclose(actual_labels ,1))
+       prediction_probabilities = np.array(prediction_probabilities)
+       prediction_probabilities = prediction_probabilities[most_likely]
+       correct_prediction = np.array(correct_prediction)
+       correct_prediction = correct_prediction[most_likely]
+
+       xs, ys , _ = bin_prediction_probabilities_by_samples_per_bin(prediction_probabilities, correct_prediction, samples_per_bin=samples_per_bin) 
+       return np.sum(np.abs(xs - ys)/len(xs))
+
+def compute_rms_calibration_error(prediction_probabilities, actual_labels, correct_prediction, samples_per_bin = 10):
+       """
+        Compute the RMS calibration
+       """
+       actual_labels = np.array(actual_labels)
+       most_likely = np.where(np.isclose(actual_labels ,1))
+       prediction_probabilities = np.array(prediction_probabilities)
+       prediction_probabilities = prediction_probabilities[most_likely]
+       correct_prediction = np.array(correct_prediction)
+       correct_prediction = correct_prediction[most_likely]
+       xs, ys , _ = bin_prediction_probabilities_by_samples_per_bin(prediction_probabilities, correct_prediction, samples_per_bin=samples_per_bin) 
+       return np.sqrt(np.sum(np.square(xs - ys))/len(xs))
+        
 
 def get_log_prob_of_completion(
         model,
