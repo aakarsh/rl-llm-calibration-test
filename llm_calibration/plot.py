@@ -3,6 +3,11 @@ import seaborn as sns
 import json
 import numpy as np
 import matplotlib.pyplot as plt
+import glob
+import json
+import os
+import re
+
 
 import itertools
 import functools
@@ -190,6 +195,44 @@ def plot_calibration_comparison(model_tags, model_labels,
     save_fig.show()
   return save_fig
 
+
+def has_glob_pattern(filename):
+  """
+  Checks if a filename contains a glob pattern using regular expressions.
+
+  Args:
+      filename: The filename to check.
+
+  Returns:
+      True if the filename contains a glob pattern, False otherwise.
+  """
+  pattern = r"[*?\[\]{}]"  # Matches glob pattern characters
+  return bool(re.search(pattern, filename))
+
+def merge_json_files(directory, pattern="*.json"):
+  """
+  Merges all JSON files matching the given pattern within a specified directory 
+  into a single JSON object.
+
+  Args:
+      directory: The path to the directory containing the JSON files.
+      pattern: A string representing the file pattern to search for (e.g., "*.json").
+
+  Returns:
+      A dictionary containing the merged data from all JSON files within the directory.
+  """
+  merged_data =[] 
+  for filename in glob.glob(os.path.join(directory, pattern)):
+    with open(filename, "r") as f:
+      try:
+        data = json.load(f)
+        if len(data)>0:
+          merged_data+=data  # Update the merged dictionary
+      except json.JSONDecodeError as e:
+        print(f"Error parsing JSON file {filename}: {e}")
+  return merged_data
+
+
 def generate_comparison_plot(file_paths,  model_labels=[], 
                              dynamic_bins=True,
                              samples_per_bin=100,
@@ -201,9 +244,13 @@ def generate_comparison_plot(file_paths,  model_labels=[],
   comparison_files = []
   
   for file_path in file_paths: 
-      with open(file_path) as f:
-          comparison_files.append(json.load(f))
-      
+      if has_glob_pattern(os.path.basename(file_path)):
+        merged_files = merge_json_files(os.path.dirname(file_path), os.path.basename(file_path)) 
+        comparison_files.append(merged_files)
+      else:
+        with open(file_path) as f:
+            comparison_files.append(json.load(f))
+        
   model_completion_probabilities={}
   model_truth_values = {}
   model_ece = {}
@@ -247,9 +294,14 @@ def generate_roc_plot(file_paths, model_labels=[],
   Plot the classification ROC
   """
   comparison_files = []
+
   for file_path in file_paths: 
-      with open(file_path) as f:
-          comparison_files.append(json.load(f))
+      if has_glob_pattern(os.path.basename(file_path)):
+        merged_files = merge_json_files(os.path.dirname(file_path), os.path.basename(file_path)) 
+        comparison_files.append(merged_files)
+      else:
+        with open(file_path) as f:
+            comparison_files.append(json.load(f))
       
   model_completion_probabilities={}
   model_truth_values = {}

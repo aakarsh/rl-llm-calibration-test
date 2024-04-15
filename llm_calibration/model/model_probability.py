@@ -10,6 +10,8 @@ def get_normalized_probabilities(model_results, include_true_negatives=False):
   truth_value = []
   actual_labels = []
   correct_predictions = []
+
+  completions = [] #list(sorted(model_results[0]['selection_results'].keys())) # use first if available
   for model_result in model_results:
     completions = list(sorted(model_result['selection_results'].keys()))
     model_log_prob_of_completion = torch.tensor([model_result['selection_results'][completion] for completion in completions])
