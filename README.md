@@ -6,6 +6,15 @@ language models.
 
 ## Installation
 
+```
+pip install -r requirements. tx
+```
+
+When running in the colab environment it is recommended ot use. 
+
+```
+pip install -r requirements-colab.txt
+```
 
 ## Unit Tests
 
@@ -15,12 +24,12 @@ Running unit tests requires pytest module invoked as follows:
     python -m pytest test
 ```
 
-# Contianer
+## Running Individual Experiments 
 
-Published docker container can be used as starting point for model 
-configuration.
+Any individual experiment can be rerun using the following command
 
-https://hub.docker.com/repository/docker/aakarsh/llm_calibration/general
+```
+python  ../llm_calibration/run_experiment.py --model_name='meta-llama/Llama-2-13b-hf' --dataset='STEM' 
+```
 
-
-
+The experimental result will produce a json result files which can be parsed offline to generate the requisite plots.  
